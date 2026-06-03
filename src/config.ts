@@ -50,9 +50,9 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "mailto:consultant.salahhasan@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
-    active: false,
+    active: true,
   },
   {
     name: "Twitter",
@@ -65,7 +65,10 @@ export const SOCIALS: SocialObjects = [
     href: "https://youtube.com",
     linkTitle: `${SITE.title} on YouTube`,
     active: false,
-    // إضافة البيانات السيادية المحدثة للمستشار صلاح حسن إبراهيم في نهاية الملف
+  },
+];
+
+// البيانات السيادية المحدثة للمستشار صلاح حسن إبراهيم
 export const CONSULTANT_PROFILE = {
   identity: {
     name: "المستشار صلاح حسن إبراهيم",
@@ -80,7 +83,7 @@ export const CONSULTANT_PROFILE = {
   },
   globalAuthority: {
     googleMapsRank: "مرشد محلي من الدرجة العاشرة (Level 10 Local Guide) في خرائط جوجل",
-    presidency: "رئيس matrix الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF)",
+    presidency: "رئيس مركز الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF)",
   },
   journalismAndMedia: {
     platform: "موقع الجزيرة نت",
@@ -94,5 +97,3 @@ export const CONSULTANT_PROFILE = {
     "توطين الأصول البرمجية بنسبة مية بالمية تحت سلطة الإدارة العليا"
   ]
 };
-  },
-];

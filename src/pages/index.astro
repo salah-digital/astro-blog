@@ -42,20 +42,20 @@
 </head>
 <body class="bg-primary-50 dark:bg-primary-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
 
-    <div class="bg-gradient-to-r from-primary-900 to-primary-950 border-b border-gold-500/30 text-gold-200 py-2.5 text-sm font-semibold relative z-[51]">
+    <div class="bg-gradient-to-r from-primary-900 to-primary-950 dark:from-black dark:to-primary-950 border-b border-gold-500/30 text-gold-200 py-2.5 text-sm font-semibold relative z-[51]">
         <div class="max-w-7xl mx-auto px-4 marquee-wrapper" dir="ltr">
             <div id="welcomeMarquee" class="marquee-content flex gap-12" dir="rtl"></div>
         </div>
     </div>
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-primary-950/85 border-b border-primary-200/50 dark:border-primary-800/50">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-primary-950/85 border-b border-primary-200/50 dark:border-primary-800/50 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer" onclick="location.hash='#hero'">
-                <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2.5 rounded-xl shadow-lg shadow-gold-500/20">
+            <div class="flex items-center gap-3 cursor-pointer animate-fade-in" onclick="location.hash='#hero'">
+                <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2.5 rounded-xl shadow-lg shadow-gold-500/20 hover:rotate-6 transition-transform">
                     <i class="fa-solid fa-building-shield text-white text-2xl"></i>
                 </div>
                 <div>
-                    <span id="headerLogoMain" class="block text-base sm:text-lg font-bold text-primary-900 dark:text-white leading-tight"></span>
+                    <span id="headerLogoMain" class="block text-base sm:text-lg font-bold text-primary-900 dark:text-white tracking-wide leading-tight"></span>
                     <span id="headerLogoSub" class="block text-[11px] sm:text-xs font-semibold text-gold-600 dark:text-gold-400"></span>
                 </div>
             </div>
@@ -65,29 +65,32 @@
                 <a href="#about" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">عن المستشار</a>
                 <a href="#services" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">خدماتنا</a>
                 <a href="#articles" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">المقالات والدراسات</a>
-                <a href="#assessment" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>تقييم النضج</a>
+                <a href="#assessment" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>تقييم النضج</a>
                 <a href="#estimator" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">حاسبة الاستشارات</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-3">
-                <button onclick="toggleTheme()" class="p-2 sm:p-2.5 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100"><i id="themeIcon" class="fa-solid fa-moon"></i></button>
-                <a href="#contact" class="hidden md:inline-flex px-4 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-all text-xs sm:text-sm">تواصل معنا</a>
+                <button onclick="toggleTheme()" class="p-2 sm:p-2.5 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100 hover:scale-105 transition-all"><i id="themeIcon" class="fa-solid fa-moon"></i></button>
+                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-all text-xs sm:text-sm">تواصل معنا</a>
                 <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100"><i class="fa-solid fa-bars text-xl"></i></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-primary-900 border-t border-primary-100 dark:border-primary-800">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">الرئيسية</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">عن المستشار</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">خدماتنا</a>
+                <a href="#articles" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">المقالات</a>
+                <a href="#assessment" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-emerald-500">تقييم النضج</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-4 py-2.5 bg-gold-600 text-white font-bold rounded-xl">تواصل معنا</a>
             </div>
         </div>
     </header>
 
-    <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-primary-900 border-t border-primary-100 dark:border-primary-800">
-        <div class="px-4 pt-2 pb-6 space-y-3">
-            <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">الرئيسية</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">عن المستشار</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold">خدماتنا</a>
-            <a href="#assessment" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-emerald-500">تقييم النضج الرقمي</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-4 py-2.5 bg-gold-600 text-white font-bold rounded-xl">تواصل معنا</a>
-        </div>
-    </div>
-
     <section id="hero" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-primary-100/50 to-transparent dark:from-primary-950 dark:to-primary-900/40">
+        <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><pattern id="heroGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#heroGrid)" /></svg>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
                 <div class="inline-flex items-center gap-2 bg-gold-50 dark:bg-gold-950/50 border border-gold-300/30 px-4 py-1.5 rounded-full">
@@ -95,29 +98,23 @@
                     <span id="heroBadge" class="text-xs sm:text-sm font-bold text-gold-700 dark:text-gold-400"></span>
                 </div>
                 <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-primary-950 dark:text-white"></h1>
-                <p id="heroDescription" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+                <p id="heroDescription" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed"></p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                    <a href="#assessment" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-xl text-center"><i class="fa-solid fa-chart-line ml-2"></i>ابدأ تقييم النضج الرقمي</a>
-                    <a href="#ai-consultant" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-primary-900 border-2 border-primary-200 dark:border-primary-800 text-primary-900 dark:text-white font-bold rounded-xl text-center"><i class="fa-solid fa-robot ml-2 text-gold-500"></i>تحدث مع المستشار الذكي</a>
+                    <a href="#assessment" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-all text-center"><i class="fa-solid fa-chart-line ml-2"></i>ابدأ تقييم النضج الرقمي</a>
+                    <a href="#ai-consultant" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-primary-900 border-2 border-primary-200 dark:border-primary-800 text-primary-900 dark:text-white font-bold rounded-xl hover:bg-primary-50 transition-all text-center"><i class="fa-solid fa-robot ml-2 text-gold-500 animate-pulse"></i>تحدث مع المستشار الذكي</a>
                 </div>
-                <div class="grid grid-cols-3 gap-4 pt-8 border-t max-w-md mx-auto lg:mx-0">
-                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">100%</span><span class="text-xs sm:text-sm text-slate-500">سيادة رقمية</span></div>
-                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">Level 10</span><span class="text-xs sm:text-sm text-slate-500">Local Guide</span></div>
-                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">0%</span><span class="text-xs sm:text-sm text-slate-500">نزيف تقني</span></div>
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-primary-200/50 dark:border-primary-800/50 max-w-md mx-auto lg:mx-0">
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">+15</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">سنة خبرة</span></div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">Level 10</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Local Guide</span></div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">100%</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">سيادة رقمية</span></div>
                 </div>
             </div>
-            
             <div class="lg:col-span-5 relative">
                 <div class="relative mx-auto w-72 sm:w-80 md:w-96 lg:w-full aspect-square rounded-3xl bg-gradient-to-tr from-primary-800 to-gold-700 p-1 shadow-2xl">
                     <div class="w-full h-full bg-primary-900 rounded-[22px] overflow-hidden relative flex flex-col items-center justify-between p-6 text-center">
-                        <img id="heroImageDisplay" src="/salah.jpg" alt="المستشار صلاح حسن إبراهيم" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop'" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gold-500/50 object-cover shadow-lg mx-auto mt-4 transition-all hover:scale-105 duration-300">
-                        <div class="space-y-1 relative z-10 pt-4">
-                            <h3 id="heroCardName" class="text-lg font-bold text-white"></h3>
-                            <p id="heroCardTitle" class="text-xs text-gold-400 font-semibold"></p>
-                        </div>
-                        <div class="bg-primary-950/80 border border-primary-800/60 p-4 rounded-xl max-w-xs mx-auto mb-2 mt-4">
-                            <p id="heroQuote" class="text-[11px] text-slate-300 italic leading-relaxed"></p>
-                        </div>
+                        <img id="heroImageDisplay" src="/salah.jpg" alt="المستشار صلاح حسن إبراهيم" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop'" class="w-28 h-28 rounded-full border-4 border-gold-500/50 object-cover shadow-lg mx-auto mt-4 transition-all hover:scale-105 duration-300">
+                        <div class="space-y-1 relative z-10"><h3 id="heroCardName" class="text-lg font-bold text-white"></h3><p id="heroCardTitle" class="text-xs text-gold-400 font-semibold"></p></div>
+                        <div class="bg-primary-950/80 border border-primary-800/60 p-4 rounded-xl max-w-xs mx-auto mb-2 mt-4"><p id="heroQuote" class="text-[11px] text-slate-300 italic leading-relaxed"></p></div>
                     </div>
                 </div>
             </div>
@@ -130,26 +127,20 @@
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-gold-600 to-primary-700 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                     <div class="relative bg-primary-900 rounded-2xl overflow-hidden shadow-2xl">
-                        <img id="aboutImageDisplay" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="السيادة الرقمية وإدارة السمعة" class="w-full h-80 object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
+                        <img id="aboutImageDisplay" src="" alt="السيادة الرقمية" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'" class="w-full h-80 object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950 via-transparent to-transparent p-8 flex flex-col justify-end">
-                            <h4 class="text-xl font-bold text-gold-400">منهجية مستدامة للأمان والموثوقية</h4>
-                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">نساعد المؤسسات والشركات في العراق والمنطقة على امتلاك سيادتها الرقمية وصيانة سمعتها السوقية بأعلى كفاءة ومعايير دولية.</p>
+                            <h4 class="text-xl font-bold text-gold-400">منهجية مستدامة للأمان</h4>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">نساعد المؤسسات والشركات في العراق والمنطقة على امتلاك سيادتها الرقمية.</p>
                         </div>
                     </div>
                 </div>
                 <div class="space-y-6">
-                    <span id="aboutSubtitle" class="text-sm font-bold text-gold-600 tracking-wider block"></span>
+                    <span id="aboutSubtitle" class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block"></span>
                     <h2 id="aboutMainTitle" class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white leading-tight"></h2>
                     <p id="aboutMainText" class="text-slate-600 dark:text-slate-300 leading-relaxed"></p>
                     <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="p-4 bg-primary-100/50 dark:bg-primary-900/60 rounded-xl hover:border-gold-500 border border-transparent transition-all">
-                            <span class="block text-base font-bold text-primary-900 dark:text-white">السيادة الرقمية</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1 block">حوكمة البيانات وحماية البنية التحتية والاستقلال التقني الكامل.</span>
-                        </div>
-                        <div class="p-4 bg-primary-100/50 dark:bg-primary-900/60 rounded-xl hover:border-gold-500 border border-transparent transition-all">
-                            <span class="block text-base font-bold text-primary-900 dark:text-white">السمعة المؤسسية</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1 block">إدارة الصورة الذهنية وحوكمة قنوات الاتصال وصناعة الهوية الرقمية.</span>
-                        </div>
+                        <div class="p-4 bg-primary-100/50 dark:bg-primary-900/60 rounded-xl"><span class="block text-base font-bold text-primary-900 dark:text-white">السيادة الرقمية</span><span class="text-xs text-slate-500 dark:text-slate-400 mt-1 block">حوكمة البيانات والاستقلال التقني الكامل.</span></div>
+                        <div class="p-4 bg-primary-100/50 dark:bg-primary-900/60 rounded-xl"><span class="block text-base font-bold text-primary-900 dark:text-white">السمعة المؤسسية</span><span class="text-xs text-slate-500 dark:text-slate-400 mt-1 block">إدارة الصورة الذهنية وحوكمة قنوات الاتصال.</span></div>
                     </div>
                 </div>
             </div>
@@ -159,9 +150,8 @@
     <section id="services" class="py-20 bg-primary-50 dark:bg-primary-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sm font-bold text-gold-600 tracking-wider block">خدماتنا الاستشارية</span>
-                <h2 id="servicesSectionTitle" class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white">حلول متكاملة تضمن التفوق والريادة الرقمية</h2>
-                <p id="servicesSectionDesc" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">نصمم خدماتنا بدقة لتلائم تطلعات واحتياجات المؤسسات الطموحة في العصر الرقمي المتسارع.</p>
+                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">خدماتنا الاستشارية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white">حلول متكاملة تضمن لك التفوق والريادة الرقمية</h2>
             </div>
             <div id="dynamicServicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
@@ -169,7 +159,10 @@
 
     <section id="articles" class="py-20 bg-white dark:bg-primary-900/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16"><h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">المقالات والدراسات الاستشارية</h2></div>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">المقالات والأبحاث الاستشارية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white">رؤى وأبحاث في السيادة والسمعة الرقمية</h2>
+            </div>
             <div id="dynamicArticlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
@@ -177,67 +170,67 @@
     <section id="assessment" class="py-20 bg-primary-100/30 dark:bg-primary-950/40">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
-                <span class="text-sm font-bold text-gold-600 block"><i class="fa-solid fa-gauge-high ml-1"></i>تقييم فوري</span>
-                <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">مقياس النضج للسيادة الرقمية</h2>
+                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 block"><i class="fa-solid fa-gauge-high ml-1"></i>تقييم فوري</span>
+                <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">مقياس النضج الرقمي للمؤسسات</h2>
             </div>
-            <div class="bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-6 shadow-xl relative overflow-hidden">
+            <div class="bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
                 <div class="w-full bg-primary-100 dark:bg-primary-950 h-2 rounded-full mb-8"><div id="quizProgress" class="bg-gradient-to-r from-gold-500 to-amber-500 h-2 rounded-full transition-all" style="width: 20%;"></div></div>
                 <div id="quizWindow">
                     <div class="quiz-step active space-y-6" data-step="1">
-                        <span class="text-gold-600 text-sm font-bold">السؤال 1 من 5</span>
-                        <h3 class="text-lg font-bold">هل تمتلك مؤسستك تحكماً برمجياً مستقلاً 100% في موقعها وتطبيقاتها؟</h3>
+                        <span class="text-gold-600 font-bold">السؤال 1 من 5</span>
+                        <h3 class="text-lg font-bold">هل تمتلك مؤسستك تحكماً برمجياً مستقلاً في موقعها وتطبيقاتها؟</h3>
                         <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(1, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نعم، نمتلك الشيفرة المصدرية والاستضافة بالكامل.</button>
-                            <button onclick="nextQuizStep(1, 2)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نمتلك الموقع ولكننا نعتمد على منصات جاهزة ومغلقة.</button>
-                            <button onclick="nextQuizStep(1, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">لا، نعتمد على شبكات التواصل الاجتماعي فقط للتواجد.</button>
+                            <button onclick="nextQuizStep(1, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نعم، نمتلك الشيفرة المصدرية والاستضافة بالكامل.</button>
+                            <button onclick="nextQuizStep(1, 2)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نمتلك الموقع ولكن نعتمد على منصات جاهزة ومغلقة.</button>
+                            <button onclick="nextQuizStep(1, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">لا، نعتمد على شبكات التواصل الاجتماعي فقط للتواجد.</button>
                         </div>
                     </div>
                     <div class="quiz-step hidden space-y-6" data-step="2">
-                        <span class="text-gold-600 text-sm font-bold">السؤال 2 من 5</span>
+                        <span class="text-gold-600 font-bold">السؤال 2 من 5</span>
                         <h3 class="text-lg font-bold">كيف تُدار العمليات الإدارية وحوكمة البيانات داخل مؤسستك؟</h3>
                         <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(2, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">أتمتة كاملة وحفظ سحابي آمن يضمن السيادة التامة.</button>
-                            <button onclick="nextQuizStep(2, 2)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نصف مؤتمتة، جداول إكسل وأدوات بسيطة.</button>
-                            <button onclick="nextQuizStep(2, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">يدوياً بالكامل عن طريق الملفات الورقية.</button>
+                            <button onclick="nextQuizStep(2, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">أتمتة كاملة وحفظ سحابي آمن يضمن السيادة التامة للبيانات.</button>
+                            <button onclick="nextQuizStep(2, 2)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نصف مؤتمتة، نستخدم بعض الأدوات البسيطة وجداول إكسل.</button>
+                            <button onclick="nextQuizStep(2, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">يدوياً بالكامل عن طريق الملفات الورقية والأرشفة التقليدية.</button>
                         </div>
                     </div>
                     <div class="quiz-step hidden space-y-6" data-step="3">
-                        <span class="text-gold-600 text-sm font-bold">السؤال 3 من 5</span>
+                        <span class="text-gold-600 font-bold">السؤال 3 من 5</span>
                         <h3 class="text-lg font-bold">هل تملكون نظاماً لرصد السمعة المؤسسية وإدارة الأزمات الإعلامية؟</h3>
                         <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(3, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نعم، لدينا أدوات رصد آلية لآراء الجمهور.</button>
-                            <button onclick="nextQuizStep(3, 1)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نتابع بشكل بسيط وغير مستمر ردود الفعل.</button>
-                            <button onclick="nextQuizStep(3, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">لا نملك أي رصد للسمعة الرقمية.</button>
+                            <button onclick="nextQuizStep(3, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نعم، لدينا أدوات رصد آلية لآراء الجمهور وبروتوكولات استباقية.</button>
+                            <button onclick="nextQuizStep(3, 1)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نتابع بشكل بسيط وغير مستمر ردود الفعل دون خطة طوارئ.</button>
+                            <button onclick="nextQuizStep(3, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">لا نملك أي رصد للسمعة الرقمية ونتعامل مع الأزمات بعشوائية.</button>
                         </div>
                     </div>
                     <div class="quiz-step hidden space-y-6" data-step="4">
-                        <span class="text-gold-600 text-sm font-bold">السؤال 4 من 5</span>
+                        <span class="text-gold-600 font-bold">السؤال 4 من 5</span>
                         <h3 class="text-lg font-bold">ما هي آليات حماية وتأمين البنية التحتية والبيانات بمؤسستك؟</h3>
                         <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(4, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نطبق جدران حماية وسياسات أمان سيبراني صارمة.</button>
-                            <button onclick="nextQuizStep(4, 1)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نعتمد على برامج حماية الأجهزة العادية.</button>
-                            <button onclick="nextQuizStep(4, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">لا توجد أي برمجيات أو خطط لحماية البيانات.</button>
+                            <button onclick="nextQuizStep(4, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نطبق جدران حماية وسياسات أمان سيبراني صارمة مع نسخ دوري.</button>
+                            <button onclick="nextQuizStep(4, 1)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نعتمد على برامج حماية الأجهزة العادية دون سياسات متكاملة.</button>
+                            <button onclick="nextQuizStep(4, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">لا توجد أي برمجيات أو خطط لحماية البيانات أو الأمن السيبراني.</button>
                         </div>
                     </div>
                     <div class="quiz-step hidden space-y-6" data-step="5">
-                        <span class="text-gold-600 text-sm font-bold">السؤال 5 من 5</span>
+                        <span class="text-gold-600 font-bold">السؤال 5 من 5</span>
                         <h3 class="text-lg font-bold">كيف تنظر الإدارة العليا للسيادة الرقمية وحفظ أمن الأصول التكنولوجية؟</h3>
                         <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(5, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نراها ضرورة سيادية وأمنية ونخصص لها ميزانية ثابتة.</button>
-                            <button onclick="nextQuizStep(5, 1)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">نراها هامة ولكن الميزانية محدودة.</button>
-                            <button onclick="nextQuizStep(5, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-sm hover:border-gold-500">لا تقع أهميتها ضمن الخطط الاستراتيجية الحالية.</button>
+                            <button onclick="nextQuizStep(5, 3)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نراها ضرورة سيادية وأمنية قصوى ونخصص لها ميزانية ثابتة.</button>
+                            <button onclick="nextQuizStep(5, 1)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نراها هامة لحماية العمليات ولكن الميزانية المخصصة لها محدودة.</button>
+                            <button onclick="nextQuizStep(5, 0)" class="w-full text-right p-4 rounded-xl border bg-white dark:bg-primary-950 font-semibold hover:border-gold-500">نعتبرها بنداً تقنياً مكلفاً لا تقع أهميته ضمن الخطط الحالية.</button>
                         </div>
                     </div>
                     <div id="quizResult" class="hidden text-center space-y-6">
-                        <div class="w-24 h-24 rounded-full bg-gold-100 flex items-center justify-center mx-auto text-4xl shadow-lg border border-gold-300/30 text-gold-600"><i class="fa-solid fa-trophy"></i></div>
-                        <div><h3 class="text-2xl font-bold">تم احتساب نضجك الرقمي بنجاح!</h3><p class="text-lg mt-2">مجموع نقاطك هو: <span id="quizScoreDisplay" class="font-bold text-gold-600">0</span> من أصل 15</p></div>
+                        <div class="w-24 h-24 rounded-full bg-gold-100 flex items-center justify-center mx-auto text-4xl shadow-lg border text-gold-600"><i class="fa-solid fa-trophy"></i></div>
+                        <div><h3 class="text-2xl font-bold">تم احتساب نضجك الرقمي بنجاح!</h3><p class="text-lg mt-2">مجموع نقاطك: <span id="quizScoreDisplay" class="font-bold text-gold-600">0</span> / 15</p></div>
                         <div class="p-6 bg-white dark:bg-primary-950 border rounded-2xl text-right max-w-xl mx-auto">
                             <h4 id="resultLevelTitle" class="font-bold text-xl text-primary-900 dark:text-gold-400"></h4>
                             <p id="resultLevelDesc" class="text-sm mt-2"></p>
                             <div class="border-t pt-4 mt-2"><h5 class="font-bold text-sm text-gold-600">💡 نصيحة المستشار الفورية:</h5><p id="resultAdvice" class="text-xs mt-1"></p></div>
                         </div>
-                        <div class="flex gap-4 justify-center">
-                            <button onclick="resetQuiz()" class="px-6 py-3 bg-primary-200 text-primary-900 font-bold rounded-xl text-sm">أعد التقييم</button>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="resetQuiz()" class="px-6 py-3 bg-primary-200 text-primary-900 font-bold rounded-xl text-sm">أعد الاختبار</button>
                             <a href="#contact" class="px-6 py-3 bg-gold-600 text-white font-bold rounded-xl shadow-lg text-sm">احجز استشارة لتطوير نضجك</a>
                         </div>
                     </div>
@@ -246,50 +239,53 @@
         </div>
     </section>
 
-    <section id="estimator" class="py-20 bg-primary-100/50 dark:bg-primary-950/60">
+    <section id="estimator" class="py-20 bg-white dark:bg-primary-900/10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12"><h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">حاسبة الاستشارات السيادية</h2></div>
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-sm font-bold text-gold-600 block"><i class="fa-solid fa-calculator ml-1"></i>شفافية تامة</span>
+                <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">حاسبة تكلفة الاستشارات التقديرية</h2>
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                <div class="lg:col-span-7 bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="lg:col-span-7 bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-6 shadow-lg">
                     <div class="space-y-3">
-                        <label class="block text-sm font-bold">نوع التدخل الاستشاري:</label>
-                        <select id="estService" onchange="calculateCost()" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none">
-                            <option value="strategic" data-rate="250">استشارة سيادة رقمية وحوكمة أصول (250$ / ساعة)</option>
-                            <option value="reputation" data-rate="300">إدارة سمعة مؤسسية وتكتيكات دفاعية (300$ / ساعة)</option>
-                            <option value="digital" data-rate="350">تحول تكنولوجي وفصل سلطات تقنية (350$ / ساعة)</option>
-                            <option value="feasibility" data-rate="200">هندسة SEO جراحي للخرائط (200$ / ساعة)</option>
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">نوع الخدمة الاستشارية المطلوبة:</label>
+                        <select id="estService" onchange="calculateCost()" class="w-full bg-primary-50 dark:bg-primary-950 border p-3 rounded-xl focus:outline-none focus:border-gold-500 text-sm">
+                            <option value="sovereignty" data-rate="300">السيادة الرقمية وحماية الأصول (300$ / ساعة)</option>
+                            <option value="reputation" data-rate="250">إدارة السمعة المؤسسية والأزمات (250$ / ساعة)</option>
+                            <option value="digital" data-rate="200">التحول والتطوير التكنولوجي (200$ / ساعة)</option>
+                            <option value="cyber" data-rate="350">الأمن السيبراني وبناء القدرات (350$ / ساعة)</option>
                         </select>
                     </div>
-                    <div class="space-y-3">
-                        <label class="block text-sm font-bold">حجم المؤسسة:</label>
+                    <div class="space-y-3 mt-6">
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">حجم المنشأة أو المؤسسة:</label>
                         <div class="grid grid-cols-3 gap-3">
                             <button onclick="setEstCompanySize('small', 1.0, this)" class="est-size-btn active p-3 rounded-xl border-2 border-gold-500 bg-gold-50/50 text-gold-600 font-bold text-xs"><i class="fa-solid fa-shop block mb-1"></i>صغيرة</button>
-                            <button onclick="setEstCompanySize('medium', 1.25, this)" class="est-size-btn p-3 rounded-xl border border-primary-300 bg-white dark:bg-primary-950 text-slate-600 dark:text-slate-300 font-semibold text-xs"><i class="fa-solid fa-building block mb-1"></i>متوسطة</button>
-                            <button onclick="setEstCompanySize('large', 1.5, this)" class="est-size-btn p-3 rounded-xl border border-primary-300 bg-white dark:bg-primary-950 text-slate-600 dark:text-slate-300 font-semibold text-xs"><i class="fa-solid fa-city block mb-1"></i>مستشفى / كبرى</button>
+                            <button onclick="setEstCompanySize('medium', 1.25, this)" class="est-size-btn p-3 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-xs"><i class="fa-solid fa-building block mb-1"></i>متوسطة</button>
+                            <button onclick="setEstCompanySize('large', 1.5, this)" class="est-size-btn p-3 rounded-xl border bg-white dark:bg-primary-950 font-semibold text-xs"><i class="fa-solid fa-city block mb-1"></i>كبرى</button>
                         </div>
                     </div>
-                    <div class="space-y-3">
+                    <div class="space-y-3 mt-6">
                         <div class="flex justify-between items-center text-sm font-bold">
-                            <label>ساعات العمل (الجلسات):</label><span class="text-gold-600 dark:text-gold-400"><span id="estHoursDisplay">5</span> ساعات</span>
+                            <label>عدد الساعات:</label><span class="text-gold-600"><span id="estHoursDisplay">5</span> ساعات</span>
                         </div>
                         <input id="estHours" type="range" min="1" max="40" value="5" oninput="updateHoursRange(this.value)" class="w-full accent-gold-500 cursor-pointer">
                     </div>
-                    <div class="flex items-center gap-3 bg-primary-50 dark:bg-primary-950/80 p-3 rounded-xl border border-primary-200 dark:border-primary-800">
-                        <input id="estUrgent" type="checkbox" onchange="calculateCost()" class="w-5 h-5 rounded accent-gold-500 cursor-pointer">
-                        <div><label for="estUrgent" class="block text-sm font-bold cursor-pointer">تدخل إنقاذ عاجل (24-48 ساعة)</label><span class="text-xs text-slate-400">علاوة 25% للأولوية القصوى.</span></div>
+                    <div class="flex items-center gap-3 bg-primary-50 dark:bg-primary-950/80 p-3 rounded-xl border mt-6">
+                        <input id="estUrgent" type="checkbox" onchange="calculateCost()" class="w-5 h-5 accent-gold-500 cursor-pointer">
+                        <div><label for="estUrgent" class="block text-sm font-bold">طلب إنقاذ عاجل (24-48 ساعة)</label><span class="text-xs text-slate-400">+25% علاوة.</span></div>
                     </div>
                 </div>
-                <div class="lg:col-span-5 bg-gradient-to-br from-primary-900 to-primary-950 border border-primary-800 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between space-y-6">
+                <div class="lg:col-span-5 bg-gradient-to-br from-primary-900 to-primary-950 border border-primary-800 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between shadow-xl">
                     <div class="space-y-4">
-                        <span class="text-xs font-bold text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full">التكلفة التقديرية (للاسترشاد)</span>
-                        <div class="pt-4"><span class="block text-xs text-slate-400">إجمالي التكلفة المتوقعة:</span><span id="estTotalCost" class="text-4xl sm:text-5xl font-extrabold text-gold-400"></span></div>
-                        <div class="border-t border-primary-800 pt-4 space-y-2 text-sm text-slate-300">
-                            <div class="flex justify-between"><span>السعر الأساسي:</span><span id="estBaseRate"></span></div>
-                            <div class="flex justify-between"><span>حجم المؤسسة:</span><span id="estSizeMultiplier"></span></div>
-                            <div class="flex justify-between"><span>رسوم الطوارئ:</span><span id="estUrgentLabel"></span></div>
+                        <span class="text-xs font-bold text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">التكلفة التقديرية</span>
+                        <div class="pt-4"><span class="block text-xs text-slate-400 font-medium">إجمالي التكلفة المتوقعة:</span><span id="estTotalCost" class="text-4xl sm:text-5xl font-extrabold text-gold-400"></span></div>
+                        <div class="border-t border-primary-800 pt-4 space-y-2">
+                            <div class="flex justify-between text-sm text-slate-300"><span>سعر الساعة الأساسي:</span><span id="estBaseRate"></span></div>
+                            <div class="flex justify-between text-sm text-slate-300"><span>معامل حجم المنشأة:</span><span id="estSizeMultiplier"></span></div>
+                            <div class="flex justify-between text-sm text-slate-300"><span>رسوم الاستعجال:</span><span id="estUrgentLabel"></span></div>
                         </div>
                     </div>
-                    <button onclick="bookCalculatedConsultation()" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg">تضمين التسعير في طلب الاستشارة</button>
+                    <button onclick="bookCalculatedConsultation()" class="w-full py-4 mt-6 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg hover:scale-[1.02] transition-all">تضمين التسعير في الطلب</button>
                 </div>
             </div>
         </div>
@@ -298,26 +294,26 @@
     <section id="ai-consultant" class="py-20 bg-primary-100/20 dark:bg-primary-950/20">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-sm font-bold text-gold-600 block"><i class="fa-solid fa-robot ml-1"></i>محاكاة ذكية فورية</span>
+                <span class="text-sm font-bold text-gold-600 block"><i class="fa-solid fa-robot ml-1"></i>محاكاة ذكية</span>
                 <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">المستشار الرقمي الذكي</h2>
             </div>
             <div class="bg-white dark:bg-primary-900 border rounded-3xl shadow-xl overflow-hidden flex flex-col h-[550px]">
                 <div class="bg-primary-100 dark:bg-primary-950 px-6 py-4 flex items-center justify-between border-b">
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center text-gold-600"><i class="fa-solid fa-user-tie text-2xl"></i></div>
+                        <div class="relative"><div class="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center text-gold-600"><i class="fa-solid fa-user-tie text-2xl"></i></div><span class="absolute bottom-0 left-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span></div>
                         <div><span class="block font-bold">النسخة الافتراضية للمستشار صلاح</span><span class="block text-xs text-emerald-600">نشط الآن</span></div>
                     </div>
                     <button onclick="clearChat()" class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <div id="chatMessages" class="flex-1 overflow-y-auto p-6 space-y-4">
                     <div class="flex items-start gap-3 max-w-[85%]">
-                        <div class="w-8 h-8 rounded-full bg-gold-600 text-white flex items-center justify-center"><i class="fa-solid fa-user-tie text-sm"></i></div>
-                        <div class="bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border shadow-sm"><p class="text-sm">مرحباً بك. أنا التوأم الرقمي للمستشار صلاح حسن المتخصص في السيادة الرقمية. كيف أساعدك اليوم؟</p></div>
+                        <div class="w-8 h-8 rounded-full bg-gold-600 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-user-tie text-sm"></i></div>
+                        <div class="bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border"><p class="text-sm">مرحباً بك. أنا التوأم الرقمي للمستشار صلاح. تفضل بطرح مشكلتك المؤسسية.</p></div>
                     </div>
                 </div>
                 <div class="p-4 bg-primary-50 dark:bg-primary-950 border-t">
                     <form id="chatForm" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                        <input id="chatInput" type="text" autocomplete="off" placeholder="اكتب سؤالك الاستشاري هنا..." class="flex-1 bg-white border p-3 rounded-xl text-sm focus:border-gold-500">
+                        <input id="chatInput" type="text" autocomplete="off" placeholder="اكتب سؤالك هنا..." class="flex-1 bg-white border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500">
                         <button type="submit" class="bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg">إرسال</button>
                     </form>
                 </div>
@@ -333,53 +329,47 @@
     </section>
 
     <section id="contact" class="py-20 bg-primary-50 dark:bg-primary-950/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div class="lg:col-span-5 bg-primary-900 text-white rounded-3xl p-8 flex flex-col justify-between space-y-8 relative shadow-xl">
-                <div class="space-y-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+            <div class="lg:col-span-5 bg-primary-900 text-white rounded-3xl p-8 flex flex-col justify-between space-y-8 relative overflow-hidden shadow-xl">
+                <div class="relative space-y-6">
                     <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block">معلومات التواصل والمكتب</span>
                     <h2 class="text-3xl font-extrabold text-white leading-tight">جاهزون لبدء رحلة التطوير والاستشارات فوراً</h2>
                     <div class="space-y-4 pt-4">
-                        <div class="flex gap-4 items-center group">
-                            <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400"><i class="fa-solid fa-map-location-dot"></i></div>
-                            <div><span class="block text-[10px] text-slate-400">المقر الرئيسي</span><span id="contactAddress" class="text-sm font-semibold">العراق - بغداد</span></div>
-                        </div>
-                        <a id="contactEmailLink" href="" class="flex gap-4 items-center group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all">
-                            <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400"><i class="fa-solid fa-envelope"></i></div>
-                            <div><span class="block text-[10px] text-slate-400">البريد المباشر</span><span id="contactEmail" class="text-sm font-semibold">consultant.salahhasan@gmail.com</span></div>
-                        </a>
-                        <a id="contactPhoneLink" href="" class="flex gap-4 items-center group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all">
-                            <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400"><i class="fa-solid fa-phone-volume"></i></div>
-                            <div><span class="block text-[10px] text-slate-400">الاتصال الهاتفي الفوري</span><span id="contactPhone" class="text-sm font-semibold font-mono">+9647706556772</span></div>
-                        </a>
+                        <div class="flex gap-4 items-center group"><div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400 shrink-0"><i class="fa-solid fa-map-location-dot"></i></div><div><span class="block text-[10px] text-slate-400">المقر الرئيسي</span><span id="contactAddress" class="text-sm font-semibold"></span></div></div>
+                        <a id="contactEmailLink" href="" class="flex gap-4 items-center group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"><div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400 shrink-0"><i class="fa-solid fa-envelope"></i></div><div><span class="block text-[10px] text-slate-400">البريد الإلكتروني المباشر</span><span id="contactEmail" class="text-sm font-semibold group-hover:text-gold-400 transition-colors"></span></div></a>
+                        <a id="contactPhoneLink" href="" class="flex gap-4 items-center group hover:bg-white/5 p-2 -m-2 rounded-xl transition-all"><div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400 shrink-0"><i class="fa-solid fa-phone-volume"></i></div><div><span class="block text-[10px] text-slate-400">الاتصال الهاتفي الفوري</span><span id="contactPhone" class="text-sm font-semibold group-hover:text-gold-400 transition-colors font-mono"></span></div></a>
                     </div>
                 </div>
+                <div class="flex items-center gap-3 pt-6 border-t border-primary-800">
+                    <a href="https://www.aljazeera.net/author/%D8%B5%D9%84%D8%A7%D8%AD-%D8%AD%D8%B3%D9%86-%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%85" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-500 flex items-center justify-center text-lg"><i class="fa-solid fa-pen-nib"></i></a>
+                    <a id="contactWhatsappLink" href="#" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-emerald-500 flex items-center justify-center text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
+
             <div class="lg:col-span-7 bg-white dark:bg-primary-900 border rounded-3xl p-8 shadow-xl">
                 <h3 class="text-2xl font-bold mb-6">طلب موعد استشارة جديدة</h3>
                 <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <input type="text" required placeholder="الاسم الثلاثي" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:border-gold-500">
-                        <input type="text" placeholder="اسم المؤسسة / المستشفى" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:border-gold-500">
+                        <input type="text" required placeholder="الاسم الثلاثي" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500">
+                        <input type="text" placeholder="اسم المؤسسة / المستشفى" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500">
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <input type="email" required placeholder="البريد الإلكتروني" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:border-gold-500">
-                        <input type="tel" required placeholder="+964 770 655 6772" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:border-gold-500 font-mono">
+                        <input type="email" required placeholder="البريد الإلكتروني" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500">
+                        <input type="tel" required placeholder="رقم الهاتف المتنقل" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500 font-mono">
                     </div>
-                    <select id="bookingServiceSelect" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:border-gold-500"></select>
-                    <textarea rows="4" placeholder="وصف موجز للمشروع أو التحدي الحالي..." class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:border-gold-500"></textarea>
-                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg hover:scale-[1.01]">إرسال الطلب وحجز موعد</button>
+                    <select id="bookingServiceSelect" class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500"></select>
+                    <textarea rows="4" placeholder="وصف موجز للمشروع أو التحدي..." class="w-full bg-primary-50 border p-3 rounded-xl text-sm focus:outline-none focus:border-gold-500"></textarea>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg">إرسال الطلب وحجز موعد الجلسة</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer class="bg-primary-950 text-white py-8 text-center text-xs">
-        <p>© <span id="currentYear" class="cursor-pointer" onclick="secretAdminTrigger()"></span> مكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي. جميع الحقوق محفوظة سيادياً.</p>
+        <p>© <span id="currentYear" class="cursor-pointer" onclick="secretAdminTrigger()"></span> مكتب المستشار صلاح حسن إبراهيم. جميع الحقوق محفوظة سيادياً.</p>
     </footer>
 
-    <a id="whatsappFloat" href="#" target="_blank" class="fixed bottom-6 right-6 z-[49] bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
+    <a id="whatsappFloat" href="#" target="_blank" class="fixed bottom-6 right-6 z-[49] bg-emerald-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
 
     <div id="notificationModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white dark:bg-primary-900 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 border shadow-2xl">
@@ -408,22 +398,14 @@
 
     <div id="articleReadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white dark:bg-primary-900 rounded-3xl max-w-2xl w-full border shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
-            <div class="p-6 border-b flex justify-between items-center">
-                <span id="readArtCategory" class="text-xs font-bold text-gold-600 bg-gold-100 px-2.5 py-1 rounded-full"></span>
-                <button onclick="closeArticleReadModal()" class="text-slate-500 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button>
-            </div>
-            <div class="flex-1 overflow-y-auto p-6 space-y-4">
-                <img id="readArtImage" src="" alt="المقالة" class="w-full h-56 object-cover rounded-2xl shadow-md">
-                <h3 id="readArtTitle" class="text-xl sm:text-2xl font-bold"></h3>
-                <div id="readArtContent" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line"></div>
-            </div>
+            <div class="p-6 border-b flex justify-between items-center"><span id="readArtCategory" class="text-xs font-bold text-gold-600 bg-gold-100 px-2.5 py-1 rounded-full"></span><button onclick="closeArticleReadModal()" class="text-slate-500 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button></div>
+            <div class="flex-1 overflow-y-auto p-6 space-y-4"><img id="readArtImage" src="" class="w-full h-56 object-cover rounded-2xl"><h3 id="readArtTitle" class="text-xl font-bold"></h3><div id="readArtContent" class="text-sm leading-relaxed whitespace-pre-line"></div></div>
         </div>
     </div>
 
-    <div id="adminPanel" class="fixed inset-y-0 left-0 z-[98] w-full max-w-lg bg-white dark:bg-primary-900 border-r shadow-2xl hidden flex-col transition-all duration-300 animate-slide-in">
+    <div id="adminPanel" class="fixed inset-y-0 left-0 z-[98] w-full max-w-lg bg-white dark:bg-primary-900 border-r shadow-2xl hidden flex-col transition-all duration-300">
         <div class="p-6 bg-gradient-to-r from-primary-900 to-primary-950 text-white flex items-center justify-between">
-            <h3 class="font-bold text-base leading-tight">لوحة الإدارة الشاملة (100%)</h3>
-            <button onclick="toggleAdminPanel()" class="text-white hover:text-red-400"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <h3 class="font-bold text-base">لوحة الإدارة الشاملة (100%)</h3><button onclick="toggleAdminPanel()" class="text-white hover:text-red-400"><i class="fa-solid fa-xmark text-xl"></i></button>
         </div>
         <div class="flex border-b bg-primary-50 text-xs font-bold overflow-x-auto">
             <button onclick="switchAdminTab('general')" id="tab-general" class="admin-tab active py-3 px-4 border-b-2 border-gold-500 text-gold-600 shrink-0">النصوص والصور</button>
@@ -440,7 +422,7 @@
                 <label class="block text-xs font-bold mb-1">الشريط المتحرك بالترويسة:</label><textarea id="inpMarqueeText" rows="2" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs"></textarea>
                 <div class="border-t pt-2 mt-2">
                     <label class="block text-xs font-bold mb-1">العنوان الرئيسي العريض:</label><input id="inpHeroTitle" type="text" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs">
-                    <label class="block text-xs font-bold mb-1">رابط صورة المستشار الكبيرة:</label><input id="inpHeroImgUrl" type="text" placeholder="/salah.jpg أو رابط مباشر" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs font-mono">
+                    <label class="block text-xs font-bold mb-1">صورة المستشار الكبيرة:</label><input id="inpHeroImgUrl" type="text" placeholder="/salah.jpg" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs font-mono">
                     <label class="block text-xs font-bold mb-1">الوصف الفرعي لـ Hero:</label><textarea id="inpHeroDesc" rows="3" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs"></textarea>
                 </div>
                 <div class="border-t pt-2 mt-2">
@@ -452,7 +434,7 @@
 
             <div id="admin-sect-services" class="admin-sect hidden space-y-4">
                 <div class="bg-primary-50 p-4 rounded-xl border space-y-3">
-                    <h5 class="font-bold text-xs"><i class="fa-solid fa-plus-circle ml-1"></i>إضافة خدمة جديدة:</h5>
+                    <h5 class="font-bold text-xs">إضافة خدمة جديدة:</h5>
                     <input id="addSvcTitle" type="text" placeholder="اسم الخدمة..." class="w-full bg-white border p-2 rounded text-xs">
                     <input id="addSvcIcon" type="text" placeholder="أيقونة (مثال: fa-solid fa-code)" class="w-full bg-white border p-2 rounded text-xs font-mono">
                     <textarea id="addSvcDesc" rows="2" placeholder="وصف الخدمة..." class="w-full bg-white border p-2 rounded text-xs"></textarea>
@@ -463,7 +445,7 @@
 
             <div id="admin-sect-articlesCms" class="admin-sect hidden space-y-4">
                 <div class="bg-primary-50 p-4 rounded-xl border space-y-3">
-                    <h5 class="font-bold text-xs"><i class="fa-solid fa-plus-circle ml-1"></i>إضافة مقالة/بحث:</h5>
+                    <h5 class="font-bold text-xs">إضافة مقالة/بحث:</h5>
                     <input id="addArtTitle" type="text" placeholder="عنوان المقال..." class="w-full bg-white border p-2 rounded text-xs">
                     <input id="addArtCategory" type="text" placeholder="التصنيف..." class="w-full bg-white border p-2 rounded text-xs">
                     <input id="addArtImgUrl" type="text" placeholder="رابط صورة المقال..." class="w-full bg-white border p-2 rounded text-xs font-mono">
@@ -476,8 +458,10 @@
 
             <div id="admin-sect-testimonials" class="admin-sect hidden space-y-4">
                 <div class="bg-primary-50 p-4 rounded-xl border space-y-3">
+                    <h5 class="font-bold text-xs">إضافة رأي عميل:</h5>
                     <input id="addTestName" type="text" placeholder="اسم العميل..." class="w-full bg-white border p-2 rounded text-xs">
                     <input id="addTestTitle" type="text" placeholder="المنصب/الشركة..." class="w-full bg-white border p-2 rounded text-xs">
+                    <input id="addTestStars" type="number" min="1" max="5" placeholder="عدد النجوم (1-5)" class="w-full bg-white border p-2 rounded text-xs">
                     <textarea id="addTestText" rows="2" placeholder="رأي العميل..." class="w-full bg-white border p-2 rounded text-xs"></textarea>
                     <button onclick="addTestimonialFromCms()" class="w-full py-2 bg-gold-600 text-white font-bold text-xs rounded">إضافة الرأي</button>
                 </div>
@@ -488,7 +472,7 @@
                 <label class="block text-xs font-bold">الموقع الجغرافي:</label><input id="inpContactAddress" type="text" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs">
                 <label class="block text-xs font-bold">البريد الإلكتروني للظهور بالموقع:</label><input id="inpContactEmail" type="email" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs font-mono">
                 <label class="block text-xs font-bold">رقم الهاتف الرسمي:</label><input id="inpContactPhone" type="text" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs font-mono">
-                <label class="block text-xs font-bold">رقم الواتساب (بدون فواصل 964...):</label><input id="inpContactWhatsapp" type="text" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs font-mono">
+                <label class="block text-xs font-bold">رقم الواتساب (للتوجيه المباشر):</label><input id="inpContactWhatsapp" type="text" class="w-full bg-primary-50 border p-2.5 rounded-lg text-xs font-mono">
                 <div class="border-t pt-2 mt-2">
                     <label class="block text-xs font-bold text-red-600">تعديل كلمة مرور المشرف الحالية:</label>
                     <input id="inpAdminPassword" type="text" class="w-full bg-primary-50 border border-red-300 p-2.5 rounded-lg text-xs font-mono">
@@ -501,7 +485,6 @@
     </div>
 
     <script is:inline>
-        // إعدادات الأدمن السيادية
         const ADMIN_EMAIL = "salahhibrahim131@gmail.com";
         const DEFAULT_PASS = "Salah@2026";
         
@@ -537,20 +520,22 @@
             articles: [
                 { id: "art-1", title: "السيادة الرقمية في بيئة الأعمال المعاصرة", category: "استراتيجية", date: "1 يونيو 2026", imgUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop", summary: "دليل المدراء لفك التبعية للخدمات السحابية الأجنبية وحماية قواعد بيانات العملاء.", content: "تعتبر السيادة الرقمية حجر الزاوية للمؤسسات التي تسعى لبناء نموذج عمل محصن ومستقل. حماية البيانات ليست مجرد جدار حماية بل التزام بالتحكم المطلق." }
             ],
-            testimonials: []
+            testimonials: [
+                { id: "test-1", name: "د. علي الخفاجي", title: "جامعة بغداد للتكنولوجيا", stars: "5", text: "بفضل الاستشارات المتقدمة، استطعنا تأمين بياناتنا بالكامل." }
+            ]
         };
 
         let siteData = {};
         let isAdminLoggedIn = false;
 
         window.onload = function() {
-            // تنظيف الإصدارات القديمة وتثبيت النسخة الأقوى
-            if(!localStorage.getItem('salah_ghost_v1')) {
+            if(!localStorage.getItem('salah_ultimate_v6')) {
                 localStorage.removeItem('salah_office_cms_state');
-                localStorage.setItem('salah_ghost_v1', 'true');
+                localStorage.setItem('salah_ultimate_v6', 'true');
             }
             loadSiteState();
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+            calculateCost();
         };
 
         function loadSiteState() {
@@ -560,7 +545,6 @@
         }
 
         function renderAllCmsElements() {
-            // نصوص الواجهة
             document.getElementById('headerLogoMain').textContent = siteData.general.logoMain;
             document.getElementById('headerLogoSub').textContent = siteData.general.logoSub;
             document.getElementById('welcomeMarquee').innerHTML = `<span>${siteData.general.marqueeText}</span><span>•</span><span>${siteData.general.marqueeText}</span>`;
@@ -571,11 +555,9 @@
             document.getElementById('heroCardTitle').textContent = siteData.general.heroCardTitle;
             document.getElementById('heroQuote').textContent = siteData.general.heroQuote;
             
-            // الصور
             document.getElementById('heroImageDisplay').src = siteData.general.heroImgUrl;
             document.getElementById('aboutImageDisplay').src = siteData.general.aboutImgUrl;
             
-            // نصوص النبذة والاتصال
             document.getElementById('aboutSubtitle').textContent = siteData.general.aboutSubtitle;
             document.getElementById('aboutMainTitle').textContent = siteData.general.aboutMainTitle;
             document.getElementById('aboutMainText').textContent = siteData.general.aboutMainText;
@@ -583,14 +565,12 @@
             document.getElementById('contactEmail').textContent = siteData.contact.email;
             document.getElementById('contactPhone').textContent = siteData.contact.phone;
 
-            // روابط الاتصال الحية
             document.getElementById('contactEmailLink').href = `mailto:${siteData.contact.email}`;
             document.getElementById('contactPhoneLink').href = `tel:${siteData.contact.phone}`;
             const whatsappLink = `https://wa.me/${siteData.contact.whatsapp}?text=${encodeURIComponent('مرحباً مكتب المستشار صلاح حسن، أود حجز جلسة استشارية.')}`;
             document.getElementById('whatsappFloat').href = whatsappLink;
             document.getElementById('contactWhatsappLink').href = whatsappLink;
 
-            // شبكة الخدمات
             const servicesGrid = document.getElementById('dynamicServicesGrid');
             const bookingSelect = document.getElementById('bookingServiceSelect');
             if(servicesGrid && bookingSelect) {
@@ -601,7 +581,6 @@
                 });
             }
 
-            // شبكة المقالات
             const articlesGrid = document.getElementById('dynamicArticlesGrid');
             if(articlesGrid) {
                 articlesGrid.innerHTML = '';
@@ -610,7 +589,6 @@
                 });
             }
 
-            // شبكة التوصيات
             const testGrid = document.getElementById('dynamicTestimonialsGrid');
             if(testGrid) {
                 testGrid.innerHTML = '';
@@ -623,25 +601,15 @@
             populateAdminInputs();
         }
 
-        // ==========================================
-        // نظام "بروتوكول الشبح" المخفي للدخول كأدمن
-        // ==========================================
         let ghostClickCount = 0;
         let ghostTimer;
-        
-        // هذه الدالة مرتبطة بكلمة 2026 في أسفل الموقع. اضغط عليها 3 مرات لتفتح اللوحة.
         function secretAdminTrigger() {
             ghostClickCount++;
             clearTimeout(ghostTimer);
-            ghostTimer = setTimeout(() => { ghostClickCount = 0; }, 1500); // 1.5 seconds to click 3 times
-            
+            ghostTimer = setTimeout(() => { ghostClickCount = 0; }, 1500); 
             if (ghostClickCount >= 3) {
                 ghostClickCount = 0;
-                if(isAdminLoggedIn) {
-                    toggleAdminPanel();
-                } else {
-                    document.getElementById('adminLoginModal').classList.replace('hidden', 'flex');
-                }
+                if(isAdminLoggedIn) { toggleAdminPanel(); } else { document.getElementById('adminLoginModal').classList.replace('hidden', 'flex'); }
             }
         }
 
@@ -649,22 +617,15 @@
             e.preventDefault();
             const email = document.getElementById('loginEmail').value.trim();
             const pass = document.getElementById('loginPassword').value;
-            
             if (email === ADMIN_EMAIL && pass === siteData.contact.password) {
                 isAdminLoggedIn = true;
                 document.getElementById('adminLoginModal').classList.replace('flex', 'hidden');
                 toggleAdminPanel();
                 e.target.reset();
-            } else {
-                alert("بيانات الدخول غير صحيحة. أنت غير مصرح لك.");
-            }
+            } else { alert("بيانات الدخول غير صحيحة. أنت غير مصرح لك."); }
         }
-        
         function closeAdminLoginModal() { document.getElementById('adminLoginModal').classList.replace('flex', 'hidden'); }
 
-        // ==========================================
-        // دوال لوحة التحكم والتعديل الشاملة (CMS)
-        // ==========================================
         function toggleAdminPanel() { const p = document.getElementById('adminPanel'); p.classList.toggle('hidden'); p.classList.toggle('flex'); }
         function switchAdminTab(t) { document.querySelectorAll('.admin-tab').forEach(btn => btn.classList.remove('active', 'border-gold-500', 'text-gold-600')); document.querySelectorAll('.admin-sect').forEach(s => s.classList.add('hidden')); document.getElementById('tab-'+t).classList.add('active', 'border-gold-500', 'text-gold-600'); document.getElementById('admin-sect-'+t).classList.remove('hidden'); }
         
@@ -688,19 +649,14 @@
             document.getElementById('inpContactPhone').value = siteData.contact.phone;
             document.getElementById('inpContactWhatsapp').value = siteData.contact.whatsapp;
             document.getElementById('inpAdminPassword').value = siteData.contact.password;
-
-            // قوائم التحكم
             renderCmsLists();
         }
 
         function renderCmsLists() {
-            // Services
             const sl = document.getElementById('cmsServicesList'); sl.innerHTML='';
             siteData.services.forEach(s => { sl.innerHTML += `<div class="flex justify-between items-center bg-white p-2 border rounded text-xs"><span>${s.title}</span><button onclick="delSvc('${s.id}')" class="text-red-500"><i class="fa-solid fa-trash"></i></button></div>`;});
-            // Articles
             const al = document.getElementById('cmsArticlesList'); al.innerHTML='';
             siteData.articles.forEach(a => { al.innerHTML += `<div class="flex justify-between items-center bg-white p-2 border rounded text-xs"><span class="truncate w-3/4">${a.title}</span><button onclick="delArt('${a.id}')" class="text-red-500"><i class="fa-solid fa-trash"></i></button></div>`;});
-            // Testimonials
             const tl = document.getElementById('cmsTestimonialsList'); tl.innerHTML='';
             siteData.testimonials.forEach(t => { tl.innerHTML += `<div class="flex justify-between items-center bg-white p-2 border rounded text-xs"><span>${t.name}</span><button onclick="delTest('${t.id}')" class="text-red-500"><i class="fa-solid fa-trash"></i></button></div>`;});
         }
@@ -728,7 +684,7 @@
             const name = document.getElementById('addTestName').value;
             const title = document.getElementById('addTestTitle').value;
             const text = document.getElementById('addTestText').value;
-            const stars = document.getElementById('addTestStars').value;
+            const stars = document.getElementById('addTestStars').value || "5";
             if(name && text) { siteData.testimonials.push({id: 'tst-'+Date.now(), name, title, text, stars}); renderCmsLists(); }
         }
 
@@ -762,9 +718,6 @@
             showNotificationModal("حفظ بنجاح!", "تم تفعيل التعديلات وتثبيت السيادة على الموقع بشكل فوري.");
         }
 
-        // ==========================================
-        // Functions: Utilities, Modals, Quiz, Chat
-        // ==========================================
         function toggleTheme() { document.documentElement.classList.toggle('dark'); }
         function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
         function showNotificationModal(t, m) { document.getElementById('modalTitle').textContent=t; document.getElementById('modalMessage').textContent=m; document.getElementById('notificationModal').classList.replace('hidden','flex'); }
@@ -798,6 +751,22 @@
         }
         function resetQuiz() { quizScore = 0; document.getElementById('quizResult').classList.add('hidden'); document.getElementById('quizProgress').style.width='20%'; document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden')); document.querySelector('.quiz-step[data-step="1"]').classList.remove('hidden'); }
 
+        let selectedCompanyMultiplier = 1.0;
+        function setEstCompanySize(size, multiplier, el) { selectedCompanyMultiplier = multiplier; document.querySelectorAll('.est-size-btn').forEach(b => b.classList.remove('active', 'border-gold-500')); el.classList.add('active', 'border-gold-500'); calculateCost(); }
+        function updateHoursRange(val) { document.getElementById('estHoursDisplay').textContent = val; calculateCost(); }
+        function calculateCost() {
+            let el = document.getElementById('estService');
+            let rate = parseInt(el.options[el.selectedIndex].getAttribute('data-rate'));
+            let hours = parseInt(document.getElementById('estHours').value);
+            let urg = document.getElementById('estUrgent').checked ? 1.25 : 1;
+            let total = (rate * hours * selectedCompanyMultiplier * urg).toFixed(0);
+            document.getElementById('estBaseRate').textContent = `$${rate}`;
+            document.getElementById('estSizeMultiplier').textContent = `x${selectedCompanyMultiplier}`;
+            document.getElementById('estUrgentLabel').textContent = urg > 1 ? '+25%' : '0';
+            document.getElementById('estTotalCost').textContent = `$${total}`;
+        }
+        function bookCalculatedConsultation() { document.getElementById('contact').scrollIntoView(); }
+
         function handleChatSubmit(e) {
             e.preventDefault();
             let inp = document.getElementById('chatInput');
@@ -805,7 +774,7 @@
             document.getElementById('chatMessages').innerHTML += `<div class="flex items-start gap-3 max-w-[85%] mr-auto flex-row-reverse"><div class="w-8 h-8 bg-slate-200 flex items-center justify-center rounded-full"><i class="fa-solid fa-user"></i></div><div class="bg-gold-500 text-white p-4 rounded-2xl rounded-tl-none"><p class="text-sm">${inp.value}</p></div></div>`;
             inp.value = '';
             setTimeout(() => {
-                document.getElementById('chatMessages').innerHTML += `<div class="flex items-start gap-3 max-w-[85%]"><div class="w-8 h-8 bg-gold-600 text-white flex items-center justify-center rounded-full"><i class="fa-solid fa-user-tie text-sm"></i></div><div class="bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border"><p class="text-sm">هذا التوأم الافتراضي يحلل سؤالك... لرد دقيق وفوري يرجى مراسلة المستشار صلاح حسن عبر زر الواتساب أسفل الشاشة.</p></div></div>`;
+                document.getElementById('chatMessages').innerHTML += `<div class="flex items-start gap-3 max-w-[85%]"><div class="w-8 h-8 bg-gold-600 text-white flex items-center justify-center rounded-full"><i class="fa-solid fa-user-tie text-sm"></i></div><div class="bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border"><p class="text-sm">لإتمام الإجابة التقنية بدقة ولأنني التوأم الافتراضي، يرجى التواصل عبر زر الواتساب أسفل الشاشة لحجز جلسة مباشرة مع المستشار.</p></div></div>`;
                 document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
             }, 1000);
         }

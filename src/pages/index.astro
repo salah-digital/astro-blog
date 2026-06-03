@@ -1,46 +1,258 @@
-// بروتوكول الشحن السيادي المباشر من لوحة التحكم إلى مستودع جيتهاب
-async function pushChangesToGitHub(updatedData) {
-    const OWNER = "salah-digital"; // اسم حسابك في جيتهاب
-    const REPO = "astro-blog";     // اسم المستودع
-    const PATH = "src/config.ts";  // الملف المستهدف بالتحديث
-    const TOKEN = "YOUR_GITHUB_PERSONAL_TOKEN"; // رمز الوصول الخاص بك المولد من جيتهاب
-
-    const apiUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`;
-
-    try {
-        // 1. جلب معرف الملف الحالي لضمان عدم حدوث تعارض برمي
-        const fileResponse = await fetch(apiUrl, {
-            headers: { "Authorization": `token ${TOKEN}` }
-        });
-        const fileData = await fileResponse.json();
-        const currentSha = fileData.sha;
-
-        // 2. صياغة محتوى ملف الإعدادات الجديد بالكامل بناءً على تعديلات اللوحة
-        const fileContent = `export const SITE_METADATA = ${JSON.stringify(updatedData, null, 2)};`;
-        
-        // 3. تشفير المحتوى بلغة النقل العالمية (Base64)
-        const encodedContent = btoa(unescape(encodeURIComponent(fileContent)));
-
-        // 4. دفع التحديث مباشرة إلى السيرفر عبر واجهة برمجة التطبيقات
-        const updateResponse = await fetch(apiUrl, {
-            method: "PUT",
-            headers: {
-                "Authorization": `token ${TOKEN}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                message: "تحديث سيادي لنصوص الواجهة من لوحة تحكم الموقع الداخلية",
-                content: encodedContent,
-                sha: currentSha
-            })
-        });
-
-        if (updateResponse.ok) {
-            showNotificationModal("نجاح التوطين السحابي", "تم تحديث مستودع الكود بنجاح مية بالمية، وجارِ إعادة بناء الموقع لايف عبر كلاود فلير خلال دقيقة واحدة.");
-        } else {
-            throw new Error("فشل في دفع التحديث للسيرفر الرئيسي");
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي | الحصن الرقمي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f7fa', 100: '#e4e8ee', 200: '#ccd5e0', 300: '#a7b8cc', 400: '#7c96b3',
+                            500: '#5c7899', 600: '#48607f', 700: '#3c4e68', 800: '#344257', 900: '#2e3a4b', 950: '#1e2531',
+                        },
+                        gold: {
+                            100: '#fdf9eb', 200: '#fbf0cc', 300: '#f5de99', 400: '#ecc45d', 500: '#deaa33',
+                            600: '#c58b26', 700: '#a36b20', 800: '#85541f', 950: '#44260a',
+                        }
+                    },
+                    fontFamily: { cairo: ['Cairo', 'sans-serif'] }
+                }
+            }
         }
-    } catch (error) {
-        showNotificationModal("خطأ في الاتصال السيادي", "تعذر إرسال البيانات مباشرة. تأكد من صلاحية رمز الوصول الشخصي الخاص بجيتهاب.");
-    }
-}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Cairo', 'sans-serif'; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e2531; }
+        ::-webkit-scrollbar-thumb { background: #c58b26; border-radius: 4px; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .marquee-wrapper { overflow: hidden; white-space: nowrap; display: flex; align-items: center; }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="bg-primary-50 dark:bg-primary-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
+
+    <div class="bg-gradient-to-r from-primary-900 to-primary-950 border-b border-gold-500/30 text-gold-200 py-2.5 text-sm font-semibold relative z-[51]">
+        <div class="max-w-7xl mx-auto px-4 marquee-wrapper">
+            <div id="welcomeMarquee" class="marquee-content flex gap-12"></div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-primary-950/85 border-b border-primary-200/50 dark:border-primary-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="location.hash='#hero'">
+                <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2.5 rounded-xl shadow-lg shadow-gold-500/20">
+                    <i class="fa-solid fa-shield-halved text-white text-2xl animate-pulse"></i>
+                </div>
+                <div>
+                    <span id="headerLogoMain" class="block text-lg font-bold text-primary-900 dark:text-white leading-tight"></span>
+                    <span id="headerLogoSub" class="block text-xs font-semibold text-gold-600 dark:text-gold-400"></span>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-6">
+                <a href="#hero" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">الرئيسية</a>
+                <a href="#about" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">السيادة الرقمية</a>
+                <a href="#services" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">الحلول الجراحية</a>
+                <a href="#assessment" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>تقييم النضج</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button onclick="toggleAdminPanel()" class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 font-bold text-xs"><i class="fa-solid fa-sliders text-base animate-spin" style="animation-duration: 8s;"></i><span class="hidden sm:inline"> لوحة التحكم</span></button>
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100"><i id="themeIcon" class="fa-solid fa-moon"></i></button>
+                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl text-sm">بروتوكول الإنقاذ</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative overflow-hidden py-16 lg:py-28 bg-gradient-to-b from-primary-100/50 to-transparent dark:from-primary-950 dark:to-primary-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                <div class="inline-flex items-center gap-2 bg-gold-50 dark:bg-gold-950/50 border border-gold-300/30 px-4 py-1.5 rounded-full">
+                    <span id="heroBadge" class="text-xs sm:text-sm font-bold text-gold-700 dark:text-gold-400"></span>
+                </div>
+                <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-primary-950 dark:text-white"></h1>
+                <p id="heroDescription" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#assessment" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-xl text-center"><i class="fa-solid fa-fingerprint ml-2"></i>تشخيص فوري للأصول</a>
+                </div>
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-primary-200/50 dark:border-primary-800/50 max-w-md mx-auto lg:mx-0">
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">100%</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">سيادة وتملك</span></div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">Level 10</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Local Guide</span></div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">0%</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">نزيف رقمي</span></div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto w-72 sm:w-80 md:w-96 lg:w-full aspect-square rounded-3xl bg-gradient-to-tr from-primary-800 to-gold-700 p-1 shadow-2xl">
+                    <div class="w-full h-full bg-primary-900 rounded-[22px] overflow-hidden relative flex flex-col items-center justify-center p-8">
+                        <div class="relative z-10 text-center space-y-4">
+                            <div class="w-28 h-28 rounded-full border-4 border-gold-500/50 mx-auto overflow-hidden bg-slate-800 flex items-center justify-center"><i class="fa-solid fa-user-tie text-slate-200 text-5xl"></i></div>
+                            <h3 id="heroCardName" class="text-xl font-bold text-white"></h3>
+                            <p id="heroCardTitle" class="text-sm text-gold-400 font-semibold"></p>
+                            <div class="bg-primary-950/80 border border-primary-800/60 p-4 rounded-xl max-w-xs mx-auto"><p id="heroQuote" class="text-xs text-slate-300 italic"></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white dark:bg-primary-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative bg-gradient-to-br from-gold-500 to-primary-800 p-1.5 rounded-2xl shadow-xl">
+                    <div class="bg-primary-900 rounded-[10px] p-8 text-white space-y-6">
+                        <h3 class="text-2xl font-bold text-gold-400 border-b border-primary-800 pb-4">أركان الحصن الرقمي</h3>
+                        <div class="flex gap-4 items-start"><i class="fa-solid fa-code text-gold-400 text-xl pt-1"></i><div><h4 class="font-bold text-lg">التملك المطلق للأصول</h4><p class="text-sm text-slate-300">بنية برمجية مستقلة تملكها أنت بالكامل بنسبة 100%.</p></div></div>
+                        <div class="flex gap-4 items-start"><i class="fa-solid fa-map-location-dot text-gold-400 text-xl pt-1"></i><div><h4 class="font-bold text-lg">التحسين الجراحي (Surgical SEO)</h4><p class="text-sm text-slate-300">سيطرة كاملة على المعرفات والخرائط الجغرافية لتفجير المكالمات.</p></div></div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span id="aboutSubtitle" class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block"></span>
+                    <h2 id="aboutMainTitle" class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white leading-tight"></h2>
+                    <p id="aboutMainText" class="text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-primary-50 dark:bg-primary-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16"><span class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">الخدمات الاستراتيجية المتاحة</span><h2 class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white">أدوات وحلول برمجية تضمن حسم القيادة والسيطرة</h2></div>
+            <div id="dynamicServicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white dark:bg-primary-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-5 bg-primary-900 text-white rounded-3xl p-8 flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-extrabold">جاهزون لهندسة الحصن الرقمي</h2>
+                    <div class="space-y-4 pt-4">
+                        <div class="flex gap-4 items-center"><i class="fa-solid fa-map-location-dot text-gold-400"></i><p id="contactAddress" class="text-sm font-semibold"></p></div>
+                        <div class="flex gap-4 items-center"><i class="fa-solid fa-envelope text-gold-400"></i><p id="contactEmail" class="text-sm font-semibold"></p></div>
+                        <div class="flex gap-4 items-center"><i class="fa-solid fa-phone-volume text-gold-400"></i><p id="contactPhone" class="text-sm font-semibold"></p></div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 pt-6 border-t border-primary-800">
+                    <a href="https://www.aljazeera.net/author/%D8%B5%D9%84%D8%A7%D8%AD-%D8%AD%D8%B3%D9%86-%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%85" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-lg hover:bg-gold-500" title="صفحتي في الجزيرة نت"><i class="fa-solid fa-pen-nib"></i></a>
+                    <a id="contactWhatsappLink" href="#" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-lg hover:bg-emerald-500"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="lg:col-span-7 bg-white dark:bg-primary-900 border dark:border-primary-800 rounded-3xl p-8 shadow-xl">
+                <form onsubmit="event.preventDefault(); alert('تم استلام طلب الجدولة السيادية بنجاح.');" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" required placeholder="الاسم واللقب" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none">
+                        <input type="text" placeholder="اسم المنشأة / المستشفى" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none">
+                    </div>
+                    <select id="bookingServiceSelect" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none"></select>
+                    <textarea rows="4" placeholder="وصف موجز لطبيعة الاختناق أو النزيف الرقمي الحالي بمؤسستك..." class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none"></textarea>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg">إرسال الطلب وتفعيل المسار</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary-950 text-white py-8 border-t border-primary-900 text-center text-xs">
+        <p>© <span id="currentYear"></span> مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي. جميع الحقوق محفوظة سيادياً بكود Astro المستقل.</p>
+    </footer>
+
+    <a id="whatsappFloat" href="#" target="_blank" class="fixed bottom-6 right-6 z-[90] bg-emerald-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
+
+    <script>
+        const DEFAULT_SITE_DATA = {
+            general: {
+                logoMain: "مكتب المستشار صلاح حسن",
+                logoSub: "للاستشارات والتطوير الرقمي",
+                marqueeText: "مرحباً بكم في منصة الحصن الرقمي للمستشار صلاح حسن إبراهيم • خبير السيادة الرقمية وإدارة السمعة المؤسسية • رئيس مركز الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF)",
+                heroBadge: "خبير السيادة الرقمية - Level 10 Local Guide",
+                heroTitle: "نبني حصنك الرقمي <br class='hidden sm:inline'><span class='text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-amber-500'>وننهي النزيف التقني</span>",
+                heroDescription: "استشارات استراتيجية سيادية لنقل أصولك الرقمية من الإيجار الافتراضي إلى التملك المطلق (100% كود وسيرفر)، مع هيمنة جغرافية حاسمة.",
+                heroCardName: "المستشار صلاح حسن إبراهيم",
+                heroCardTitle: "خبير السيادة الرقمية والسمعة المؤسسية",
+                heroQuote: "\"امتلاك الأصول الرقمية ليس ترفاً تقنياً، بل حجر الأساس لحماية الأمن القومي والاقتصادي للمؤسسات.\"",
+                aboutSubtitle: "من هو المستشار صلاح حسن؟",
+                aboutMainTitle: "قيادة التحول الرقمي الاستراتيجي وتأمين الهياكل المؤسسية",
+                aboutMainText: "كاتب وصحفي في موقع الجزيرة نت، ورئيس مركز الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF). خبير في الإدارة الرقمية وهندسة السيادة التكنولوجية. يمتلك أعلى رتبة جغرافية عالمية (Level 10 Local Guide) في خرائط جوجل. يعمل من مقره في بغداد على قيادة الخطط الإستراتيجية الكبرى للمستشفيات والشركات لإنهاء النزيف المالي والتقني وإيقاف التبعية للخدمات السحابية عبر توطين الشيفرات البرمجية والبيانات الحيوية."
+            },
+            contact: {
+                address: "بغداد، جمهورية العراق",
+                email: "consultant.salahhasan@gmail.com",
+                phone: "+964 770 675 5677",
+                whatsapp: "96477067556772"
+            },
+            services: [
+                { id: "svc-1", title: "إدارة السيادة الرقمية", icon: "fa-solid fa-code", description: "بناء وتطوير المواقع والمنصات الرسمية بكود مستقل لإنهاء إيجارات الويب الاحتكارية." },
+                { id: "svc-2", title: "التحسين الجراحي والتكتل المكاني", icon: "fa-solid fa-map-location-dot", description: "هيكلة وتحديث الحسابات الجغرافية لرفع الترتيب المحلي وتفجير حركة المكالمات المباشرة." },
+                { id: "svc-3", title: "الحوكمة وفصل السلطات التقنية", icon: "fa-solid fa-shield-halved", description: "إعادة هندسة الصلاحيات الرقمية لقطع تبعية الإدارة العليا للشركات الوسيطة النازفة." }
+            ]
+        };
+
+        let siteData = {};
+
+        window.onload = function() {
+            if(!localStorage.getItem('salah_baghdad_v3')) {
+                localStorage.removeItem('salah_office_cms_state');
+                localStorage.setItem('salah_baghdad_v3', 'true');
+            }
+            loadSiteState();
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        };
+
+        function loadSiteState() {
+            const savedState = localStorage.getItem('salah_office_cms_state');
+            siteData = savedState ? JSON.parse(savedState) : JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+            renderAllCmsElements();
+        }
+
+        function renderAllCmsElements() {
+            document.getElementById('headerLogoMain').textContent = siteData.general.logoMain;
+            document.getElementById('headerLogoSub').textContent = siteData.general.logoSub;
+            document.getElementById('welcomeMarquee').innerHTML = `<span>${siteData.general.marqueeText}</span><span> • </span><span>${siteData.general.marqueeText}</span>`;
+            document.getElementById('heroBadge').textContent = siteData.general.heroBadge;
+            document.getElementById('heroTitle').innerHTML = siteData.general.heroTitle;
+            document.getElementById('heroDescription').textContent = siteData.general.heroDescription;
+            document.getElementById('heroCardName').textContent = siteData.general.heroCardName;
+            document.getElementById('heroCardTitle').textContent = siteData.general.heroCardTitle;
+            document.getElementById('heroQuote').textContent = siteData.general.heroQuote;
+            document.getElementById('aboutSubtitle').textContent = siteData.general.aboutSubtitle;
+            document.getElementById('aboutMainTitle').textContent = siteData.general.aboutMainTitle;
+            document.getElementById('aboutMainText').textContent = siteData.general.aboutMainText;
+            document.getElementById('contactAddress').textContent = siteData.contact.address;
+            document.getElementById('contactEmail').textContent = siteData.contact.email;
+            document.getElementById('contactPhone').textContent = siteData.contact.phone;
+            
+            const whatsappLink = `https://wa.me/${siteData.contact.whatsapp}?text=${encodeURIComponent('مرحباً مكتب المستشار صلاح حسن، أود حجز جلسة معالجة للإنقاذ والتوحيد الرقمي.')}`;
+            document.getElementById('whatsappFloat').href = whatsappLink;
+            document.getElementById('contactWhatsappLink').href = whatsappLink;
+
+            const servicesGrid = document.getElementById('dynamicServicesGrid');
+            const bookingSelect = document.getElementById('bookingServiceSelect');
+            if(servicesGrid && bookingSelect) {
+                servicesGrid.innerHTML = '';
+                bookingSelect.innerHTML = '';
+                siteData.services.forEach(svc => {
+                    servicesGrid.innerHTML += `
+                        <div class="bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl border border-primary-100 dark:border-primary-800">
+                            <div class="w-14 h-14 rounded-xl bg-gold-100 flex items-center justify-center text-gold-600 mb-4"><i class="${svc.icon} text-2xl"></i></div>
+                            <h3 class="text-xl font-bold mb-2">${svc.title}</h3>
+                            <p class="text-sm text-slate-500">${svc.description}</p>
+                        </div>`;
+                    bookingSelect.innerHTML += `<option value="${svc.title}">${svc.title}</option>`;
+                });
+            }
+        }
+        function toggleTheme() { document.documentElement.classList.toggle('dark'); }
+    </script>
+</body>
+</html>

@@ -3,252 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <title>مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي | الحصن الرقمي</title>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+    <script is:inline>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f5f7fa',
-                            100: '#e4e8ee',
-                            200: '#ccd5e0',
-                            300: '#a7b8cc',
-                            400: '#7c96b3',
-                            500: '#5c7899',
-                            600: '#48607f',
-                            700: '#3c4e68',
-                            800: '#344257',
-                            900: '#2e3a4b',
-                            950: '#1e2531',
+                            50: '#f5f7fa', 100: '#e4e8ee', 200: '#ccd5e0', 300: '#a7b8cc', 400: '#7c96b3',
+                            500: '#5c7899', 600: '#48607f', 700: '#3c4e68', 800: '#344257', 900: '#2e3a4b', 950: '#1e2531',
                         },
                         gold: {
-                            100: '#fdf9eb',
-                            200: '#fbf0cc',
-                            300: '#f5de99',
-                            400: '#ecc45d',
-                            500: '#deaa33',
-                            600: '#c58b26',
-                            700: '#a36b20',
-                            800: '#85541f',
-                            950: '#44260a',
+                            100: '#fdf9eb', 200: '#fbf0cc', 300: '#f5de99', 400: '#ecc45d', 500: '#deaa33',
+                            600: '#c58b26', 700: '#a36b20', 800: '#85541f', 950: '#44260a',
                         }
                     },
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif'],
-                    }
+                    fontFamily: { cairo: ['Cairo', 'sans-serif'] }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght=300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Cairo', 'sans-serif';
-            scroll-behavior: smooth;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1e2531;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #c58b26;
-            border-radius: 4px;
-        }
-        /* Continuous Custom Marquee CSS */
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .marquee-wrapper {
-            overflow: hidden;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-        }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 25s linear infinite;
-        }
-        .marquee-content:hover {
-            animation-play-state: paused;
-        }
+        body { font-family: 'Cairo', 'sans-serif'; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e2531; }
+        ::-webkit-scrollbar-thumb { background: #c58b26; border-radius: 4px; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .marquee-wrapper { overflow: hidden; white-space: nowrap; display: flex; align-items: center; }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
     </style>
 </head>
 <body class="bg-primary-50 dark:bg-primary-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
 
-    <!-- Top Running Banner (Marquee) -->
-    <div class="bg-gradient-to-r from-primary-900 to-primary-950 dark:from-black dark:to-primary-950 border-b border-gold-500/30 text-gold-200 py-2.5 text-sm font-semibold relative z-[51]">
+    <div class="bg-gradient-to-r from-primary-900 to-primary-950 border-b border-gold-500/30 text-gold-200 py-2.5 text-sm font-semibold relative z-[51]">
         <div class="max-w-7xl mx-auto px-4 marquee-wrapper">
-            <div id="welcomeMarquee" class="marquee-content flex gap-12">
-                <!-- Content injected dynamically -->
-                <span>مرحباً بكم في مكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي</span>
-                <span>•</span>
-                <span>بوابتكم الاحترافية للسيادة الرقمية وإدارة السمعة المؤسسية والتحول الرقمي وتوظيف الذكاء الاصطناعي</span>
-                <span>•</span>
-                <span>احصلوا على استشارتكم الاستكشافية الأولى مجاناً بالتواصل معنا مباشرة!</span>
-            </div>
+            <div id="welcomeMarquee" class="marquee-content flex gap-12"></div>
         </div>
     </div>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-primary-950/85 border-b border-primary-200/50 dark:border-primary-800/50 transition-colors duration-300">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-primary-950/85 border-b border-primary-200/50 dark:border-primary-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
             <div class="flex items-center gap-3 cursor-pointer" onclick="location.hash='#hero'">
-                <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2.5 rounded-xl shadow-lg shadow-gold-500/20 hover:rotate-6 transition-transform">
-                    <i class="fa-solid fa-laptop-code text-white text-2xl animate-pulse"></i>
+                <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2.5 rounded-xl shadow-lg shadow-gold-500/20">
+                    <i class="fa-solid fa-shield-halved text-white text-2xl animate-pulse"></i>
                 </div>
                 <div>
-                    <span id="headerLogoMain" class="block text-lg font-bold text-primary-900 dark:text-white tracking-wide leading-tight">مكتب المستشار صلاح حسن إبراهيم</span>
-                    <span id="headerLogoSub" class="block text-xs font-semibold text-gold-600 dark:text-gold-400">للاستشارات والتطوير الرقمي</span>
+                    <span id="headerLogoMain" class="block text-lg font-bold text-primary-900 dark:text-white leading-tight"></span>
+                    <span id="headerLogoSub" class="block text-xs font-semibold text-gold-600 dark:text-gold-400"></span>
                 </div>
             </div>
 
-            <!-- Desktop Menu -->
             <nav class="hidden lg:flex items-center gap-6">
                 <a href="#hero" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">الرئيسية</a>
-                <a href="#about" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">عن المستشار</a>
-                <a href="#services" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">خدماتنا</a>
-                <a href="#assessment" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    تقييم النضج
-                </a>
-                <a href="#estimator" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">حاسبة الاستشارات</a>
-                <a href="#ai-consultant" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">المستشار الذكي</a>
+                <a href="#about" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">السيادة الرقمية</a>
+                <a href="#services" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold transition-colors">الحلول الجراحية</a>
+                <a href="#assessment" class="hover:text-gold-600 dark:hover:text-gold-400 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>تقييم النضج</a>
             </nav>
 
-            <!-- Actions (Darkmode, Admin CMS, CTA, Mobile Menu Toggle) -->
             <div class="flex items-center gap-3">
-                <!-- Admin CMS Toggle Button -->
-                <button onclick="toggleAdminPanel()" class="p-2.5 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/30 text-amber-600 dark:text-amber-400 hover:scale-105 transition-all flex items-center gap-1.5 font-bold text-xs" title="لوحة تحكم محتوى الموقع">
-                    <i class="fa-solid fa-sliders text-base animate-spin" style="animation-duration: 8s;"></i>
-                    <span class="hidden sm:inline">لوحة التحكم</span>
-                </button>
-
-                <!-- Theme Toggle Button -->
-                <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100 hover:scale-105 transition-all" aria-label="تبديل المظهر">
-                    <i id="themeIcon" class="fa-solid fa-moon"></i>
-                </button>
-
-                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold rounded-xl shadow-lg shadow-gold-600/20 hover:scale-105 transition-all duration-300 text-xs sm:text-sm">
-                    تواصل معنا
-                </a>
-
-                <!-- Mobile menu button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Navigation -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-primary-900 border-t border-primary-100 dark:border-primary-800 animate-fade-in">
-            <div class="px-4 pt-2 pb-6 space-y-3">
-                <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">الرئيسية</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">عن المستشار</a>
-                <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">خدماتنا</a>
-                <a href="#assessment" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800 text-emerald-500">تقييم النضج الرقمي</a>
-                <a href="#estimator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">حاسبة الاستشارات</a>
-                <a href="#ai-consultant" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">المستشار الذكي</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="block w-full text-center px-4 py-2.5 bg-gold-600 text-white font-bold rounded-xl">تواصل معنا</a>
+                <button onclick="toggleAdminPanel()" class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 font-bold text-xs"><i class="fa-solid fa-sliders text-base animate-spin" style="animation-duration: 8s;"></i><span class="hidden sm:inline"> لوحة التحكم</span></button>
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-100"><i id="themeIcon" class="fa-solid fa-moon"></i></button>
+                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl text-sm">بروتوكول الإنقاذ</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="relative overflow-hidden py-16 lg:py-28 bg-gradient-to-b from-primary-100/50 to-transparent dark:from-primary-950 dark:to-primary-900/40">
-        <!-- Background Grid Pattern Decorator -->
-        <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
-            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-                <defs>
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
-        </div>
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Text Content -->
             <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
                 <div class="inline-flex items-center gap-2 bg-gold-50 dark:bg-gold-950/50 border border-gold-300/30 px-4 py-1.5 rounded-full">
-                    <span class="w-2.5 h-2.5 rounded-full bg-gold-500 animate-pulse"></span>
-                    <span id="heroBadge" class="text-xs sm:text-sm font-bold text-gold-700 dark:text-gold-400">بوابتك الريادية للسيادة الرقمية وإدارة السمعة</span>
+                    <span id="heroBadge" class="text-xs sm:text-sm font-bold text-gold-700 dark:text-gold-400"></span>
                 </div>
-                
-                <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-primary-950 dark:text-white">
-                    نصنع المستقبل الرقمي <br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-amber-500">لمؤسستك وأعمالك</span>
-                </h1>
-                
-                <p id="heroDescription" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    مكتب المستشار صلاح حسن إبراهيم يقدم باقة متكاملة من الاستشارات الاستراتيجية في السيادة الرقمية والتحول التكنولوجي المبتكر لتمكين الشركات من قيادة السوق وضمان الأمان والريادة المستدامة.
-                </p>
-
+                <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-primary-950 dark:text-white"></h1>
+                <p id="heroDescription" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed"></p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                    <a href="#assessment" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-xl shadow-gold-600/30 hover:scale-105 transition-all text-center">
-                        <i class="fa-solid fa-chart-line ml-2"></i>ابدأ تقييم النضج الرقمي
-                    </a>
-                    <a href="#ai-consultant" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-primary-900 border-2 border-primary-200 dark:border-primary-800 text-primary-900 dark:text-white font-bold rounded-xl hover:bg-primary-50 dark:hover:bg-primary-800 transition-all text-center">
-                        <i class="fa-solid fa-robot ml-2 text-gold-500"></i>تحدث مع المستشار الذكي
-                    </a>
+                    <a href="#assessment" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-xl text-center"><i class="fa-solid fa-fingerprint ml-2"></i>تشخيص فوري للأصول</a>
                 </div>
-
-                <!-- Fast Facts -->
                 <div class="grid grid-cols-3 gap-4 pt-8 border-t border-primary-200/50 dark:border-primary-800/50 max-w-md mx-auto lg:mx-0">
-                    <div>
-                        <span id="fact1Num" class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">+15</span>
-                        <span id="fact1Label" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">سنة خبرة</span>
-                    </div>
-                    <div>
-                        <span id="fact2Num" class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">+250</span>
-                        <span id="fact2Label" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">مشروع ناجح</span>
-                    </div>
-                    <div>
-                        <span id="fact3Num" class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">99%</span>
-                        <span id="fact3Label" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">رضا الشركاء</span>
-                    </div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">100%</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">سيادة وتملك</span></div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">Level 10</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Local Guide</span></div>
+                    <div><span class="block text-2xl sm:text-3xl font-extrabold text-gold-600 dark:text-gold-400">0%</span><span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">نزيف رقمي</span></div>
                 </div>
             </div>
-
-            <!-- Hero Image / Visual Mockup -->
             <div class="lg:col-span-5 relative">
-                <div class="relative mx-auto w-72 sm:w-80 md:w-96 lg:w-full aspect-square rounded-3xl bg-gradient-to-tr from-primary-800 to-gold-700 p-1 shadow-2xl shadow-primary-950/40">
+                <div class="relative mx-auto w-72 sm:w-80 md:w-96 lg:w-full aspect-square rounded-3xl bg-gradient-to-tr from-primary-800 to-gold-700 p-1 shadow-2xl">
                     <div class="w-full h-full bg-primary-900 rounded-[22px] overflow-hidden relative flex flex-col items-center justify-center p-8">
-                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-500/20 via-transparent to-transparent"></div>
-                        
-                        <div class="absolute top-10 left-10 w-16 h-16 bg-gold-500/10 rounded-2xl flex items-center justify-center border border-gold-500/20 animate-bounce" style="animation-duration: 4s;">
-                            <i class="fa-solid fa-chart-pie text-gold-400 text-2xl"></i>
-                        </div>
-                        <div class="absolute bottom-12 right-8 w-16 h-16 bg-cyan-500/10 rounded-2xl flex items-center justify-center border border-cyan-500/20 animate-bounce" style="animation-duration: 3s;">
-                            <i class="fa-solid fa-shield-halved text-cyan-400 text-2xl"></i>
-                        </div>
-
-                        <!-- Portrait Mockup -->
                         <div class="relative z-10 text-center space-y-4">
-                            <div class="w-28 h-28 rounded-full border-4 border-gold-500/50 mx-auto overflow-hidden bg-slate-800 flex items-center justify-center relative group">
-                                <i class="fa-solid fa-user-tie text-slate-200 text-5xl"></i>
-                            </div>
-                            <div>
-                                <h3 id="heroCardName" class="text-lg font-bold text-white">المستشار صلاح حسن إبراهيم</h3>
-                                <p id="heroCardTitle" class="text-xs text-gold-400 font-semibold leading-relaxed">خبير السيادة الرقمية وإدارة السمعة المؤسسية</p>
-                            </div>
-                            <div class="bg-primary-950/80 border border-primary-800/60 p-4 rounded-xl max-w-xs mx-auto">
-                                <p id="heroQuote" class="text-xs text-slate-300 italic">"التحول الرقمي وإدارة السمعة والسيادة الرقمية ليست مجرد أدوات تقنية، بل هي حجر الزاوية لحماية ريادة المؤسسة وبناء ثقة مستدامة."</p>
-                            </div>
+                            <div class="w-28 h-28 rounded-full border-4 border-gold-500/50 mx-auto overflow-hidden bg-slate-800 flex items-center justify-center"><i class="fa-solid fa-user-tie text-slate-200 text-5xl"></i></div>
+                            <h3 id="heroCardName" class="text-xl font-bold text-white"></h3>
+                            <p id="heroCardTitle" class="text-sm text-gold-400 font-semibold"></p>
+                            <div class="bg-primary-950/80 border border-primary-800/60 p-4 rounded-xl max-w-xs mx-auto"><p id="heroQuote" class="text-xs text-slate-300 italic"></p></div>
                         </div>
                     </div>
                 </div>
@@ -256,1523 +107,152 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 bg-white dark:bg-primary-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Visual Box -->
-                <div class="space-y-6">
-                    <div class="relative bg-gradient-to-br from-gold-500 to-primary-800 p-1.5 rounded-2xl shadow-xl">
-                        <div class="bg-primary-900 rounded-[10px] p-8 text-white space-y-6">
-                            <h3 id="aboutWhyTitle" class="text-2xl font-bold text-gold-400 border-b border-primary-800 pb-4">لماذا مكتب المستشار صلاح حسن؟</h3>
-                            
-                            <div class="flex gap-4 items-start group">
-                                <div class="bg-gold-500/20 p-3 rounded-xl text-gold-400 shrink-0 group-hover:bg-gold-500 group-hover:text-white transition-colors duration-300">
-                                    <i class="fa-solid fa-bullseye text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg">السيادة الرقمية الكاملة</h4>
-                                    <p class="text-sm text-slate-300">نضمن تملكك الكامل لبياناتك الرقمية وبناء أنظمة تشغيلية مستقلة وحصينة ضد التهديدات الخارجية.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 items-start group">
-                                <div class="bg-gold-500/20 p-3 rounded-xl text-gold-400 shrink-0 group-hover:bg-gold-500 group-hover:text-white transition-colors duration-300">
-                                    <i class="fa-solid fa-gears text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg">أدوات وتقنيات متطورة</h4>
-                                    <p class="text-sm text-slate-300">نعتمد على منهجيات نضج رقمي حصرية ومعايير أداء عالمية لقياس وتطوير الأعمال بدقة متناهية.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 items-start group">
-                                <div class="bg-gold-500/20 p-3 rounded-xl text-gold-400 shrink-0 group-hover:bg-gold-500 group-hover:text-white transition-colors duration-300">
-                                    <i class="fa-solid fa-handshake text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg">إدارة السمعة والأزمات</h4>
-                                    <p class="text-sm text-slate-300">حماية صورة المنشأة الذهنية لدى الجمهور، وحوكمة قنوات الاتصال لبناء سمعة رقمية ومؤسسية موثوقة.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="relative bg-gradient-to-br from-gold-500 to-primary-800 p-1.5 rounded-2xl shadow-xl">
+                    <div class="bg-primary-900 rounded-[10px] p-8 text-white space-y-6">
+                        <h3 class="text-2xl font-bold text-gold-400 border-b border-primary-800 pb-4">أركان الحصن الرقمي</h3>
+                        <div class="flex gap-4 items-start"><i class="fa-solid fa-code text-gold-400 text-xl pt-1"></i><div><h4 class="font-bold text-lg">التملك المطلق للأصول</h4><p class="text-sm text-slate-300">بنية برمجية مستقلة تملكها أنت بالكامل بنسبة 100%.</p></div></div>
+                        <div class="flex gap-4 items-start"><i class="fa-solid fa-map-location-dot text-gold-400 text-xl pt-1"></i><div><h4 class="font-bold text-lg">التحسين الجراحي (Surgical SEO)</h4><p class="text-sm text-slate-300">سيطرة كاملة على المعرفات والخرائط الجغرافية لتفجير المكالمات.</p></div></div>
                     </div>
                 </div>
-
-                <!-- Text Box -->
                 <div class="space-y-6">
-                    <span id="aboutSubtitle" class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">من هو المستشار صلاح حسن؟</span>
-                    <h2 id="aboutMainTitle" class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white leading-tight">شغف بالتمكين التكنولوجي والنهوض المؤسسي</h2>
-                    <p id="aboutMainText" class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        مستشار وخبير دولي في السيادة الرقمية وإدارة السمعة المؤسسية، قدم العديد من الاستشارات والحلول التقنية والتدريبية لشركات ومؤسسات كبرى في العراق والشرق الأوسط. يعمل على دمج استراتيجيات الأعمال مع التقنيات الناشئة والذكاء الاصطناعي لضمان الأمان السيبراني للبيانات وبناء نماذج عمل ديناميكية ومرنة.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="p-4 bg-primary-100/50 dark:bg-primary-900/60 rounded-xl hover:border-gold-500 border border-transparent transition-all">
-                            <span class="block text-lg font-bold text-primary-900 dark:text-white">السيادة الرقمية</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400">حوكمة البيانات، حماية البنية التحتية، والاستقلال التكنولوجي الشامل.</span>
-                        </div>
-                        <div class="p-4 bg-primary-100/50 dark:bg-primary-900/60 rounded-xl hover:border-gold-500 border border-transparent transition-all">
-                            <span class="block text-lg font-bold text-primary-900 dark:text-white">السمعة المؤسسية</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400">إدارة الصورة الذهنية، تحليل انطباعات الجمهور، وحوكمة قنوات النشر الرقمية.</span>
-                        </div>
-                    </div>
+                    <span id="aboutSubtitle" class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block"></span>
+                    <h2 id="aboutMainTitle" class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white leading-tight"></h2>
+                    <p id="aboutMainText" class="text-slate-600 dark:text-slate-300 leading-relaxed"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section (Dynamic CMS Grid) -->
     <section id="services" class="py-20 bg-primary-50 dark:bg-primary-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">خدماتنا الاستشارية</span>
-                <h2 id="servicesSectionTitle" class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white">حلول متكاملة تضمن لك التفوق والريادة الرقمية</h2>
-                <p id="servicesSectionDesc" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">نصمم خدماتنا بدقة لتلائم تطلعات واحتياجات المؤسسات الطموحة في العصر الرقمي المتسارع.</p>
-            </div>
-
-            <!-- Dynamic Services Destination -->
-            <div id="dynamicServicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Injected via JavaScript from siteData -->
-            </div>
+            <div class="text-center max-w-3xl mx-auto mb-16"><span class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">الخدمات الاستراتيجية المتاحة</span><h2 class="text-3xl sm:text-4xl font-extrabold text-primary-950 dark:text-white">أدوات وحلول برمجية تضمن حسم القيادة والسيطرة</h2></div>
+            <div id="dynamicServicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
-    <!-- Interactive Feature 1: Digital Maturity Assessment Tool -->
-    <section id="assessment" class="py-20 bg-white dark:bg-primary-900/40">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
-                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 block"><i class="fa-solid fa-gauge-high ml-1"></i>تقييم فوري</span>
-                <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">مقياس النضج الرقمي للمؤسسات</h2>
-                <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400">أجب عن 5 أسئلة سريعة لمعرفة مستوى استعداد مؤسستك للتحول الرقمي والحصول على توصيات استشارية أولية فورية من المستشار.</p>
-            </div>
-
-            <!-- Quiz Container -->
-            <div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
-                <!-- Progress Bar -->
-                <div class="w-full bg-primary-200 dark:bg-primary-800 h-2 rounded-full mb-8">
-                    <div id="quizProgress" class="bg-gradient-to-r from-gold-500 to-amber-500 h-2 rounded-full transition-all duration-300" style="width: 20%;"></div>
-                </div>
-
-                <!-- Questions Area -->
-                <div id="quizWindow">
-                    <!-- Question 1 -->
-                    <div class="quiz-step active space-y-6" data-step="1">
-                        <span class="text-gold-600 dark:text-gold-400 text-sm font-bold">السؤال 1 من 5</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-primary-950 dark:text-white">هل تمتلك مؤسستك موقعاً إلكترونياً أو تطبيقاً تفاعلياً لخدمة العملاء؟</h3>
-                        <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(1, 3)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعم، يعمل بكفاءة عالية ويلبي كافة الاحتياجات.</button>
-                            <button onclick="nextQuizStep(1, 2)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعم، متوفر ولكنه قديم وبطيء ويحتاج إلى تحديث.</button>
-                            <button onclick="nextQuizStep(1, 0)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">لا، نعتمد على التواصل المباشر ومواقع التواصل الاجتماعي فقط.</button>
-                        </div>
-                    </div>
-
-                    <!-- Question 2 -->
-                    <div class="quiz-step hidden space-y-6" data-step="2">
-                        <span class="text-gold-600 dark:text-gold-400 text-sm font-bold">السؤال 2 من 5</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-primary-950 dark:text-white">كيف تُدار العمليات الإدارية والملفات داخل مؤسستك؟</h3>
-                        <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(2, 3)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">أتمتة كاملة عبر الأنظمة السحابية (ERP/CRM).</button>
-                            <button onclick="nextQuizStep(2, 2)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نصف مؤتمتة، نستخدم بعض الأدوات الرقمية وجداول إكسل التقليدية.</button>
-                            <button onclick="nextQuizStep(2, 0)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">يدوياً بالكامل عن طريق الملفات والأوراق والأرشفة التقليدية.</button>
-                        </div>
-                    </div>
-
-                    <!-- Question 3 -->
-                    <div class="quiz-step hidden space-y-6" data-step="3">
-                        <span class="text-gold-600 dark:text-gold-400 text-sm font-bold">السؤال 3 من 5</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-primary-950 dark:text-white">ما هي آلية اتخاذ القرارات وحفظ وتحليل البيانات لديك؟</h3>
-                        <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(3, 3)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعتمد على أدوات ذكاء الأعمال (BI) والبيانات التاريخية بدقة عالية.</button>
-                            <button onclick="nextQuizStep(3, 1)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعتمد على التقديرات والخبرة الشخصية مع رصد بسيط للأرقام.</button>
-                            <button onclick="nextQuizStep(3, 0)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">لا يوجد رصد حقيقي للبيانات، والقرارات تُتخذ بشكل فوري وتراكمي.</button>
-                        </div>
-                    </div>
-
-                    <!-- Question 4 -->
-                    <div class="quiz-step hidden space-y-6" data-step="4">
-                        <span class="text-gold-600 dark:text-gold-400 text-sm font-bold">السؤال 4 من 5</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-primary-950 dark:text-white">هل تقوم بتدريب الموظفين لديك على المهارات والتقنيات الرقمية والذكاء الاصطناعي؟</h3>
-                        <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(4, 3)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعم، توجد خطة تدريب وتطوير سنوية مستمرة لجميع الأقسام.</button>
-                            <button onclick="nextQuizStep(4, 1)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعم، تم تدريبهم مرة واحدة على الأقل بالماضي دون استمرارية منهجية.</button>
-                            <button onclick="nextQuizStep(4, 0)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">لا، الموظفون يتعلمون ذاتياً دون رعاية أو تخطيط مؤسسي.</button>
-                        </div>
-                    </div>
-
-                    <!-- Question 5 -->
-                    <div class="quiz-step hidden space-y-6" data-step="5">
-                        <span class="text-gold-600 dark:text-gold-400 text-sm font-bold">السؤال 5 من 5</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-primary-950 dark:text-white">كيف تنظر الإدارة العليا للتحول الرقمي وتخصيص الميزانية؟</h3>
-                        <div class="grid grid-cols-1 gap-3">
-                            <button onclick="nextQuizStep(5, 3)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نراها ضرورة قصوى ومحركاً رئيسياً للنمو، ولدينا ميزانية سنوية ثابتة.</button>
-                            <button onclick="nextQuizStep(5, 1)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نراها جيدة ولكنها ليست أولوية للميزانية الحالية.</button>
-                            <button onclick="nextQuizStep(5, 0)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold">نعتبر التحول الرقمي ترفاً تكنولوجياً مكلفاً لا يناسب ميزانية الشركة.</button>
-                        </div>
-                    </div>
-
-                    <!-- Results Section (Initially Hidden) -->
-                    <div id="quizResult" class="hidden text-center space-y-6">
-                        <div class="w-24 h-24 rounded-full bg-gold-100 dark:bg-gold-950/50 text-gold-600 dark:text-gold-400 flex items-center justify-center mx-auto text-4xl shadow-lg border border-gold-300/30">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-primary-950 dark:text-white">تم احتساب نضجك الرقمي بنجاح!</h3>
-                            <p class="text-lg text-slate-600 dark:text-slate-300 mt-2">مجموع نقاطك هو: <span id="quizScoreDisplay" class="font-bold text-gold-600 dark:text-gold-400">0</span> من أصل <span class="font-bold">15</span></p>
-                        </div>
-                        
-                        <!-- Dynamic Result Card -->
-                        <div class="p-6 bg-white dark:bg-primary-950 border border-primary-200 dark:border-primary-800 rounded-2xl text-right space-y-4 max-w-xl mx-auto">
-                            <h4 id="resultLevelTitle" class="font-bold text-xl text-primary-900 dark:text-gold-400 flex items-center gap-2">
-                                <i class="fa-solid fa-circle-info"></i>
-                                تحديد المستوى
-                            </h4>
-                            <p id="resultLevelDesc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                جار التحليل...
-                            </p>
-                            <div class="border-t border-primary-100 dark:border-primary-800 pt-4 mt-2">
-                                <h5 class="font-bold text-sm text-gold-600 dark:text-gold-400">💡 نصيحة المستشار صلاح حسن إبراهيم الفورية:</h5>
-                                <p id="resultAdvice" class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                                    توصية عامة...
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button onclick="resetQuiz()" class="px-6 py-3 bg-primary-200 dark:bg-primary-800 text-primary-900 dark:text-white font-bold rounded-xl hover:bg-primary-300 transition-all text-sm">
-                                <i class="fa-solid fa-rotate-left ml-2"></i>أعد الاختبار
-                            </button>
-                            <a href="#contact" class="px-6 py-3 bg-gold-600 text-white font-bold rounded-xl hover:bg-gold-700 shadow-lg shadow-gold-600/30 transition-all text-sm">
-                                <i class="fa-solid fa-phone ml-2"></i>احجز استشارة لتطوير نضجك
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Feature 2: Consulting Cost Estimator -->
-    <section id="estimator" class="py-20 bg-primary-100/50 dark:bg-primary-950/60">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 block"><i class="fa-solid fa-calculator ml-1"></i>شفافية تامة</span>
-                <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">حاسبة تكلفة الاستشارات التقديرية</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm sm:text-base">قم بتهيئة الخدمة التي ترغب بها وتعرّف على تكلفة استشارتك وجدولتها التقديرية بدقة وسهولة.</p>
-            </div>
-
-            <!-- Card Calculator Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                <!-- Inputs Section -->
-                <div class="lg:col-span-7 bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between">
-                    <!-- Service Type Selection -->
-                    <div class="space-y-3">
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">نوع الخدمة الاستشارية المطلوبة:</label>
-                        <select id="estService" onchange="calculateCost()" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-gold-500">
-                            <option value="strategic" data-rate="250">استشارة سيادة رقمية وحماية بيانات (250$ / ساعة)</option>
-                            <option value="reputation" data-rate="300">إدارة سمعة مؤسسية وأزمات إعلامية (300$ / ساعة)</option>
-                            <option value="digital" data-rate="350">تحول تكنولوجي وأتمتة ذكية (350$ / ساعة)</option>
-                            <option value="feasibility" data-rate="200">دراسة جدوى ونمذجة أعمال (200$ / ساعة)</option>
-                        </select>
-                    </div>
-
-                    <!-- Client Company Size -->
-                    <div class="space-y-3">
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300">حجم المنشأة أو المؤسسة:</label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <button onclick="setEstCompanySize('small', 1.0, this)" class="est-size-btn active p-3 rounded-xl border-2 border-gold-500 bg-gold-50/50 dark:bg-gold-950/20 text-gold-600 dark:text-gold-400 font-bold text-center text-xs sm:text-sm">
-                                <i class="fa-solid fa-shop block text-lg mb-1"></i>ناشئة / صغيرة
-                            </button>
-                            <button onclick="setEstCompanySize('medium', 1.25, this)" class="est-size-btn p-3 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 text-slate-600 dark:text-slate-300 font-semibold text-center text-xs sm:text-sm">
-                                <i class="fa-solid fa-building block text-lg mb-1"></i>متوسطة (+1.25)
-                            </button>
-                            <button onclick="setEstCompanySize('large', 1.5, this)" class="est-size-btn p-3 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 text-slate-600 dark:text-slate-300 font-semibold text-center text-xs sm:text-sm">
-                                <i class="fa-solid fa-city block text-lg mb-1"></i>كبيرة / كبرى (+1.5)
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Hours Slider -->
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center text-sm font-bold">
-                            <label class="text-slate-700 dark:text-slate-300">عدد الساعات الاستشارية المطلوبة:</label>
-                            <span class="text-gold-600 dark:text-gold-400"><span id="estHoursDisplay">5</span> ساعات</span>
-                        </div>
-                        <input id="estHours" type="range" min="1" max="40" value="5" oninput="updateHoursRange(this.value)" class="w-full accent-gold-500 cursor-pointer">
-                        <div class="flex justify-between text-xs text-slate-400">
-                            <span>ساعة واحدة</span>
-                            <span>40 ساعة استشارية</span>
-                        </div>
-                    </div>
-
-                    <!-- Urgent Request Option -->
-                    <div class="flex items-center gap-3 bg-primary-50 dark:bg-primary-950/80 p-3 rounded-xl border border-primary-200 dark:border-primary-800">
-                        <input id="estUrgent" type="checkbox" onchange="calculateCost()" class="w-5 h-5 rounded accent-gold-500 cursor-pointer">
-                        <div>
-                            <label for="estUrgent" class="block text-sm font-bold text-slate-800 dark:text-slate-200 cursor-pointer">طلب استشارة عاجلة ومستعجلة (خلال 24-48 ساعة)</label>
-                            <span class="text-xs text-slate-400">تطبيق علاوة بنسبة 25% على السعر الإجمالي لسرعة التخصيص.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Live Results Banner -->
-                <div class="lg:col-span-5 bg-gradient-to-br from-primary-900 to-primary-950 border border-primary-800 rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between space-y-6 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gold-500/5 pointer-events-none"></div>
-                    <div class="relative space-y-4">
-                        <span class="text-xs font-bold text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">التكلفة التقديرية للاستشارة</span>
-                        
-                        <div class="pt-4">
-                            <span class="block text-xs text-slate-400 font-medium">إجمالي التكلفة المتوقعة:</span>
-                            <span id="estTotalCost" class="text-4xl sm:text-5xl font-extrabold text-gold-400 tracking-tight">$1,000</span>
-                        </div>
-
-                        <div class="border-t border-primary-800 pt-4 space-y-2">
-                            <div class="flex justify-between text-sm text-slate-300">
-                                <span>سعر الساعة الأساسي:</span>
-                                <span id="estBaseRate">$200</span>
-                            </div>
-                            <div class="flex justify-between text-sm text-slate-300">
-                                <span>معامل حجم المنشأة:</span>
-                                <span id="estSizeMultiplier">1.0x</span>
-                            </div>
-                            <div class="flex justify-between text-sm text-slate-300">
-                                <span>رسوم الاستعجال:</span>
-                                <span id="estUrgentLabel">لا يوجد</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Call To Action -->
-                    <div class="space-y-4">
-                        <p class="text-xs text-slate-400 leading-relaxed text-center">ملاحظة: هذه الأسعار هي تقديرات استرشادية أولية، ويتم صياغة السعر النهائي التعاقدي بعد الجلسة الاستكشافية الأولى المجانية.</p>
-                        <button onclick="bookCalculatedConsultation()" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold rounded-xl shadow-lg shadow-gold-500/20 hover:scale-[1.02] transition-all text-center">
-                            أرسل طلب الاستشارة بهذا التقدير
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive AI Assistant Block (Gemini Driven) -->
-    <section id="ai-consultant" class="py-20 bg-white dark:bg-primary-900/30">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 block"><i class="fa-solid fa-robot ml-1"></i>محاكاة ذكية فورية</span>
-                <h2 class="text-3xl font-extrabold text-primary-950 dark:text-white">المستشار الرقمي الذكي لمكتب المستشار صلاح حسن</h2>
-                <p class="text-slate-500 dark:text-slate-400 text-sm sm:text-base">تحدث مباشرة مع التوأم الرقمي للمستشار صلاح حسن إبراهيم المدعوم بتقنية Gemini 2.5 للرد على استشاراتك وتطويرك الرقمي بشكل فوري وسريع.</p>
-            </div>
-
-            <!-- Chat Window UI -->
-            <div class="bg-primary-50 dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl shadow-xl overflow-hidden flex flex-col h-[550px]">
-                <!-- Chat Header -->
-                <div class="bg-primary-100 dark:bg-primary-950 px-6 py-4 flex items-center justify-between border-b border-primary-200 dark:border-primary-800">
-                    <div class="flex items-center gap-3">
-                        <div class="relative">
-                            <div class="w-12 h-12 rounded-full bg-gold-100 dark:bg-gold-950/60 flex items-center justify-center text-gold-600 dark:text-gold-400 font-extrabold border border-gold-300">
-                                <i class="fa-solid fa-user-tie text-2xl animate-pulse"></i>
-                            </div>
-                            <span class="absolute bottom-0 left-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white dark:border-primary-950 rounded-full animate-pulse"></span>
-                        </div>
-                        <div>
-                            <span class="block font-bold text-primary-950 dark:text-white">النسخة الافتراضية للمستشار صلاح حسن</span>
-                            <span class="block text-xs text-emerald-600 dark:text-emerald-400">نشط الآن لمساعدتك استشارياً</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs bg-gold-400/20 text-gold-700 dark:text-gold-400 px-2.5 py-1 rounded-full font-bold">بقدرات Gemini 2.5</span>
-                        <button onclick="clearChat()" class="p-2 text-slate-400 hover:text-red-500 transition-colors" title="مسح المحادثة">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Messages Container -->
-                <div id="chatMessages" class="flex-1 overflow-y-auto p-6 space-y-4">
-                    <!-- Bot First Message -->
-                    <div class="flex items-start gap-3 max-w-[85%]">
-                        <div class="w-8 h-8 rounded-full bg-gold-600 text-white flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-user-tie text-sm"></i>
-                        </div>
-                        <div class="bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border border-primary-200 dark:border-primary-800 shadow-sm">
-                            <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-100">
-                                مرحباً بك في مكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي. أنا توأمه الرقمي الذكي المتخصص في السيادة الرقمية وإدارة السمعة المؤسسية. كيف يمكنني إرشادك اليوم بشأن التطوير الإداري، حماية البيانات، أو حوكمة الأعمال في العراق والمنطقة؟
-                            </p>
-                            <span class="block text-[10px] text-slate-400 mt-2 text-left">الآن</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Input Chat Area -->
-                <div class="p-4 bg-primary-100 dark:bg-primary-950 border-t border-primary-200 dark:border-primary-800">
-                    <form id="chatForm" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                        <input id="chatInput" type="text" autocomplete="off" placeholder="اكتب سؤالك الاستشاري هنا (مثال: كيف أحمي السمعة الرقمية لمؤسستي؟)..." class="flex-1 bg-white dark:bg-primary-900 border border-primary-300 dark:border-primary-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100">
-                        <button type="submit" class="bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-gold-500/10 hover:scale-[1.02] transition-all flex items-center gap-2 shrink-0">
-                            <span>إرسال</span>
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Testimonials Section (Dynamic CMS) -->
-    <section class="py-20 bg-primary-50 dark:bg-primary-950 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sm font-bold text-gold-600 dark:text-gold-400 tracking-wider block">آراء شركائنا</span>
-                <h2 id="testimonialsSectionTitle" class="text-3xl font-extrabold text-primary-950 dark:text-white">نجاحات مشتركة تفخر بها المسيرة</h2>
-            </div>
-
-            <!-- Dynamic Testimonials Destination -->
-            <div id="dynamicTestimonialsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Injected via JavaScript from siteData -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Booking Section -->
     <section id="contact" class="py-20 bg-white dark:bg-primary-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-                <!-- Info Section -->
-                <div class="lg:col-span-5 bg-primary-900 dark:bg-primary-950 border border-primary-800 text-white rounded-3xl p-8 flex flex-col justify-between space-y-8 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gold-500/5 pointer-events-none"></div>
-                    
-                    <div class="relative space-y-6">
-                        <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block">معلومات التواصل والمكتب</span>
-                        <h2 class="text-3xl font-extrabold text-white leading-tight">جاهزون لبدء رحلة التطوير والاستشارات فوراً</h2>
-                        <p class="text-slate-300 text-sm leading-relaxed">يسعدنا استقبالكم في مقرنا الرسمي، أو تنسيق اجتماعات مرئية عن بعد لخدمة أعمالكم في العراق وكافة أنحاء الوطن العربي.</p>
-                        
-                        <div class="space-y-4 pt-4">
-                            <div class="flex gap-4 items-center">
-                                <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400"><i class="fa-solid fa-map-location-dot animate-bounce"></i></div>
-                                <p id="contactAddress" class="text-sm text-slate-200 font-semibold">العراق - بغداد</p>
-                            </div>
-                            <div class="flex gap-4 items-center">
-                                <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400"><i class="fa-solid fa-envelope animate-pulse"></i></div>
-                                <p id="contactEmail" class="text-sm text-slate-200 font-semibold">consultant.salahhasan@gmail.com</p>
-                            </div>
-                            <div class="flex gap-4 items-center">
-                                <div class="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center text-gold-400"><i class="fa-solid fa-phone-volume animate-pulse"></i></div>
-                                <p id="contactPhone" class="text-sm text-slate-200 font-semibold">+9647706556772</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Icons -->
-                    <div class="flex items-center gap-3 pt-6 border-t border-primary-800">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-500 hover:text-white transition-all flex items-center justify-center text-lg"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-500 hover:text-white transition-all flex items-center justify-center text-lg"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a id="contactWhatsappLink" href="#" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-emerald-500 hover:text-white transition-all flex items-center justify-center text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-5 bg-primary-900 text-white rounded-3xl p-8 flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-extrabold">جاهزون لهندسة الحصن الرقمي</h2>
+                    <div class="space-y-4 pt-4">
+                        <div class="flex gap-4 items-center"><i class="fa-solid fa-map-location-dot text-gold-400"></i><p id="contactAddress" class="text-sm font-semibold"></p></div>
+                        <div class="flex gap-4 items-center"><i class="fa-solid fa-envelope text-gold-400"></i><p id="contactEmail" class="text-sm font-semibold"></p></div>
+                        <div class="flex gap-4 items-center"><i class="fa-solid fa-phone-volume text-gold-400"></i><p id="contactPhone" class="text-sm font-semibold"></p></div>
                     </div>
                 </div>
-
-                <!-- Form Section -->
-                <div class="lg:col-span-7 bg-white dark:bg-primary-900 border border-primary-200 dark:border-primary-800 rounded-3xl p-8 shadow-xl">
-                    <h3 class="text-2xl font-bold text-primary-950 dark:text-white mb-6">طلب موعد استشارة جديدة</h3>
-                    
-                    <form id="bookingForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="space-y-1.5">
-                                <label class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">الاسم الثلاثي:</label>
-                                <input type="text" required placeholder="أحمد محمد" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">اسم المؤسسة أو الشركة:</label>
-                                <input type="text" placeholder="شركة التميز المحدودة" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="space-y-1.5">
-                                <label class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">البريد الإلكتروني:</label>
-                                <input type="email" required placeholder="name@company.com" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">رقم الهاتف المتنقل:</label>
-                                <input type="tel" required placeholder="+964 770 655 6772" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100">
-                            </div>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">الخدمة المطلوبة للدراسة:</label>
-                            <select id="bookingServiceSelect" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100">
-                                <!-- Populated dynamically from services array -->
-                            </select>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300">وصف موجز للمشروع أو التحدي الحالي:</label>
-                            <textarea rows="4" placeholder="يرجى كتابة أهدافك الاستشارية أو نوع التحدي الحالي الذي تواجهه مؤسستك لمناقشته مع المستشار..." class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none focus:border-gold-500 text-slate-800 dark:text-slate-100"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold rounded-xl shadow-lg shadow-gold-500/20 hover:scale-[1.01] transition-all text-center">
-                            إرسال الطلب وحجز موعد الجلسة الاستكشافية
-                        </button>
-                    </form>
+                <div class="flex items-center gap-3 pt-6 border-t border-primary-800">
+                    <a href="https://www.aljazeera.net/author/%D8%B5%D9%84%D8%A7%D8%AD-%D8%AD%D8%B3%D9%86-%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%85" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-lg hover:bg-gold-500" title="صفحتي في الجزيرة نت"><i class="fa-solid fa-pen-nib"></i></a>
+                    <a id="contactWhatsappLink" href="#" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-lg hover:bg-emerald-500"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer Area -->
-    <footer class="bg-primary-950 text-white py-12 border-t border-primary-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Office Description -->
-            <div class="md:col-span-2 space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2 rounded-lg text-white">
-                        <i class="fa-solid fa-laptop-code text-xl"></i>
+            <div class="lg:col-span-7 bg-white dark:bg-primary-900 border dark:border-primary-800 rounded-3xl p-8 shadow-xl">
+                <form onsubmit="event.preventDefault(); alert('تم استلام طلب الجدولة السيادية بنجاح.');" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" required placeholder="الاسم واللقب" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none">
+                        <input type="text" placeholder="اسم المنشأة / المستشفى" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none">
                     </div>
-                    <div>
-                        <span id="footerTitle" class="block font-bold text-lg leading-tight">المستشار صلاح حسن إبراهيم</span>
-                        <span id="footerSubtitle" class="block text-xs text-gold-400 font-semibold">للاستشارات والتطوير الرقمي</span>
-                    </div>
-                </div>
-                <p id="footerDescription" class="text-xs text-slate-400 leading-relaxed max-w-sm">مكتب استشاري مرخص يقدم أرقى الحلول المهنية المتكاملة المرتكزة على دمج السيادة الرقمية وإدارة السمعة بالمؤسسات والشركات مع التمكين التقني الحديث وحوكمة البيانات في العراق والشرق الأوسط.</p>
-            </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="font-bold text-sm text-gold-400 uppercase tracking-widest mb-4">روابط سريعة</h4>
-                <ul class="space-y-2.5 text-xs text-slate-400">
-                    <li><a href="#about" class="hover:text-gold-400 transition-colors">عن المستشار</a></li>
-                    <li><a href="#services" class="hover:text-gold-400 transition-colors">خدماتنا الاستشارية</a></li>
-                    <li><a href="#assessment" class="hover:text-gold-400 transition-colors">مقياس النضج الرقمي</a></li>
-                    <li><a href="#estimator" class="hover:text-gold-400 transition-colors">حاسبة الاستشارات</a></li>
-                </ul>
-            </div>
-
-            <!-- Newsletter -->
-            <div>
-                <h4 class="font-bold text-sm text-gold-400 uppercase tracking-widest mb-4">النشرة الرقمية</h4>
-                <p class="text-xs text-slate-400 mb-4 leading-relaxed">اشترك لتلقي أحدث الأبحاث والدراسات الاستشارية في التحول الرقمي شهرياً.</p>
-                <form onsubmit="handleNewsletterSubmit(event)" class="flex gap-2">
-                    <input type="email" required placeholder="البريد الإلكتروني..." class="bg-primary-900 text-xs text-slate-200 p-2.5 rounded-lg border border-primary-800 focus:outline-none focus:border-gold-500 flex-1">
-                    <button type="submit" class="bg-gold-600 hover:bg-gold-700 text-white px-4 rounded-lg text-xs font-bold transition-colors">اشترك</button>
+                    <select id="bookingServiceSelect" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none"></select>
+                    <textarea rows="4" placeholder="وصف موجز لطبيعة الاختناق أو النزيف الرقمي الحالي بمؤسستك..." class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 rounded-xl p-3 text-sm focus:outline-none"></textarea>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg">إرسال الطلب وتفعيل المسار</button>
                 </form>
             </div>
         </div>
+    </section>
 
-        <!-- Copyrights bar -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-primary-900/60 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-            <p>© <span id="currentYear"></span> مكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي. جميع الحقوق محفوظة.</p>
-            <div class="flex gap-4">
-                <a href="#" class="hover:underline">سياسة الخصوصية</a>
-                <span class="text-slate-800">|</span>
-                <a href="#" class="hover:underline">شروط وأحكام الاستخدام</a>
-            </div>
-        </div>
+    <footer class="bg-primary-950 text-white py-8 border-t border-primary-900 text-center text-xs">
+        <p>© <span id="currentYear"></span> مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي. جميع الحقوق محفوظة سيادياً بكود Astro المستقل.</p>
     </footer>
 
-    <!-- Active Floating WhatsApp Widget -->
-    <a id="whatsappFloat" href="#" target="_blank" class="fixed bottom-6 right-6 z-[90] bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center group" aria-label="تواصل معنا عبر واتساب">
-        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-out whitespace-nowrap ml-0 group-hover:ml-2 text-sm font-bold block">تواصل مباشر عبر الواتساب</span>
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
+    <a id="whatsappFloat" href="#" target="_blank" class="fixed bottom-6 right-6 z-[90] bg-emerald-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
 
-    <!-- Custom Modal for Notifications (Alert alternative) -->
-    <div id="notificationModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="bg-white dark:bg-primary-900 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 border border-primary-100 dark:border-primary-800 shadow-2xl animate-scale-up">
-            <div class="w-16 h-16 bg-gold-100 dark:bg-gold-950/60 rounded-full flex items-center justify-center text-gold-600 dark:text-gold-400 text-3xl mx-auto border border-gold-300/30">
-                <i class="fa-solid fa-circle-check animate-bounce"></i>
-            </div>
-            <div>
-                <h4 id="modalTitle" class="text-xl font-bold text-primary-950 dark:text-white">نجاح العملية!</h4>
-                <p id="modalMessage" class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">تم تسجيل طلبك بنجاح وسنقوم بالتواصل معك خلال ساعات.</p>
-            </div>
-            <button onclick="closeNotificationModal()" class="w-full py-3 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl shadow-lg">حسناً، فهمت</button>
-        </div>
-    </div>
-
-    <!-- ADMIN CONTENT MANAGEMENT DASHBOARD PANEL (CMS) -->
-    <div id="adminPanel" class="fixed inset-y-0 left-0 z-[100] w-full max-w-lg bg-white dark:bg-primary-900 border-r border-primary-200 dark:border-primary-800 shadow-2xl hidden flex-col transition-all duration-300 animate-slide-in">
-        <!-- Panel Header -->
-        <div class="p-6 bg-gradient-to-r from-primary-900 to-primary-950 text-white flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-sliders text-amber-500 text-xl"></i>
-                <div>
-                    <h3 class="font-bold text-base leading-tight">لوحة تحكم وتعديل الموقع</h3>
-                    <p class="text-[10px] text-amber-400">تعديل فوري للنصوص، والخدمات، والآراء</p>
-                </div>
-            </div>
-            <button onclick="toggleAdminPanel()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <!-- Navigation Tabs -->
-        <div class="flex border-b border-primary-200 dark:border-primary-800 bg-primary-50 dark:bg-primary-950/80 text-xs font-bold overflow-x-auto">
-            <button onclick="switchAdminTab('general')" id="tab-general" class="admin-tab active py-3 px-4 border-b-2 border-gold-500 text-gold-600 shrink-0">النصوص العامة</button>
-            <button onclick="switchAdminTab('services')" id="tab-services" class="admin-tab py-3 px-4 border-b-2 border-transparent hover:text-gold-500 shrink-0">الخدمات</button>
-            <button onclick="switchAdminTab('testimonials')" id="tab-testimonials" class="admin-tab py-3 px-4 border-b-2 border-transparent hover:text-gold-500 shrink-0">آراء العملاء</button>
-            <button onclick="switchAdminTab('contactTab')" id="tab-contactTab" class="admin-tab py-3 px-4 border-b-2 border-transparent hover:text-gold-500 shrink-0">الاتصال والروابط</button>
-            <button onclick="switchAdminTab('backup')" id="tab-backup" class="admin-tab py-3 px-4 border-b-2 border-transparent hover:text-gold-500 shrink-0 text-amber-500"><i class="fa-solid fa-download ml-1"></i>تصدير/استيراد</button>
-        </div>
-
-        <!-- Panel Body Scrollable Content -->
-        <div class="flex-1 overflow-y-auto p-6 space-y-6 text-sm text-slate-800 dark:text-slate-100">
-            
-            <!-- TAB 1: GENERAL TEXTS -->
-            <div id="admin-sect-general" class="admin-sect space-y-4">
-                <h4 class="font-bold text-gold-600 dark:text-gold-400 border-b pb-2">نصوص الواجهة والشعار:</h4>
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-bold mb-1">اسم الشعار العريض (الهيدر والفوتر):</label>
-                        <input id="inpLogoMain" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-semibold">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">الاسم الفرعي للشعار:</label>
-                        <input id="inpLogoSub" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">شريط الإعلانات المتحرك (Marquee Text):</label>
-                        <textarea id="inpMarqueeText" rows="2" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs"></textarea>
-                    </div>
-                </div>
-
-                <h4 class="font-bold text-gold-600 dark:text-gold-400 border-b pb-2 pt-4">قسم الترحيب (Hero Section):</h4>
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-bold mb-1">الوسم الصغير المضيء (Badge):</label>
-                        <input id="inpHeroBadge" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">العنوان الرئيسي العريض:</label>
-                        <input id="inpHeroTitle" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">الوصف الفرعي لـ Hero:</label>
-                        <textarea id="inpHeroDesc" rows="3" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">مقولة المستشار في البطاقة:</label>
-                        <textarea id="inpHeroQuote" rows="2" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs"></textarea>
-                    </div>
-                </div>
-
-                <h4 class="font-bold text-gold-600 dark:text-gold-400 border-b pb-2 pt-4">قسم نبذة المستشار (About Section):</h4>
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-bold mb-1">العنوان الفرعي الصغير:</label>
-                        <input id="inpAboutSubtitle" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">العنوان الرئيسي:</label>
-                        <input id="inpAboutTitle" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">نص النبذة التفصيلي:</label>
-                        <textarea id="inpAboutText" rows="4" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: SERVICES MANAGEMENT -->
-            <div id="admin-sect-services" class="admin-sect hidden space-y-4">
-                <div class="bg-amber-500/10 p-3 rounded-lg border border-amber-500/30 mb-2">
-                    <p class="text-xs text-amber-700 dark:text-amber-400 leading-normal"><strong>إشعار تعديل الخدمات:</strong> يمكنك إزالة الخدمات الحالية أو إضافة خدمات جديدة فوراً وستنعكس تلقائياً في حاسبة الاستعارار ونموذج طلب الموعد.</p>
-                </div>
-                
-                <!-- Add Service Form -->
-                <div class="bg-primary-50 dark:bg-primary-950 p-4 rounded-xl border dark:border-primary-800 space-y-3">
-                    <h5 class="font-bold text-xs text-gold-600 dark:text-gold-400"><i class="fa-solid fa-plus-circle ml-1"></i>إضافة خدمة جديدة للمكتب:</h5>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div>
-                            <label class="block text-[10px] font-bold mb-0.5">اسم الخدمة:</label>
-                            <input id="addSvcTitle" type="text" placeholder="مثال: خدمات الميتافيرس" class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold mb-0.5">أيقونة الخدمة (FontAwesome Class):</label>
-                            <input id="addSvcIcon" type="text" placeholder="fa-solid fa-robot" class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold mb-0.5">الوصف الاستشاري:</label>
-                        <textarea id="addSvcDesc" rows="2" placeholder="اكتب وصفاً جذاباً وموجزاً عما تقدمه الخدمة للشركات..." class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs"></textarea>
-                    </div>
-                    <button onclick="addServiceFromCms()" class="w-full py-2 bg-gold-600 text-white font-bold text-xs rounded hover:bg-gold-700 transition-colors">إضافة الخدمة للموقع فوراً</button>
-                </div>
-
-                <!-- Existing Services List to Manage -->
-                <h5 class="font-bold text-xs text-slate-500 pt-2"><i class="fa-solid fa-list ml-1"></i>الخدمات الحالية النشطة بالموقع:</h5>
-                <div id="cmsServicesList" class="space-y-2">
-                    <!-- Loaded dynamically via JavaScript -->
-                </div>
-            </div>
-
-            <!-- TAB 3: TESTIMONIALS MANAGEMENT -->
-            <div id="admin-sect-testimonials" class="admin-sect hidden space-y-4">
-                <div class="bg-primary-50 dark:bg-primary-950 p-4 rounded-xl border dark:border-primary-800 space-y-3">
-                    <h5 class="font-bold text-xs text-gold-600 dark:text-gold-400"><i class="fa-solid fa-plus-circle ml-1"></i>إضافة رأي عميل جديد:</h5>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div>
-                            <label class="block text-[10px] font-bold mb-0.5">اسم العميل:</label>
-                            <input id="addTestName" type="text" placeholder="مثال: أ. محمد العتيبي" class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold mb-0.5">المنصب والشركة:</label>
-                            <input id="addTestTitle" type="text" placeholder="المدير التنفيذي لشركة سابك" class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold mb-0.5">التقييم (عدد النجوم):</label>
-                        <select id="addTestStars" class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs">
-                            <option value="5">⭐⭐⭐⭐⭐ خمسة نجوم كاملة</option>
-                            <option value="4.5">⭐⭐⭐⭐⭐ 4.5 نجوم</option>
-                            <option value="4">⭐⭐⭐⭐ أربعة نجوم</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold mb-0.5">نص التوصية أو الرأي الاستشاري:</label>
-                        <textarea id="addTestText" rows="2" placeholder="نص الاقتباس عما تحقق من نجاحات بفضل استشارات المكتب..." class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs"></textarea>
-                    </div>
-                    <button onclick="addTestimonialFromCms()" class="w-full py-2 bg-gold-600 text-white font-bold text-xs rounded hover:bg-gold-700 transition-colors">إضافة التوصية ونشرها</button>
-                </div>
-
-                <h5 class="font-bold text-xs text-slate-500 pt-2"><i class="fa-solid fa-comments ml-1"></i>توصيات العملاء الحالية:</h5>
-                <div id="cmsTestimonialsList" class="space-y-2">
-                    <!-- Injected dynamically -->
-                </div>
-            </div>
-
-            <!-- TAB 4: CONTACT & LINKS -->
-            <div id="admin-sect-contactTab" class="admin-sect hidden space-y-4">
-                <h4 class="font-bold text-gold-600 dark:text-gold-400 border-b pb-2">تفاصيل الاتصال والعنوان:</h4>
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-bold mb-1">العنوان الجغرافي للمقر:</label>
-                        <input id="inpContactAddress" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">البريد الإلكتروني للمكتب:</label>
-                        <input id="inpContactEmail" type="email" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">رقم الهاتف الرسمي:</label>
-                        <input id="inpContactPhone" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">رقم الواتساب الفعال (بدون رموز أو مسافات مثل 9647706556772):</label>
-                        <input id="inpContactWhatsapp" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 5: BACKUP & ACTIONS -->
-            <div id="admin-sect-backup" class="admin-sect hidden space-y-4">
-                <div class="bg-amber-500/10 p-4 rounded-xl border border-amber-500/20 text-xs leading-normal">
-                    <p class="font-bold text-amber-700 dark:text-amber-400 mb-1">تصدير واستيراد البناء الكامل للموقع:</p>
-                    أنت لست بحاجة لقاعدة بيانات معقدة! يمكنك حفظ وتعديل كافة صفحاتك وتنزيلها كملف احتياطي على جهازك والعودة واستيراده في أي وقت لتعديل شكل ومضمون الموقع في ثوانٍ.
-                </div>
-
-                <div class="space-y-3">
-                    <button onclick="exportSiteBackup()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
-                        <i class="fa-solid fa-file-export"></i>تصدير وتحميل النسخة الاحتياطية للموقع (JSON)
-                    </button>
-
-                    <div class="border-t border-primary-200 dark:border-primary-800 pt-4">
-                        <label class="block text-xs font-bold mb-2 text-gold-600">استيراد ورفع ملف نسخة احتياطية (JSON):</label>
-                        <input type="file" id="importJsonFileInput" accept=".json" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-primary-100 file:text-primary-700 hover:file:bg-primary-200">
-                        <button onclick="importSiteBackup()" class="w-full mt-3 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-2 transition-all">
-                            <i class="fa-solid fa-file-import"></i>تأكيد الاستيراد والتطبيق الفوري
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Panel Footer with Actions -->
-        <div class="p-6 bg-primary-50 dark:bg-primary-950 border-t border-primary-200 dark:border-primary-800 grid grid-cols-2 gap-3">
-            <button onclick="saveAndApplyCmsChanges()" class="w-full py-3 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-lg">
-                <i class="fa-solid fa-check"></i>حفظ التغييرات الآن
-            </button>
-            <button onclick="restoreDefaultConfig()" class="w-full py-3 bg-primary-200 dark:bg-primary-800 text-primary-800 dark:text-white font-bold rounded-xl text-xs hover:bg-red-500 hover:text-white transition-all">
-                <i class="fa-solid fa-rotate-left"></i>إعادة التعيين للأصل
-            </button>
-        </div>
-    </div>
-
-
-    <!-- Script Logic (Dynamic State Manager and CMS System) -->
-    <script>
-        // API Configuration (Gemini 2.5 Flash Preview)
-        const apiKey = ""; 
-        
-        // Initial / Default Template Structure for Site Data (CMS State)
+    <script is:inline>
         const DEFAULT_SITE_DATA = {
             general: {
-                logoMain: "مكتب المستشار صلاح حسن إبراهيم",
+                logoMain: "مكتب المستشار صلاح حسن",
                 logoSub: "للاستشارات والتطوير الرقمي",
-                marqueeText: "مرحباً بكم في مكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي  •  بوابتكم الاحترافية للسيادة الرقمية وإدارة السمعة المؤسسية والتحول الرقمي وتوظيف الذكاء الاصطناعي  •  احصلوا على استشارتكم الاستكشافية الأولى مجاناً بالتواصل معنا مباشرة!",
-                heroBadge: "بوابتك الريادية للسيادة الرقمية وإدارة السمعة",
-                heroTitle: "نصنع المستقبل الرقمي لمؤسستك وأعمالك",
-                heroDescription: "مكتب المستشار صلاح حسن إبراهيم يقدم باقة متكاملة من الاستشارات الاستراتيجية والحلول التقنية المبتكرة لتمكين الشركات من قيادة السوق وضمان السمعة المؤسسية المرموقة والسيادة الرقمية الكاملة.",
+                marqueeText: "مرحباً بكم في منصة الحصن الرقمي للمستشار صلاح حسن إبراهيم • خبير السيادة الرقمية وإدارة السمعة المؤسسية • رئيس مركز الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF)",
+                heroBadge: "خبير السيادة الرقمية - Level 10 Local Guide",
+                heroTitle: "نبني حصنك الرقمي <br class='hidden sm:inline'><span class='text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-amber-500'>وننهي النزيف التقني</span>",
+                heroDescription: "استشارات استراتيجية سيادية لنقل أصولك الرقمية من الإيجار الافتراضي إلى التملك المطلق (100% كود وسيرفر)، مع هيمنة جغرافية حاسمة لجلب المكالمات الحية.",
                 heroCardName: "المستشار صلاح حسن إبراهيم",
-                heroCardTitle: "خبير السيادة الرقمية وإدارة السمعة المؤسسية",
-                heroQuote: "\"التحول الرقمي وإدارة السمعة والسيادة الرقمية ليست مجرد أدوات تقنية، بل هي حجر الزاوية لحماية ريادة المؤسسة وبناء ثقة مستدامة.\"",
+                heroCardTitle: "خبير السيادة الرقمية والسمعة المؤسسية",
+                heroQuote: "\"امتلاك الأصول الرقمية ليس ترفاً تقنياً، بل حجر الأساس لحماية الأمن القومي والاقتصادي للمؤسسات.\"",
                 aboutSubtitle: "من هو المستشار صلاح حسن؟",
-                aboutMainTitle: "شغف بالتمكين التكنولوجي والنهوض المؤسسي",
-                aboutMainText: "مستشار وخبير دولي في السيادة الرقمية وإدارة السمعة المؤسسية، قدم العديد من الاستشارات والحلول التقنية والتدريبية لشركات ومؤسسات كبرى في العراق والشرق الأوسط. يعمل على دمج استراتيجيات الأعمال مع التقنيات الناشئة والذكاء الاصطناعي لضمان الأمان السيبراني للبيانات وبناء نماذج عمل ديناميكية ومرنة."
+                aboutMainTitle: "قيادة التحول الرقمي الاستراتيجي وتأمين الهياكل المؤسسية",
+                aboutMainText: "كاتب وصحفي في موقع الجزيرة نت، ورئيس مركز الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF). خبير في الإدارة الرقمية وهندسة السيادة التكنولوجية للمؤسسات. يحوز أعلى رتبة جغرافية عالمية (Level 10 Local Guide) في خرائط جوجل. يعمل من مقره في بغداد على قيادة وتصميم الخطط الإستراتيجية الكبرى للمستشفيات والشركات لإنهاء النزيف المالي والتقني وإيقاف التبعية للخدمات السحابية عبر توطين الشيفرات البرمجية والبيانات الحيوية الحساسة بنسبة مية بالمية."
             },
             contact: {
-                address: "العراق - بغداد",
+                address: "بغداد، جمهورية العراق",
                 email: "consultant.salahhasan@gmail.com",
-                phone: "+9647706556772",
-                whatsapp: "9647706556772"
+                phone: "+964 770 675 5677",
+                whatsapp: "96477067556772"
             },
             services: [
-                {
-                    id: "svc-1",
-                    title: "السيادة الرقمية وحماية البيانات",
-                    icon: "fa-solid fa-shield-halved",
-                    description: "حوكمة البيانات الحساسة، تأمين البنية التحتية للمؤسسات والشركات، وتأسيس قواعد السيادة التقنية الكاملة المستقلة."
-                },
-                {
-                    id: "svc-2",
-                    title: "إدارة السمعة المؤسسية والأزمات",
-                    icon: "fa-solid fa-users-gear",
-                    description: "بناء وإدارة الهوية الرقمية للمؤسسات، تتبع انطباعات الجمهور، وحيازة استراتيجيات مبتكرة لإدارة السمعة وتخفيف وطأة الأزمات."
-                },
-                {
-                    id: "svc-3",
-                    title: "التطوير والتحول التكنولوجي",
-                    icon: "fa-solid fa-microchip",
-                    description: "أتمتة العمليات الإدارية، تبني الأنظمة والتقنيات السحابية المتكاملة، ودمج أدوات الذكاء الاصطناعي لزيادة الكفاءة."
-                },
-                {
-                    id: "svc-4",
-                    title: "الاستشارات الإدارية وهيكلة الأعمال",
-                    icon: "fa-solid fa-bezier-curve",
-                    description: "تحسين وتصميم الهياكل التنظيمية الذكية، تدوين السياسات واللوائح والتحقق من حوكمة وموثوقية ممارسات التشغيل."
-                },
-                {
-                    id: "svc-5",
-                    title: "دراسات الجدوى ونمذجة الأعمال",
-                    icon: "fa-solid fa-chart-bar",
-                    description: "إعداد دراسات الجدوى الاقتصادية والفنية التفصيلية وتأسيس النماذج التشغيلية المبتكرة والملائمة للاقتصادات الحديثة."
-                },
-                {
-                    id: "svc-6",
-                    title: "الأمن السيبراني وبناء القدرات",
-                    icon: "fa-solid fa-lock",
-                    description: "تحليل مخاطر تكنولوجيا المعلومات والاتصالات، وتقديم حزم تدريب متكاملة لتوعية ورفع كفاءة الكوادر المؤسسية رقمياً."
-                }
-            ],
-            testimonials: [
-                {
-                    id: "test-1",
-                    name: "أ. حسين الدليمي",
-                    title: "رئيس مجلس الإدارة لشركة الرافدين للتكنولوجيا",
-                    stars: "5",
-                    text: "بفضل استشارات المستشار صلاح حسن، استطعنا تأسيس بنية تحتية رقمية تضمن حماية السيادة الكاملة لبيانات عملائنا وحوكمة السمعة الرقمية للشركة بمعدل ثقة قياسي."
-                },
-                {
-                    id: "test-2",
-                    name: "م. رند الراوي",
-                    title: "المؤسس التنفيذي لبوابة الابتكار للحلول الذكية",
-                    stars: "5",
-                    text: "كانت خارطة السيادة الرقمية وإدارة السمعة التي صممها المكتب دقيقة وفورية. تكللت جهودنا بنمو ريادي وحفظ أمين للهوية الرقمية عبر الفضاء الإلكتروني."
-                },
-                {
-                    id: "test-3",
-                    name: "د. علي الخفاجي",
-                    title: "مستشار التطوير لجامعة بغداد للتكنولوجيا",
-                    stars: "4.5",
-                    text: "دمج السيادة الرقمية والسمعة المؤسسية غيّر تماماً من نظرة شركائنا الدوليين لكفاءتنا. نوصي بشدة بالتعاقد مع مكتب المستشار صلاح حسن."
-                }
+                { id: "svc-1", title: "إدارة السيادة الرقمية", icon: "fa-solid fa-code", description: "بناء وتطوير المواقع والمنصات الرسمية بكود مستقل لإنهاء إيجارات الويب الاحتكارية." },
+                { id: "svc-2", title: "التحسين الجراحي والتكتل المكاني", icon: "fa-solid fa-map-location-dot", description: "هيكلة وتحديث الحسابات الجغرافية لرفع الترتيب المحلي وتفجير حركة المكالمات المباشرة." },
+                { id: "svc-3", title: "الحوكمة وفصل السلطات التقنية", icon: "fa-solid fa-shield-halved", description: "إعادة هندسة الصلاحيات الرقمية لقطع تبعية الإدارة العليا للشركات الوسيطة النازفة." }
             ]
         };
 
-        // Active Application State (Pulls from LocalStorage or template)
         let siteData = {};
-        let appTheme = localStorage.getItem('theme') || 'light';
-        let currentQuizStep = 1;
-        let quizScore = 0;
-        let selectedCompanyMultiplier = 1.0;
-        let selectedCompanyLabel = "ناشئة / صغيرة";
 
-        // DOM Initialization
         window.onload = function() {
-            // Load CMS Site data
-            loadSiteState();
-
-            // Set Theme setting
-            if (appTheme === 'dark') {
-                document.documentElement.classList.add('dark');
-                document.getElementById('themeIcon').className = 'fa-solid fa-sun';
-            } else {
-                document.documentElement.classList.remove('dark');
-                document.getElementById('themeIcon').className = 'fa-solid fa-moon';
+            if(!localStorage.getItem('salah_baghdad_v4')) {
+                localStorage.removeItem('salah_office_cms_state');
+                localStorage.setItem('salah_baghdad_v4', 'true');
             }
-
-            // Apply system date
+            loadSiteState();
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-            // Compute Estimator Initial values
-            calculateCost();
         };
 
-        // CMS State Loader and Render Engine
         function loadSiteState() {
             const savedState = localStorage.getItem('salah_office_cms_state');
-            if (savedState) {
-                try {
-                    siteData = JSON.parse(savedState);
-                } catch (e) {
-                    siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
-                }
-            } else {
-                siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
-            }
+            siteData = savedState ? JSON.parse(savedState) : JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
             renderAllCmsElements();
         }
 
-        // Render Data dynamically across all HTML sections
         function renderAllCmsElements() {
-            // Header Logo
             document.getElementById('headerLogoMain').textContent = siteData.general.logoMain;
             document.getElementById('headerLogoSub').textContent = siteData.general.logoSub;
-
-            // Running Marquee
-            document.getElementById('welcomeMarquee').innerHTML = `
-                <span>${siteData.general.marqueeText}</span>
-                <span>•</span>
-                <span>${siteData.general.marqueeText}</span>
-            `;
-
-            // Hero Section Texts
+            document.getElementById('welcomeMarquee').innerHTML = <span>${siteData.general.marqueeText}</span><span> • </span><span>${siteData.general.marqueeText}</span>;
             document.getElementById('heroBadge').textContent = siteData.general.heroBadge;
-            document.getElementById('heroTitle').innerHTML = siteData.general.heroTitle.replace("لمؤسستك", "<br class='hidden sm:inline'><span class='text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-amber-500'>لمؤسستك");
+            document.getElementById('heroTitle').innerHTML = siteData.general.heroTitle;
             document.getElementById('heroDescription').textContent = siteData.general.heroDescription;
             document.getElementById('heroCardName').textContent = siteData.general.heroCardName;
             document.getElementById('heroCardTitle').textContent = siteData.general.heroCardTitle;
             document.getElementById('heroQuote').textContent = siteData.general.heroQuote;
-
-            // About Texts
             document.getElementById('aboutSubtitle').textContent = siteData.general.aboutSubtitle;
             document.getElementById('aboutMainTitle').textContent = siteData.general.aboutMainTitle;
             document.getElementById('aboutMainText').textContent = siteData.general.aboutMainText;
-
-            // Footer Texts
-            document.getElementById('footerTitle').textContent = siteData.general.logoMain;
-            document.getElementById('footerSubtitle').textContent = siteData.general.logoSub;
-
-            // Contact Info
             document.getElementById('contactAddress').textContent = siteData.contact.address;
             document.getElementById('contactEmail').textContent = siteData.contact.email;
             document.getElementById('contactPhone').textContent = siteData.contact.phone;
-
-            // WhatsApp floating widget setup
-            const customMessage = encodeURIComponent(`مرحباً مكتب المستشار صلاح حسن إبراهيم، أود طلب استشارة حول السيادة الرقمية وإدارة السمعة لشركتنا.`);
-            const whatsappLink = `https://wa.me/${siteData.contact.whatsapp}?text=${customMessage}`;
+            
+            const whatsappLink = https://wa.me/${siteData.contact.whatsapp}?text=${encodeURIComponent('مرحباً مكتب المستشار صلاح حسن، أود حجز جلسة معالجة للإنقاذ والتوحيد الرقمي.')};
             document.getElementById('whatsappFloat').href = whatsappLink;
             document.getElementById('contactWhatsappLink').href = whatsappLink;
 
-            // Render Services Grid
             const servicesGrid = document.getElementById('dynamicServicesGrid');
-            servicesGrid.innerHTML = '';
-            
-            // Populating Booking service dropdown options dynamically as well
             const bookingSelect = document.getElementById('bookingServiceSelect');
-            bookingSelect.innerHTML = '';
-
-            siteData.services.forEach(svc => {
-                // Svc Grid Card
-                const card = document.createElement('div');
-                card.className = "bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl hover:-translate-y-2 transition-all duration-300 border border-primary-100 dark:border-primary-800 flex flex-col justify-between group";
-                card.innerHTML = `
-                    <div class="space-y-4">
-                        <div class="w-14 h-14 rounded-xl bg-gold-100 dark:bg-gold-950/60 flex items-center justify-center text-gold-600 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-all duration-300">
-                            <i class="${svc.icon} text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary-900 dark:text-white">${svc.title}</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">${svc.description}</p>
-                    </div>
-                    <a href="#contact" onclick="selectBookingService('${svc.title}')" class="inline-flex items-center gap-2 text-gold-600 dark:text-gold-400 font-bold text-sm pt-6 hover:underline">
-                        احجز الخدمة الآن <i class="fa-solid fa-arrow-left"></i>
-                    </a>
-                `;
-                servicesGrid.appendChild(card);
-
-                // Option in dropdown
-                const opt = document.createElement('option');
-                opt.value = svc.title;
-                opt.textContent = svc.title;
-                bookingSelect.appendChild(opt);
-            });
-
-            // Render Testimonials Grid
-            const testGrid = document.getElementById('dynamicTestimonialsGrid');
-            testGrid.innerHTML = '';
-            siteData.testimonials.forEach(test => {
-                // Generate stars
-                let starsHTML = '';
-                const starCount = parseFloat(test.stars);
-                for (let i = 1; i <= 5; i++) {
-                    if (i <= starCount) {
-                        starsHTML += '<i class="fa-solid fa-star"></i>';
-                    } else if (i - 0.5 <= starCount) {
-                        starsHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
-                    } else {
-                        starsHTML += '<i class="fa-regular fa-star"></i>';
-                    }
-                }
-
-                const card = document.createElement('div');
-                card.className = "bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl border border-primary-100 dark:border-primary-800 space-y-6";
-                card.innerHTML = `
-                    <div class="flex gap-1 text-gold-500">
-                        ${starsHTML}
-                    </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 italic">"${test.text}"</p>
-                    <div class="flex items-center gap-3 border-t border-primary-100 dark:border-primary-800 pt-4">
-                        <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-800 flex items-center justify-center font-bold text-primary-800 dark:text-white text-xs">
-                            ${test.name.substring(0, 2)}
-                        </div>
-                        <div>
-                            <span class="block font-bold text-sm text-primary-900 dark:text-white">${test.name}</span>
-                            <span class="block text-xs text-slate-400">${test.title}</span>
-                        </div>
-                    </div>
-                `;
-                testGrid.appendChild(card);
-            });
-
-            // Populate CMS inputs to be ready with actual values
-            document.getElementById('inpLogoMain').value = siteData.general.logoMain;
-            document.getElementById('inpLogoSub').value = siteData.general.logoSub;
-            document.getElementById('inpMarqueeText').value = siteData.general.marqueeText;
-            document.getElementById('inpHeroBadge').value = siteData.general.heroBadge;
-            document.getElementById('inpHeroTitle').value = siteData.general.heroTitle;
-            document.getElementById('inpHeroDesc').value = siteData.general.heroDescription;
-            document.getElementById('inpHeroQuote').value = siteData.general.heroQuote;
-            document.getElementById('inpAboutSubtitle').value = siteData.general.aboutSubtitle;
-            document.getElementById('inpAboutTitle').value = siteData.general.aboutTitle;
-            document.getElementById('inpAboutText').value = siteData.general.aboutMainText;
-
-            // Contact tab CMS inputs
-            document.getElementById('inpContactAddress').value = siteData.contact.address;
-            document.getElementById('inpContactEmail').value = siteData.contact.email;
-            document.getElementById('inpContactPhone').value = siteData.contact.phone;
-            document.getElementById('inpContactWhatsapp').value = siteData.contact.whatsapp;
-
-            // Render CMS Panel Management Lists
-            renderCmsServicesList();
-            renderCmsTestimonialsList();
-        }
-
-        // Dropdown Auto-select helper
-        function selectBookingService(title) {
-            const select = document.getElementById('bookingServiceSelect');
-            select.value = title;
-        }
-
-        // Render Services inside CMS manager list
-        function renderCmsServicesList() {
-            const listContainer = document.getElementById('cmsServicesList');
-            if(!listContainer) return;
-            listContainer.innerHTML = '';
-            siteData.services.forEach(svc => {
-                const item = document.createElement('div');
-                item.className = "flex items-center justify-between p-3 bg-primary-100/50 dark:bg-primary-950/80 border dark:border-primary-800 rounded-lg text-xs";
-                item.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <i class="${svc.icon} text-gold-500 text-sm"></i>
-                        <div>
-                            <span class="font-bold block">${svc.title}</span>
-                        </div>
-                    </div>
-                    <button onclick="deleteServiceFromCms('${svc.id}')" class="text-red-500 hover:text-red-700 font-bold px-2 py-1"><i class="fa-solid fa-trash-can"></i></button>
-                `;
-                listContainer.appendChild(item);
-            });
-        }
-
-        // Add service handler in CMS
-        function addServiceFromCms() {
-            const title = document.getElementById('addSvcTitle').value.trim();
-            const icon = document.getElementById('addSvcIcon').value.trim() || 'fa-solid fa-shield';
-            const desc = document.getElementById('addSvcDesc').value.trim();
-
-            if (!title || !desc) {
-                showNotificationModal("خطأ إدخال", "يرجى تعبئة اسم الخدمة الاستشارية والوصف أولاً لتتمكن من إضافتها.");
-                return;
-            }
-
-            const newService = {
-                id: 'svc-' + Date.now(),
-                title: title,
-                icon: icon,
-                description: desc
-            };
-
-            siteData.services.push(newService);
-            renderCmsServicesList();
-
-            // Clear inputs
-            document.getElementById('addSvcTitle').value = '';
-            document.getElementById('addSvcIcon').value = '';
-            document.getElementById('addSvcDesc').value = '';
-
-            showNotificationModal("إضافة مؤقتة ناجحة", "تمت إضافة الخدمة الجديدة لقائمتك. يرجى الضغط على زر 'حفظ التغييرات الآن' أسفل لوحة التحكم لتطبيقها على الموقع بالكامل.");
-        }
-
-        // Delete service in CMS
-        function deleteServiceFromCms(id) {
-            siteData.services = siteData.services.filter(svc => svc.id !== id);
-            renderCmsServicesList();
-        }
-
-        // Render Testimonials inside CMS manager list
-        function renderCmsTestimonialsList() {
-            const listContainer = document.getElementById('cmsTestimonialsList');
-            if(!listContainer) return;
-            listContainer.innerHTML = '';
-            siteData.testimonials.forEach(test => {
-                const item = document.createElement('div');
-                item.className = "flex items-center justify-between p-3 bg-primary-100/50 dark:bg-primary-950/80 border dark:border-primary-800 rounded-lg text-xs";
-                item.innerHTML = `
-                    <div>
-                        <span class="font-bold block">${test.name}</span>
-                        <span class="text-[10px] text-slate-400 block">${test.title}</span>
-                    </div>
-                    <button onclick="deleteTestimonialFromCms('${test.id}')" class="text-red-500 hover:text-red-700 font-bold px-2 py-1"><i class="fa-solid fa-trash-can"></i></button>
-                `;
-                listContainer.appendChild(item);
-            });
-        }
-
-        // Add testimonial handler in CMS
-        function addTestimonialFromCms() {
-            const name = document.getElementById('addTestName').value.trim();
-            const title = document.getElementById('addTestTitle').value.trim();
-            const stars = document.getElementById('addTestStars').value;
-            const text = document.getElementById('addTestText').value.trim();
-
-            if (!name || !text) {
-                showNotificationModal("خطأ إدخال", "يرجى ملء اسم العميل ورأيه لحفظ التوصية في الموقع.");
-                return;
-            }
-
-            const newTest = {
-                id: 'test-' + Date.now(),
-                name: name,
-                title: title || 'شريك نجاح',
-                stars: stars,
-                text: text
-            };
-
-            siteData.testimonials.push(newTest);
-            renderCmsTestimonialsList();
-
-            // Clear inputs
-            document.getElementById('addTestName').value = '';
-            document.getElementById('addTestTitle').value = '';
-            document.getElementById('addTestText').value = '';
-
-            showNotificationModal("تجهيز رأي العميل", "تمت إضافة شهادة العميل بنجاح. اضغط على زر 'حفظ التغييرات الآن' في الأسفل لتثبيت هذا الرأي في الواجهة الأمامية للموقع.");
-        }
-
-        // Delete testimonial in CMS
-        function deleteTestimonialFromCms(id) {
-            siteData.testimonials = siteData.testimonials.filter(test => test.id !== id);
-            renderCmsTestimonialsList();
-        }
-
-        // Save CMS updates to LocalStorage and refresh
-        function saveAndApplyCmsChanges() {
-            // Pick up input texts
-            siteData.general.logoMain = document.getElementById('inpLogoMain').value;
-            siteData.general.logoSub = document.getElementById('inpLogoSub').value;
-            siteData.general.marqueeText = document.getElementById('inpMarqueeText').value;
-            siteData.general.heroBadge = document.getElementById('inpHeroBadge').value;
-            siteData.general.heroTitle = document.getElementById('inpHeroTitle').value;
-            siteData.general.heroDescription = document.getElementById('inpHeroDesc').value;
-            siteData.general.heroQuote = document.getElementById('inpHeroQuote').value;
-            siteData.general.aboutSubtitle = document.getElementById('inpAboutSubtitle').value;
-            siteData.general.aboutTitle = document.getElementById('inpAboutTitle').value;
-            siteData.general.aboutMainText = document.getElementById('inpAboutText').value;
-
-            // Contact inputs
-            siteData.contact.address = document.getElementById('inpContactAddress').value;
-            siteData.contact.email = document.getElementById('inpContactEmail').value;
-            siteData.contact.phone = document.getElementById('inpContactPhone').value;
-            siteData.contact.whatsapp = document.getElementById('inpContactWhatsapp').value;
-
-            // Save to LocalStorage
-            localStorage.setItem('salah_office_cms_state', JSON.stringify(siteData));
-
-            // Re-render
-            renderAllCmsElements();
-            
-            // Re-calculate cost since parameters might have shifted
-            calculateCost();
-
-            // Hide Admin panel
-            toggleAdminPanel();
-
-            showNotificationModal("تم الحفظ والتطبيق فوريًا!", "لقد تم تحديث وتغيير كافة نصوص وعناصر موقع مكتب المستشار صلاح حسن إبراهيم وفقاً لتعديلاتك وحفظها بنجاح.");
-        }
-
-        // Reset CMS settings to original defaults
-        function restoreDefaultConfig() {
-            if (confirm("هل أنت متأكد من رغبتك في إلغاء كافة التعديلات والعودة للنسخة الأصلية للموقع؟")) {
-                localStorage.removeItem('salah_office_cms_state');
-                loadSiteState();
-                toggleAdminPanel();
-                showNotificationModal("تمت إعادة التعيين", "تم استرجاع النسخة الأصلية والتصميم الافتراضي لموقع مكتب المستشار صلاح حسن.");
+            if(servicesGrid && bookingSelect) {
+                servicesGrid.innerHTML = '';
+                bookingSelect.innerHTML = '';
+                siteData.services.forEach(svc => {
+                    servicesGrid.innerHTML += `
+                        <div class="bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl border border-primary-100 dark:border-primary-800">
+                            <div class="w-14 h-14 rounded-xl bg-gold-100 flex items-center justify-center text-gold-600 mb-4"><i class="${svc.icon} text-2xl"></i></div>
+                            <h3 class="text-xl font-bold mb-2">${svc.title}</h3>
+                            <p class="text-sm text-slate-500">${svc.description}</p>
+                        </div>`;
+                    bookingSelect.innerHTML += <option value="${svc.title}">${svc.title}</option>;
+                });
             }
         }
-
-        // Export data backup JSON
-        function exportSiteBackup() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(siteData, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "salah_consultant_site_backup.json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-        }
-
-        // Import data backup JSON
-        function importSiteBackup() {
-            const fileInput = document.getElementById('importJsonFileInput');
-            const file = fileInput.files[0];
-            if (!file) {
-                showNotificationModal("لم يتم اختيار ملف", "يرجى تحديد ملف النسخة الاحتياطية بصيغة .json من جهازك أولاً.");
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const parsedData = JSON.parse(e.target.result);
-                    // Minimal validation
-                    if (parsedData.general && parsedData.services && parsedData.testimonials) {
-                        siteData = parsedData;
-                        localStorage.setItem('salah_office_cms_state', JSON.stringify(siteData));
-                        renderAllCmsElements();
-                        calculateCost();
-                        toggleAdminPanel();
-                        showNotificationModal("تم استيراد بنجاح", "تمت قراءة ملف JSON وتطبيق تصميم ومحتوى موقعك المخصص فورياً بنجاح تام.");
-                    } else {
-                        showNotificationModal("ملف غير صالح", "مضمون ملف JSON غير متوافق مع نظام إدارة الموقع المحدث.");
-                    }
-                } catch (err) {
-                    showNotificationModal("فشل في القراءة", "لم نتمكن من تحليل وقراءة الملف. تأكد من أن الملف بصيغة JSON سليمة.");
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        // Toggle Admin CMS panel display
-        function toggleAdminPanel() {
-            const panel = document.getElementById('adminPanel');
-            panel.classList.toggle('hidden');
-            panel.classList.toggle('flex');
-        }
-
-        // Navigation inside Admin tabbed menus
-        function switchAdminTab(tabName) {
-            document.querySelectorAll('.admin-tab').forEach(tab => {
-                tab.classList.remove('active', 'border-gold-500', 'text-gold-600');
-                tab.classList.add('border-transparent');
-            });
-            document.querySelectorAll('.admin-sect').forEach(sect => {
-                sect.classList.add('hidden');
-            });
-
-            document.getElementById(`tab-${tabName}`).classList.add('active', 'border-gold-500', 'text-gold-600');
-            document.getElementById(`admin-sect-${tabName}`).classList.remove('hidden');
-        }
-
-        // Theme Toggle Functionality
-        function toggleTheme() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                document.getElementById('themeIcon').className = 'fa-solid fa-moon';
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                document.getElementById('themeIcon').className = 'fa-solid fa-sun';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Mobile Menu Trigger
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Digital Maturity Quiz Logic
-        function nextQuizStep(step, points) {
-            quizScore += points;
-            
-            // Hide current step
-            const currentStepEl = document.querySelector(`.quiz-step[data-step="${step}"]`);
-            if (currentStepEl) currentStepEl.classList.add('hidden');
-            
-            const nextStep = step + 1;
-            const progressPercentage = (nextStep / 5) * 100;
-            document.getElementById('quizProgress').style.width = `${progressPercentage}%`;
-
-            if (nextStep <= 5) {
-                // Show next step
-                const nextStepEl = document.querySelector(`.quiz-step[data-step="${nextStep}"]`);
-                if (nextStepEl) nextStepEl.classList.remove('hidden');
-            } else {
-                // Show results page
-                showQuizResults();
-            }
-        }
-
-        function showQuizResults() {
-            document.getElementById('quizResult').classList.remove('hidden');
-            document.getElementById('quizScoreDisplay').textContent = quizScore;
-            
-            const levelTitle = document.getElementById('resultLevelTitle');
-            const levelDesc = document.getElementById('resultLevelDesc');
-            const resultAdvice = document.getElementById('resultAdvice');
-            
-            if (quizScore >= 12) {
-                levelTitle.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500"></i>مستوى متقدم (نضج رائد)`;
-                levelDesc.textContent = "تمتلك مؤسستك أساسات رقمية قوية وثقافة عمل مرنة تتكيف سريعاً مع التقنيات الناشئة وأدوات السيادة الرقمية والذكاء الاصطناعي بنجاح.";
-                resultAdvice.textContent = "ركز الآن مع مكتبنا على الابتكار الاستباقي وحماية البنية السيبرانية من التهديدات الخارجية لضمان السيطرة والهيمنة الكاملة على السمعة المؤسسية لشركتك.";
-            } else if (quizScore >= 7) {
-                levelTitle.innerHTML = `<i class="fa-solid fa-circle-exclamation text-amber-500"></i>مستوى متوسط (نضج ناشئ)`;
-                levelDesc.textContent = "تستخدم بعض الحلول التقنية ولكن هناك فجوات في ربط البيانات وحوكمتها مما يعرض السمعة المؤسسية لثغرات غير مرغوبة.";
-                resultAdvice.textContent = "ننصحك بالبدء فوراً في إعادة هندسة العمليات وتوحيد قواعد البيانات السحابية الحصينة، وتطوير بروتوكولات حماية السمعة الرقمية للحد من الأزمات الإعلامية.";
-            } else {
-                levelTitle.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-red-500"></i>مستوى حرج (تقليـدي)`;
-                levelDesc.textContent = "مؤسستك تدار كلياً أو جزئياً بالطرق الورقية التقليدية، وتواجه مخاطر فقدان البيانات وهشاشة السمعة الرقمية بالكامل أمام المنافسين.";
-                resultAdvice.textContent = "أنت بحاجة ماسة وعاجلة إلى تصميم خطة سيادة رقمية وحماية للسمعة. ننصح بالبدء فوراً بجلسة استشارية عاجلة مع مكتب المستشار صلاح حسن إبراهيم لإيقاف النزيف التشغيلي.";
-            }
-        }
-
-        function resetQuiz() {
-            quizScore = 0;
-            document.getElementById('quizProgress').style.width = '20%';
-            document.getElementById('quizResult').classList.add('hidden');
-            document.querySelectorAll('.quiz-step').forEach(step => step.classList.add('hidden'));
-            document.querySelector('.quiz-step[data-step="1"]').classList.remove('hidden');
-        }
-
-        // Estimator Calculations
-        function updateHoursRange(value) {
-            document.getElementById('estHoursDisplay').textContent = value;
-            calculateCost();
-        }
-
-        function setEstCompanySize(size, multiplier, element) {
-            selectedCompanyMultiplier = multiplier;
-            
-            if (size === 'small') selectedCompanyLabel = "ناشئة / صغيرة";
-            else if (size === 'medium') selectedCompanyLabel = "متوسطة";
-            else selectedCompanyLabel = "كبيرة / كبرى";
-
-            // Update UI buttons styling
-            document.querySelectorAll('.est-size-btn').forEach(btn => {
-                btn.classList.remove('active', 'border-gold-500', 'bg-gold-50/50', 'dark:bg-gold-950/20', 'text-gold-600', 'dark:text-gold-400');
-                btn.classList.add('border-primary-300', 'dark:border-primary-700', 'bg-white', 'dark:bg-primary-950', 'text-slate-600', 'dark:text-slate-300');
-            });
-            
-            element.classList.remove('border-primary-300', 'dark:border-primary-700', 'bg-white', 'dark:bg-primary-950', 'text-slate-600', 'dark:text-slate-300');
-            element.classList.add('active', 'border-gold-500', 'bg-gold-50/50', 'dark:bg-gold-950/20', 'text-gold-600', 'dark:text-gold-400');
-            
-            calculateCost();
-        }
-
-        function calculateCost() {
-            const selectEl = document.getElementById('estService');
-            if(!selectEl) return;
-            const baseRate = parseInt(selectEl.options[selectEl.selectedIndex].getAttribute('data-rate'));
-            const hours = parseInt(document.getElementById('estHours').value);
-            const isUrgent = document.getElementById('estUrgent').checked;
-
-            let subtotal = baseRate * hours * selectedCompanyMultiplier;
-            let urgentFee = 0;
-
-            if (isUrgent) {
-                urgentFee = subtotal * 0.25;
-            }
-
-            const total = subtotal + urgentFee;
-
-            // Update display
-            document.getElementById('estBaseRate').textContent = `$${baseRate}/ساعة`;
-            document.getElementById('estSizeMultiplier').textContent = `${selectedCompanyMultiplier}x (${selectedCompanyLabel})`;
-            document.getElementById('estUrgentLabel').textContent = isUrgent ? `+$${urgentFee.toFixed(0)} (25%)` : 'لا يوجد';
-            document.getElementById('estTotalCost').textContent = `$${total.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
-        }
-
-        function bookCalculatedConsultation() {
-            const serviceName = document.getElementById('estService').options[document.getElementById('estService').selectedIndex].text;
-            const hours = document.getElementById('estHours').value;
-            const total = document.getElementById('estTotalCost').textContent;
-
-            // Fill & scroll to booking form
-            const textarea = document.querySelector('#bookingForm textarea');
-            textarea.value = `أود طلب حجز موعد استشاري للخدمة: [${serviceName}] بحجم منشأة: [${selectedCompanyLabel}] لعدد ساعات تقديرية: [${hours} ساعات]. التكلفة التقديرية بالحاسبة هي: [${total}].`;
-            
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            
-            showNotificationModal("تجهيز حاسبة الاستشارات", "تم نقل تفاصيل تقدير الحساب بنجاح لنموذج الحجز أدناه. يرجى إكمال إدخال بيانات تواصلك لإرسال الطلب بشكل رسمي.");
-        }
-
-        // Notifications Modal Helpers
-        function showNotificationModal(title, msg) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalMessage').textContent = msg;
-            
-            const modal = document.getElementById('notificationModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        // Close custom notifications modal
-        function closeNotificationModal() {
-            const modal = document.getElementById('notificationModal');
-            if(modal){
-                modal.classList.remove('flex');
-                modal.classList.add('hidden');
-            }
-        }
-
-        // Form Submit
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            showNotificationModal("تم استلام طلبك بنجاح!", `نشكرك لثقتك بمكتب المستشار صلاح حسن إبراهيم. تم تسجيل طلب استشارتك بنجاح وجاري فحص ملف شركتك، وسيتواصل معك منسق المكتب عبر الواتساب أو الهاتف لتأكيد موعد المقابلة الاستكشافية الأولى مجاناً.`);
-            e.target.reset();
-        }
-
-        // Newsletter Subscription
-        function handleNewsletterSubmit(e) {
-            e.preventDefault();
-            showNotificationModal("تم الاشتراك بنجاح!", "يسعدنا انضمامك لقائمتنا البريدية. سنقوم بإرسال النشرات الاستشارية المتخصصة في السيادة الرقمية وإدارة السمعة شهرياً بشكل مباشر لبريدك.");
-            e.target.reset();
-        }
-
-        // Live Chat Assistant (Gemini API Integration with Exponential Backoff)
-        async function fetchGeminiWithBackoff(userQuery, systemPrompt) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] }
-            };
-            
-            let delay = 1000;
-            for (let i = 0; i < 5; i++) {
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (response.ok) {
-                        return await response.json();
-                    }
-                } catch (e) {
-                    // Backoff retries
-                }
-                await new Promise(resolve => setTimeout(resolve, delay));
-                delay *= 2;
-            }
-            throw new Error("فشل الاتصال بخدمة الذكاء الاصطناعي بعد عدة محاولات.");
-        }
-
-        async function handleChatSubmit(e) {
-            e.preventDefault();
-            const inputEl = document.getElementById('chatInput');
-            const query = inputEl.value.trim();
-            if (!query) return;
-
-            // Clear input
-            inputEl.value = '';
-
-            // Render user message
-            appendChatMessage(query, 'user');
-
-            // Render temporary waiting placeholder response
-            const placeholderId = appendChatMessage('قيد التفكير وتوليد النصائح الاستشارية والمحاكاة...', 'bot-loading');
-
-            const systemPrompt = `أنت المساعد الرقمي الافتراضي والتوأم الذكي لمكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي. اسمك 'مستشار صلاح الرقمي'. أنت خبير في السيادة الرقمية وإدارة السمعة المؤسسية والأمن السيبراني في العراق والوطن العربي. تحدث بلغة استشارية راقية، ملهمة، واحترافية باللغة العربية. قدم إرشادات ونقاط نصائح عملية في استراتيجيات الإدارة والتحول الرقمي والتقنية والسمعة المؤسسية استناداً لخبرة واسعة. شجع العميل على حجز موعد مع المستشار الحقيقي 'صلاح حسن إبراهيم' لمراجعة أعمق وتطبيق عملي من خلال النماذج والوسائل المتاحة بالموقع أو التواصل الفوري عبر الواتساب المتاح بالموقع على الرقم ${siteData.contact.whatsapp} أو هاتف المكتب المباشر ${siteData.contact.phone} أو إرسال بريد إلكتروني إلى ${siteData.contact.email}، ومقرنا هو العراق - بغداد.`;
-
-            try {
-                const responseData = await fetchGeminiWithBackoff(query, systemPrompt);
-                const answerText = responseData.candidates?.[0]?.content?.parts?.[0]?.text || "نأسف، لم نتمكن من الحصول على رد مناسب حالياً. يرجى المحاولة لاحقاً.";
-                
-                removeMessageElement(placeholderId);
-                appendChatMessage(answerText, 'bot');
-            } catch (err) {
-                removeMessageElement(placeholderId);
-                appendChatMessage(`عذراً، يبدو أن هناك ضغطاً مؤقتاً على خوادم الذكاء الاصطناعي. تفضل بالتواصل معنا عبر واتساب المكتب المباشر ${siteData.contact.whatsapp} أو اترك رسالتك بطلب الاستشارة بالأسفل لحجز موعد استثنائي مجاني.`, 'bot-error');
-            }
-        }
-
-        function appendChatMessage(text, sender) {
-            const container = document.getElementById('chatMessages');
-            const msgId = 'msg-' + Date.now() + Math.random().toString(36).substr(2, 4);
-
-            const wrapper = document.createElement('div');
-            wrapper.id = msgId;
-            wrapper.className = 'flex items-start gap-3 max-w-[85%] ' + (sender === 'user' ? 'mr-auto flex-row-reverse' : 'ml-auto');
-
-            let avatar = '';
-            let bubbleClass = '';
-            
-            if (sender === 'user') {
-                avatar = `<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-user text-sm"></i></div>`;
-                bubbleClass = `bg-gold-500 text-white rounded-2xl rounded-tl-none p-4 shadow-sm border border-gold-600`;
-            } else {
-                avatar = `<div class="w-8 h-8 rounded-full bg-gold-600 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-user-tie text-sm"></i></div>`;
-                if (sender === 'bot-loading') {
-                    bubbleClass = `bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border border-primary-200 dark:border-primary-800 shadow-sm text-slate-400 italic animate-pulse`;
-                } else if (sender === 'bot-error') {
-                    bubbleClass = `bg-red-50 dark:bg-red-950/20 p-4 rounded-2xl rounded-tr-none border border-red-200 dark:border-red-900 shadow-sm text-red-500 text-xs`;
-                } else {
-                    bubbleClass = `bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border border-primary-200 dark:border-primary-800 shadow-sm text-slate-800 dark:text-slate-100`;
-                }
-            }
-
-            wrapper.innerHTML = `
-                ${avatar}
-                <div class="${bubbleClass}">
-                    <p class="text-sm leading-relaxed">${text}</p>
-                    <span class="block text-[10px] text-slate-400 mt-2 text-left">الآن</span>
-                </div>
-            `;
-
-            container.appendChild(wrapper);
-            container.scrollTop = container.scrollHeight;
-            return msgId;
-        }
-
-        function removeMessageElement(id) {
-            const el = document.getElementById(id);
-            if (el) el.remove();
-        }
-
-        function clearChat() {
-            const container = document.getElementById('chatMessages');
-            container.innerHTML = `
-                <div class="flex items-start gap-3 max-w-[85%]">
-                    <div class="w-8 h-8 rounded-full bg-gold-600 text-white flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-user-tie text-sm"></i>
-                    </div>
-                    <div class="bg-white dark:bg-primary-950 p-4 rounded-2xl rounded-tr-none border border-primary-200 dark:border-primary-800 shadow-sm">
-                        <p class="text-sm leading-relaxed text-slate-800 dark:text-slate-100">
-                            مرحباً بك مجدداً في مكتب المستشار صلاح حسن إبراهيم. تم تفريغ سجل المحادثة بنجاح، ويسعدني الإجابة عن أي استشارات فنية أو إدارية جديدة ترغب بها. تفضل بطلبك الاستشاري الآن.
-                        </p>
-                        <span class="block text-[10px] text-slate-400 mt-2 text-left">الآن</span>
-                    </div>
-                </div>
-            `;
-        }
+        function toggleTheme() { document.documentElement.classList.toggle('dark'); }
     </script>
 </body>
 </html>

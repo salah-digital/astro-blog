@@ -68,7 +68,7 @@ export const SOCIALS: SocialObjects = [
   },
 ];
 
-// البيانات السيادية المحدثة للمستشار صلاح حسن إبراهيم (التوطين: بغداد، العراق)
+// البيانات السيادية المحدثة للمستشار صلاح حسن إبراهيم (التوطين والسيادة: بغداد، العراق)
 export const CONSULTANT_PROFILE = {
   identity: {
     name: "المستشار صلاح حسن إبراهيم",
@@ -83,7 +83,7 @@ export const CONSULTANT_PROFILE = {
   },
   globalAuthority: {
     googleMapsRank: "مرشد محلي من الدرجة العاشرة (Level 10 Local Guide) في خرائط جوجل",
-    presidency: "رئيس مركز الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF)",
+    presidency: "رئيس matrix الشرق الأوسط للتنمية والحريات الإعلامية (MECDEF)",
   },
   journalismAndMedia: {
     platform: "موقع الجزيرة نت",

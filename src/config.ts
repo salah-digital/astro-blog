@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://salah-digital.com/",
   author: "المستشار صلاح حسن إبراهيم",
-  desc: "منصة استراتيجية مستقلة لتقديم الاستشارات المهنية، التطوير الرقمي، وبناء منظومات السيادة الرقمية للمؤسسات.",
+  desc: "المنصة الاستراتيجية المعتمدة لتقديم استشارات السيادة الرقمية، هندسة السمعة المؤسسية، وبناء منظومات الحصن الرقمي في العراق والشرق الأوسط.",
   title: "مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -34,7 +34,7 @@ export const SOCIALS: SocialObjects = [
     name: "Facebook",
     href: "https://facebook.com",
     linkTitle: `${SITE.title} on Facebook`,
-    active: true,
+    active: false,
   },
   {
     name: "Instagram",
@@ -68,7 +68,7 @@ export const SOCIALS: SocialObjects = [
   },
 ];
 
-// البيانات السيادية المحدثة للمستشار صلاح حسن إبراهيم
+// البيانات السيادية المحدثة للمستشار صلاح حسن إبراهيم (التوطين: بغداد، العراق)
 export const CONSULTANT_PROFILE = {
   identity: {
     name: "المستشار صلاح حسن إبراهيم",
@@ -94,6 +94,6 @@ export const CONSULTANT_PROFILE = {
     "إدارة وتطوير الشراكات الاستراتيجية الكبرى",
     "تحقيق السيادة الرقمية وإدارة السمعة المؤسسية وتطهير الفضاء الرقمي",
     "تطوير وتحديث عمل المؤسسات وتواجدها الرقمي السيادي لإنهاء النزيف التقني",
-    "توطين الأصول البرمجية بنسبة مية بالمية تحت سلطة الإدارة العليا"
+    "توطين الأصول البرمجية بنسبة 100% تحت سلطة الإدارة العليا"
   ]
 };

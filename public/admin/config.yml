@@ -1,12 +1,13 @@
 backend:
   name: github
-  repo: "salah-digital/astro-blog" # يرجى استبدال "salah-digital" باسم مستخدم الغيت هاب الخاص بك بدقة إذا كان مختلفاً
+  repo: "salah-digital/astro-blog"
   branch: main
+  base_url: "https://salah-cms-auth.salahibrahim131.workers.dev"
 
 media_folder: "public/images"
 public_folder: "/images"
 
-locale: 'ar' # تعريب اللوحة بالكامل
+locale: 'ar' # تعريب واجهة الإدارة بالكامل
 
 collections:
   - name: "blog"

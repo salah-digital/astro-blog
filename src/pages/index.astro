@@ -50,6 +50,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Cairo', 'sans-serif';
@@ -79,10 +80,42 @@
         }
         .marquee-content {
             display: inline-block;
-            animation: marquee-reverse 55s linear infinite; /* Highly optimized slow speed */
+            animation: marquee-reverse 55s linear infinite;
         }
         .marquee-content:hover {
             animation-play-state: paused;
+        }
+
+        /* HARD FALLBACK CSS RULES (To protect against Tailwind loading blocks on GitHub Pages) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .dark header {
+            background: #1e2531 !important;
+            border-bottom: 1px solid #334155;
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        @media (max-width: 1023px) {
+            nav.hidden {
+                display: none !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            nav.hidden {
+                display: flex !important;
+            }
+            #mobileMenu {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -99,7 +132,7 @@
 
     <!-- Header Navigation -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-primary-950/85 border-b border-primary-200/50 dark:border-primary-800/50 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between w-full">
             <!-- Logo -->
             <div class="flex items-center gap-3 cursor-pointer" onclick="location.hash='#hero'">
                 <div class="bg-gradient-to-tr from-gold-600 to-gold-400 p-2.5 rounded-xl shadow-lg shadow-gold-500/20 hover:rotate-6 transition-transform">
@@ -150,7 +183,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-primary-900 border-t border-primary-100 dark:border-primary-800">
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-primary-900 border-t border-primary-100 dark:border-primary-800 w-full">
             <div class="px-4 pt-2 pb-6 space-y-3">
                 <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">الرئيسية</a>
                 <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold hover:bg-primary-100 dark:hover:bg-primary-800">عن المستشار</a>
@@ -218,13 +251,13 @@
                 </div>
             </div>
 
-            <!-- Right Image Mockup (GitHub Salah.jpg integrated) -->
+            <!-- Right Image Mockup (GitHub Salah.Jpg / Salah.jpg integrated) -->
             <div class="lg:col-span-5 relative">
                 <div class="relative mx-auto w-72 sm:w-80 md:w-96 lg:w-full aspect-square rounded-3xl bg-gradient-to-tr from-primary-800 to-gold-700 p-1 shadow-2xl">
                     <div class="w-full h-full bg-primary-900 rounded-[22px] overflow-hidden relative flex flex-col items-center justify-between p-6 text-center">
                         
-                        <!-- Main Image call. Direct Fallback to Unsplash if Salah.jpg is not yet uploaded on GitHub -->
-                        <img id="heroImageDisplay" src="./Salah.jpg" alt="[صورة المستشار صلاح حسن إبراهيم]" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop';" class="w-28 h-28 rounded-full border-4 border-gold-500/50 object-cover shadow-lg mx-auto mt-4 transition-all hover:scale-105 duration-300">
+                        <!-- Main Image call. Direct Fallback to Unsplash if Salah.Jpg is not yet uploaded on GitHub -->
+                        <img id="heroImageDisplay" src="./Salah.Jpg" alt="[صورة المستشار صلاح حسن إبراهيم]" onerror="handleHeroImageError(this)" class="w-28 h-28 rounded-full border-4 border-gold-500/50 object-cover shadow-lg mx-auto mt-4 transition-all hover:scale-105 duration-300">
                         
                         <div class="space-y-1 relative z-10">
                             <h3 id="heroCardName" class="text-lg font-bold text-white">المستشار صلاح حسن إبراهيم</h3>
@@ -232,7 +265,7 @@
                         </div>
                         
                         <div class="bg-primary-950/80 border border-primary-800/60 p-4 rounded-xl max-w-xs mx-auto mb-2">
-                            <p id="heroQuote" class="text-[11px] text-slate-300 italic leading-relaxed">"التحول الرقمي وحماية السمعة والسيادة الرقمية ليست مجرد أدوات تقنية، بل هي حجر الزاوية لحماية ريادة المؤسسة وبناء ثقة مستدامة."</p>
+                            <p id="heroQuote" class="text-[11px] text-slate-300 italic leading-relaxed">"التحول الرقمي وإدارة السمعة والسيادة الرقمية ليست مجرد أدوات تقنية، بل هي حجر الزاوية لحماية ريادة المؤسسة وبناء ثقة مستدامة."</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +281,7 @@
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-gold-600 to-primary-700 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                     <div class="relative bg-primary-900 rounded-2xl overflow-hidden shadow-2xl">
-                        <img id="aboutImageDisplay" src="about.jpg" alt="[صورة قسم السيادة الرقمية]" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop';" class="w-full h-80 object-cover opacity-85 group-hover:scale-105 transition-transform duration-500">
+                        <img id="aboutImageDisplay" src="./about.jpg" alt="[صورة قسم السيادة الرقمية]" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop';" class="w-full h-80 object-cover opacity-85 group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950 via-transparent to-transparent p-8 flex flex-col justify-end">
                             <h4 class="text-xl font-bold text-gold-400">منهجية مستدامة للأمان والموثوقية</h4>
                             <p class="text-xs text-slate-300 mt-2 leading-relaxed">نساعد المؤسسات والشركات في العراق والمنطقة على امتلاك سيادتها الرقمية وصيانة سمعتها السوقية بأعلى كفاءة ومعايير دولية.</p>
@@ -294,7 +327,7 @@
         </div>
     </section>
 
-    <!-- Articles & Blog Section (CMS DRIVEN) -->
+    <!-- Articles & Blog Section -->
     <section id="articles" class="py-20 bg-white dark:bg-primary-900/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -331,7 +364,7 @@
                     <!-- Question 1 -->
                     <div class="quiz-step active space-y-6" data-step="1">
                         <span class="text-gold-600 dark:text-gold-400 text-sm font-bold">السؤال 1 من 5</span>
-                        <h3 class="text-lg sm:text-xl font-bold text-primary-950 dark:text-white">هل تمتلك مؤسستك موقعاً إلكترونياً أو تطبيقاً تفاعلياً لخدمة العملاء؟</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-primary-950 dark:text-white">هل تمتلك مؤسستك موقعاً إلكترونياً أو تطبيقاً تفاعلياً لخدمة العملاء?</h3>
                         <div class="grid grid-cols-1 gap-3">
                             <button onclick="nextQuizStep(1, 3)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold text-sm">نعم، يعمل بكفاءة عالية ويلبي كافة الاحتياجات.</button>
                             <button onclick="nextQuizStep(1, 2)" class="quiz-btn w-full text-right p-4 rounded-xl border border-primary-300 dark:border-primary-700 bg-white dark:bg-primary-950 hover:bg-gold-50 dark:hover:bg-gold-950/20 hover:border-gold-500 dark:hover:border-gold-500 transition-all font-semibold text-sm">نعم، متوفر ولكنه قديم وبطيء ويحتاج إلى تحديث وتطوير.</button>
@@ -754,10 +787,10 @@
     </a>
 
     <!-- CUSTOM NOTIFICATION MODAL -->
-    <div id="notificationModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+    <div id="notificationModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white dark:bg-primary-900 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 border border-primary-100 dark:border-primary-800 shadow-2xl">
             <div class="w-16 h-16 bg-gold-100 dark:bg-gold-950/60 rounded-full flex items-center justify-center text-gold-600 dark:text-gold-400 text-3xl mx-auto border border-gold-300/30">
-                <i class="fa-solid fa-circle-check animate-pulse"></i>
+                <i class="fa-solid fa-circle-check animate-bounce"></i>
             </div>
             <div>
                 <h4 id="modalTitle" class="text-xl font-bold text-primary-950 dark:text-white">نجاح العملية!</h4>
@@ -767,32 +800,32 @@
         </div>
     </div>
 
-    <!-- CUSTOM CONFIRMATION DIALOG MODAL (Alert/Confirm Alternative) -->
-    <div id="confirmModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+    <!-- CUSTOM CONFIRMATION DIALOG MODAL -->
+    <div id="confirmModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white dark:bg-primary-900 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 border border-primary-100 dark:border-primary-800 shadow-2xl">
             <div class="w-16 h-16 bg-red-100 dark:bg-red-950/50 rounded-full flex items-center justify-center text-red-600 dark:text-red-400 text-3xl mx-auto border border-red-300/30">
-                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
             </div>
             <div>
                 <h4 id="confirmTitle" class="text-xl font-bold text-primary-950 dark:text-white">هل أنت متأكد؟</h4>
-                <p id="confirmMessage" class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">لا يمكنك التراجع عن هذا الإجراء بعد تنفيذه.</p>
+                <p id="confirmMessage" class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">لا يمكنك التراجع عن هذا الإجراء.</p>
             </div>
             <div class="grid grid-cols-2 gap-3 pt-2">
-                <button id="confirmYesBtn" class="py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-xs transition-colors">نعم، متأكد</button>
+                <button id="confirmYesBtn" class="py-2.5 bg-red-600 text-white font-bold rounded-xl text-xs">نعم، متأكد</button>
                 <button onclick="closeConfirmModal()" class="py-2.5 bg-primary-100 dark:bg-primary-800 text-slate-800 dark:text-white font-bold rounded-xl text-xs">إلغاء</button>
             </div>
         </div>
     </div>
 
     <!-- ADMIN LOGIN MODAL -->
-    <div id="adminLoginModal" class="fixed inset-0 z-[99] hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
+    <div id="adminLoginModal" class="fixed inset-0 z-[99] hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
         <div class="bg-white dark:bg-primary-900 rounded-3xl p-6 max-w-md w-full border border-primary-100 dark:border-primary-800 shadow-2xl space-y-4">
             <div class="text-center space-y-2">
                 <div class="w-16 h-16 bg-amber-500/10 dark:bg-amber-500/20 rounded-full flex items-center justify-center text-amber-500 text-3xl mx-auto">
-                    <i class="fa-solid fa-user-shield animate-pulse"></i>
+                    <i class="fa-solid fa-user-shield"></i>
                 </div>
                 <h3 class="text-xl font-bold text-primary-950 dark:text-white">تسجيل دخول المشرف</h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">هذه البوابة مخصصة حصرياً للمستشار صلاح حسن إبراهيم لإدارة محتوى الموقع بالكامل وبشكل مخصّص.</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-normal">هذه البوابة مخصصة حصرياً للمستشار صلاح حسن إبراهيم لإدارة محتوى الموقع بالكامل.</p>
             </div>
 
             <form id="loginForm" onsubmit="handleAdminLogin(event)" class="space-y-4">
@@ -805,7 +838,7 @@
                     <input id="loginPassword" type="password" required placeholder="••••••••" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-300 dark:border-primary-800 p-3 rounded-xl text-xs text-slate-800 dark:text-white focus:outline-none focus:border-gold-500">
                 </div>
                 <div class="grid grid-cols-2 gap-3 pt-2">
-                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold rounded-xl text-xs shadow-lg transition-all">تحقق ودخول</button>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl text-xs shadow-lg">تحقق ودخول</button>
                     <button type="button" onclick="closeAdminLoginModal()" class="w-full py-3 bg-primary-100 dark:bg-primary-800 text-slate-800 dark:text-white font-bold rounded-xl text-xs">إلغاء</button>
                 </div>
             </form>
@@ -897,9 +930,9 @@
                         <input id="inpHeroTitle" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1">رابط صورة المستشار الكبيرة (الافتراضي: Salah.jpg):</label>
-                        <input id="inpHeroImgUrl" type="text" placeholder="./Salah.jpg" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
-                        <span class="text-[10px] text-amber-500 font-semibold">تنويه: اتركها كما هي "./Salah.jpg" ليتم قراءتها مباشرة بعد رفع صورتك الشخصية على مستودع GitHub.</span>
+                        <label class="block text-xs font-bold mb-1">رابط صورة المستشار الكبيرة (الافتراضي: ./Salah.Jpg):</label>
+                        <input id="inpHeroImgUrl" type="text" placeholder="./Salah.Jpg" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <span class="text-[10px] text-amber-500 font-semibold">تنويه: اتركها كما هي "./Salah.Jpg" ليتم قراءتها بعد رفع صورتك باسم "Salah.Jpg" على مستودع GitHub.</span>
                     </div>
                     <div>
                         <label class="block text-xs font-bold mb-1">الوصف الفرعي لـ Hero:</label>
@@ -923,7 +956,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold mb-1">رابط صورة قسم النبذة (About Image URL):</label>
-                        <input id="inpAboutImgUrl" type="text" placeholder="about.jpg" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <input id="inpAboutImgUrl" type="text" placeholder="./about.jpg" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold mb-1">نص النبذة التفصيلي:</label>
@@ -948,7 +981,7 @@
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold mb-0.5">الوصف الاستشاري:</label>
-                        <textarea id="addSvcDesc" rows="2" placeholder="اكتب وصفاً جذاباً وموجزاً عما تقدمه الخدمة للشركات..." class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs"></textarea>
+                        <textarea id="addSvcDesc" rows="2" placeholder="اكتب وصفاً جذاباً عما تقدمه الخدمة للشركات..." class="w-full bg-white dark:bg-primary-900 border dark:border-primary-800 p-2 rounded text-xs"></textarea>
                     </div>
                     <button onclick="addServiceFromCms()" class="w-full py-2 bg-gold-600 hover:bg-gold-700 text-white font-bold text-xs rounded transition-colors">إضافة الخدمة للموقع</button>
                 </div>
@@ -1041,19 +1074,19 @@
                 <div class="space-y-3">
                     <div>
                         <label class="block text-xs font-bold mb-1">الموقع الجغرافي للمقر:</label>
-                        <input id="inpContactAddress" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <input id="inpContactAddress" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-800 p-2.5 rounded-lg text-xs font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold mb-1">البريد الإلكتروني المباشر (تفاعلي):</label>
-                        <input id="inpContactEmail" type="email" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <input id="inpContactEmail" type="email" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-800 p-2.5 rounded-lg text-xs font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold mb-1">رقم الهاتف الرسمي (تفاعلي):</label>
-                        <input id="inpContactPhone" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <input id="inpContactPhone" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-800 p-2.5 rounded-lg text-xs font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold mb-1">رقم الواتساب (تنسيق دولي مباشر مثل 9647706556772):</label>
-                        <input id="inpContactWhatsapp" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <input id="inpContactWhatsapp" type="text" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-800 p-2.5 rounded-lg text-xs font-mono">
                     </div>
                 </div>
 
@@ -1064,7 +1097,7 @@
                 <div class="space-y-3">
                     <div>
                         <label class="block text-xs font-bold mb-1">تعديل كلمة مرور الإدارة الجديدة:</label>
-                        <input id="inpAdminPassword" type="text" placeholder="اكتب كلمة مرور الإدارة الجديدة هنا" class="w-full bg-primary-50 dark:bg-primary-950 border dark:border-primary-800 p-2.5 rounded-lg text-xs font-mono">
+                        <input id="inpAdminPassword" type="text" placeholder="اكتب كلمة مرور الإدارة الجديدة هنا" class="w-full bg-primary-50 dark:bg-primary-950 border border-primary-800 p-2.5 rounded-lg text-xs font-mono">
                     </div>
                 </div>
             </div>
@@ -1124,7 +1157,7 @@
                 heroCardName: "المستشار صلاح حسن إبراهيم",
                 heroCardTitle: "خبير السيادة الرقمية وإدارة السمعة المؤسسية",
                 heroQuote: "\"التحول الرقمي وإدارة السمعة والسيادة الرقمية ليست مجرد أدوات تقنية، بل هي حجر الزاوية لحماية ريادة المؤسسة وبناء ثقة مستدامة.\"",
-                heroImgUrl: "./Salah.jpg", // Pre-targeted for local repository file Salah.jpg
+                heroImgUrl: "./Salah.Jpg", // Pre-targeted for local repository file Salah.Jpg
                 aboutSubtitle: "من هو المستشار صلاح حسن؟",
                 aboutMainTitle: "شغف بالتمكين التكنولوجي والنهوض المؤسسي",
                 aboutMainText: "مستشار وخبير دولي في السيادة الرقمية وإدارة السمعة المؤسسية، قدم العديد من الاستشارات والحلول التقنية والتدريبية لشركات ومؤسسات كبرى في العراق والشرق الأوسط. يعمل على دمج استراتيجيات الأعمال مع التقنيات الناشئة والذكاء الاصطناعي لضمان الأمان السيبراني للبيانات وبناء نماذج عمل ديناميكية ومرنة.",
@@ -1233,6 +1266,38 @@
         let siteData = {};
         let isAdminLoggedIn = false; // Auth Guard State
 
+        // Crash-proof DOM manipulation helpers
+        function safeSetText(id, text) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = text;
+        }
+        function safeSetHTML(id, html) {
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = html;
+        }
+        function safeSetSrc(id, src) {
+            const el = document.getElementById(id);
+            if (el) el.src = src;
+        }
+        function safeSetValue(id, val) {
+            const el = document.getElementById(id);
+            if (el) el.value = val;
+        }
+
+        // Intelligent Image Case Sensitivity Solver for GitHub Pages
+        function handleHeroImageError(img) {
+            if (img.src.includes('Salah.Jpg')) {
+                img.src = './Salah.jpg'; // Try lower J
+            } else if (img.src.includes('Salah.jpg')) {
+                img.src = './salah.jpg'; // Try complete lowercase
+            } else if (img.src.includes('salah.jpg')) {
+                img.src = './Salah.JPG'; // Try capital JPG extension
+            } else {
+                // Safe luxury fallback placeholder if the file is not yet uploaded
+                img.src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop';
+            }
+        }
+
         // Load CMS Site data
         function loadSiteState() {
             const savedState = localStorage.getItem('salah_office_cms_state');
@@ -1248,177 +1313,189 @@
             renderAllCmsElements();
         }
 
-        // Render Data dynamically across all HTML sections
+        // Render Data dynamically across all HTML sections with safe checking
         function renderAllCmsElements() {
             // Header Logo
-            document.getElementById('headerLogoMain').textContent = siteData.general.logoMain;
-            document.getElementById('headerLogoSub').textContent = siteData.general.logoSub;
+            safeSetText('headerLogoMain', siteData.general.logoMain);
+            safeSetText('headerLogoSub', siteData.general.logoSub);
 
             // Running Marquee
-            document.getElementById('welcomeMarquee').innerHTML = `
+            safeSetHTML('welcomeMarquee', `
                 <span>${siteData.general.marqueeText}</span>
                 <span>•</span>
                 <span>${siteData.general.marqueeText}</span>
-            `;
+            `);
 
             // Hero Section Texts & Image Display with dynamic error fallback
-            document.getElementById('heroBadge').textContent = siteData.general.heroBadge;
-            document.getElementById('heroTitle').innerHTML = siteData.general.heroTitle.replace("لمؤسستك", "<br class='hidden sm:inline'><span class='text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-amber-500'>لمؤسستك");
-            document.getElementById('heroDescription').textContent = siteData.general.heroDescription;
-            document.getElementById('heroCardName').textContent = siteData.general.heroCardName;
-            document.getElementById('heroCardTitle').textContent = siteData.general.heroCardTitle;
-            document.getElementById('heroQuote').textContent = siteData.general.heroQuote;
+            safeSetText('heroBadge', siteData.general.heroBadge);
+            safeSetHTML('heroTitle', siteData.general.heroTitle.replace("لمؤسستك", "<br class='hidden sm:inline'><span class='text-transparent bg-clip-text bg-gradient-to-r from-gold-600 to-amber-500'>لمؤسستك"));
+            safeSetText('heroDescription', siteData.general.heroDescription);
+            safeSetText('heroCardName', siteData.general.heroCardName);
+            safeSetText('heroCardTitle', siteData.general.heroCardTitle);
+            safeSetText('heroQuote', siteData.general.heroQuote);
             
-            const heroImg = document.getElementById('heroImageDisplay');
-            heroImg.src = siteData.general.heroImgUrl || './Salah.jpg';
+            safeSetSrc('heroImageDisplay', siteData.general.heroImgUrl || './Salah.Jpg');
 
             // About Texts & Image
-            document.getElementById('aboutSubtitle').textContent = siteData.general.aboutSubtitle;
-            document.getElementById('aboutMainTitle').textContent = siteData.general.aboutMainTitle;
-            document.getElementById('aboutMainText').textContent = siteData.general.aboutMainText;
-            
-            const aboutImg = document.getElementById('aboutImageDisplay');
-            aboutImg.src = siteData.general.aboutImgUrl || './about.jpg';
+            safeSetText('aboutSubtitle', siteData.general.aboutSubtitle);
+            safeSetText('aboutMainTitle', siteData.general.aboutMainTitle);
+            safeSetText('aboutMainText', siteData.general.aboutMainText);
+            safeSetSrc('aboutImageDisplay', siteData.general.aboutImgUrl || './about.jpg');
 
             // Footer Texts
-            document.getElementById('footerTitle').textContent = siteData.general.logoMain;
-            document.getElementById('footerSubtitle').textContent = siteData.general.logoSub;
-            document.getElementById('footerDescription').textContent = siteData.general.heroDescription;
+            safeSetText('footerTitle', siteData.general.logoMain);
+            safeSetText('footerSubtitle', siteData.general.logoSub);
+            safeSetText('footerDescription', siteData.general.heroDescription);
 
             // Contact Info & Direct protocols clickable links
-            document.getElementById('contactAddress').textContent = siteData.contact.address;
-            document.getElementById('contactEmail').textContent = siteData.contact.email;
-            document.getElementById('contactPhone').textContent = siteData.contact.phone;
+            safeSetText('contactAddress', siteData.contact.address);
+            safeSetText('contactEmail', siteData.contact.email);
+            safeSetText('contactPhone', siteData.contact.phone);
 
             // Active href bindings
-            document.getElementById('contactEmailLink').href = `mailto:${siteData.contact.email}`;
-            document.getElementById('contactPhoneLink').href = `tel:${siteData.contact.phone}`;
+            const emailLnk = document.getElementById('contactEmailLink');
+            if (emailLnk) emailLnk.href = `mailto:${siteData.contact.email}`;
+
+            const phoneLnk = document.getElementById('contactPhoneLink');
+            if (phoneLnk) phoneLnk.href = `tel:${siteData.contact.phone}`;
 
             // WhatsApp floating widget setup
             const customMessage = encodeURIComponent(`مرحباً مكتب المستشار صلاح حسن إبراهيم، أود طلب استشارة حول السيادة الرقمية وإدارة السمعة لشركتنا.`);
             const whatsappLink = `https://wa.me/${siteData.contact.whatsapp}?text=${customMessage}`;
-            document.getElementById('whatsappFloat').href = whatsappLink;
-            document.getElementById('contactWhatsappLink').href = whatsappLink;
+            
+            const waFloat = document.getElementById('whatsappFloat');
+            if (waFloat) waFloat.href = whatsappLink;
+
+            const waContact = document.getElementById('contactWhatsappLink');
+            if (waContact) waContact.href = whatsappLink;
 
             // Render Services Grid
             const servicesGrid = document.getElementById('dynamicServicesGrid');
-            servicesGrid.innerHTML = '';
-            
-            // Populating Booking service dropdown options dynamically as well
-            const bookingSelect = document.getElementById('bookingServiceSelect');
-            bookingSelect.innerHTML = '';
+            if (servicesGrid) {
+                servicesGrid.innerHTML = '';
+                
+                // Populating Booking service dropdown options dynamically as well
+                const bookingSelect = document.getElementById('bookingServiceSelect');
+                if (bookingSelect) bookingSelect.innerHTML = '';
 
-            siteData.services.forEach(svc => {
-                // Svc Grid Card
-                const card = document.createElement('div');
-                card.className = "bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl hover:-translate-y-2 transition-all duration-300 border border-primary-100 dark:border-primary-800 flex flex-col justify-between group";
-                card.innerHTML = `
-                    <div class="space-y-4">
-                        <div class="w-14 h-14 rounded-xl bg-gold-100 dark:bg-gold-950/60 flex items-center justify-center text-gold-600 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-all duration-300">
-                            <i class="${svc.icon} text-2xl"></i>
+                siteData.services.forEach(svc => {
+                    // Svc Grid Card
+                    const card = document.createElement('div');
+                    card.className = "bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl hover:-translate-y-2 transition-all duration-300 border border-primary-100 dark:border-primary-800 flex flex-col justify-between group";
+                    card.innerHTML = `
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-xl bg-gold-100 dark:bg-gold-950/60 flex items-center justify-center text-gold-600 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-all duration-300">
+                                <i class="${svc.icon} text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary-900 dark:text-white">${svc.title}</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">${svc.description}</p>
                         </div>
-                        <h3 class="text-xl font-bold text-primary-900 dark:text-white">${svc.title}</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">${svc.description}</p>
-                    </div>
-                    <a href="#contact" onclick="selectBookingService('${svc.title}')" class="inline-flex items-center gap-2 text-gold-600 dark:text-gold-400 font-bold text-sm pt-6 hover:underline">
-                        احجز الخدمة الآن <i class="fa-solid fa-arrow-left"></i>
-                    </a>
-                `;
-                servicesGrid.appendChild(card);
+                        <a href="#contact" onclick="selectBookingService('${svc.title}')" class="inline-flex items-center gap-2 text-gold-600 dark:text-gold-400 font-bold text-sm pt-6 hover:underline">
+                            احجز الخدمة الآن <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    `;
+                    servicesGrid.appendChild(card);
 
-                // Option in dropdown
-                const opt = document.createElement('option');
-                opt.value = svc.title;
-                opt.textContent = svc.title;
-                bookingSelect.appendChild(opt);
-            });
+                    // Option in dropdown
+                    if (bookingSelect) {
+                        const opt = document.createElement('option');
+                        opt.value = svc.title;
+                        opt.textContent = svc.title;
+                        bookingSelect.appendChild(opt);
+                    }
+                });
+            }
 
             // Render Articles Grid (BLOG)
             const articlesGrid = document.getElementById('dynamicArticlesGrid');
-            articlesGrid.innerHTML = '';
-            siteData.articles.forEach(art => {
-                const item = document.createElement('div');
-                item.className = "bg-white dark:bg-primary-900 rounded-2xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-800 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group";
-                item.innerHTML = `
-                    <div>
-                        <div class="relative overflow-hidden h-48">
-                            <img src="${art.imgUrl}" alt="${art.title}" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <span class="absolute top-4 right-4 text-[10px] font-bold text-white bg-gold-600 px-2.5 py-1 rounded-full shadow-md">${art.category}</span>
+            if (articlesGrid) {
+                articlesGrid.innerHTML = '';
+                siteData.articles.forEach(art => {
+                    const item = document.createElement('div');
+                    item.className = "bg-white dark:bg-primary-900 rounded-2xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-800 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group";
+                    item.innerHTML = `
+                        <div>
+                            <div class="relative overflow-hidden h-48">
+                                <img src="${art.imgUrl}" alt="${art.title}" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-4 right-4 text-[10px] font-bold text-white bg-gold-600 px-2.5 py-1 rounded-full shadow-md">${art.category}</span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <span class="text-[10px] text-slate-400 font-semibold"><i class="fa-regular fa-calendar ml-1.5"></i>${art.date}</span>
+                                <h3 class="font-bold text-base sm:text-lg text-primary-950 dark:text-white line-clamp-2 leading-tight group-hover:text-gold-600 transition-colors">${art.title}</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">${art.summary}</p>
+                            </div>
                         </div>
-                        <div class="p-6 space-y-3">
-                            <span class="text-[10px] text-slate-400 font-semibold"><i class="fa-regular fa-calendar ml-1.5"></i>${art.date}</span>
-                            <h3 class="font-bold text-base sm:text-lg text-primary-950 dark:text-white line-clamp-2 leading-tight group-hover:text-gold-600 transition-colors">${art.title}</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">${art.summary}</p>
+                        <div class="p-6 pt-0">
+                            <button onclick="readFullArticle('${art.id}')" class="w-full py-2.5 bg-primary-100 dark:bg-primary-950 hover:bg-gold-600 hover:text-white text-primary-800 dark:text-gold-400 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1">
+                                <span>اقرأ المقالة كاملة</span>
+                                <i class="fa-solid fa-book-open"></i>
+                            </button>
                         </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="readFullArticle('${art.id}')" class="w-full py-2.5 bg-primary-100 dark:bg-primary-950 hover:bg-gold-600 hover:text-white text-primary-800 dark:text-gold-400 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1">
-                            <span>اقرأ المقالة كاملة</span>
-                            <i class="fa-solid fa-book-open"></i>
-                        </button>
-                    </div>
-                `;
-                articlesGrid.appendChild(item);
-            });
+                    `;
+                    articlesGrid.appendChild(item);
+                });
+            }
 
             // Render Testimonials Grid
             const testGrid = document.getElementById('dynamicTestimonialsGrid');
-            testGrid.innerHTML = '';
-            siteData.testimonials.forEach(test => {
-                let starsHTML = '';
-                const starCount = parseFloat(test.stars);
-                for (let i = 1; i <= 5; i++) {
-                    if (i <= starCount) {
-                        starsHTML += '<i class="fa-solid fa-star"></i>';
-                    } else if (i - 0.5 <= starCount) {
-                        starsHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
-                    } else {
-                        starsHTML += '<i class="fa-regular fa-star"></i>';
+            if (testGrid) {
+                testGrid.innerHTML = '';
+                siteData.testimonials.forEach(test => {
+                    let starsHTML = '';
+                    const starCount = parseFloat(test.stars);
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= starCount) {
+                            starsHTML += '<i class="fa-solid fa-star"></i>';
+                        } else if (i - 0.5 <= starCount) {
+                            starsHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
+                        } else {
+                            starsHTML += '<i class="fa-regular fa-star"></i>';
+                        }
                     }
-                }
 
-                const card = document.createElement('div');
-                card.className = "bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl border border-primary-100 dark:border-primary-800 space-y-6";
-                card.innerHTML = `
-                    <div class="flex gap-1 text-gold-500">
-                        ${starsHTML}
-                    </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 italic">"${test.text}"</p>
-                    <div class="flex items-center gap-3 border-t border-primary-100 dark:border-primary-800 pt-4">
-                        <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-850 flex items-center justify-center font-bold text-primary-800 dark:text-white text-xs">
-                            ${test.name.substring(0, 2)}
+                    const card = document.createElement('div');
+                    card.className = "bg-white dark:bg-primary-900 p-8 rounded-2xl shadow-xl border border-primary-100 dark:border-primary-800 space-y-6";
+                    card.innerHTML = `
+                        <div class="flex gap-1 text-gold-500">
+                            ${starsHTML}
                         </div>
-                        <div>
-                            <span class="block font-bold text-sm text-primary-900 dark:text-white">${test.name}</span>
-                            <span class="block text-xs text-slate-400">${test.title}</span>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 italic">"${test.text}"</p>
+                        <div class="flex items-center gap-3 border-t border-primary-100 dark:border-primary-800 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-850 flex items-center justify-center font-bold text-primary-800 dark:text-white text-xs">
+                                ${test.name.substring(0, 2)}
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sm text-primary-900 dark:text-white">${test.name}</span>
+                                <span class="block text-xs text-slate-400">${test.title}</span>
+                            </div>
                         </div>
-                    </div>
-                `;
-                testGrid.appendChild(card);
-            });
+                    `;
+                    testGrid.appendChild(card);
+                });
+            }
 
-            // Populate CMS inputs
-            document.getElementById('inpLogoMain').value = siteData.general.logoMain;
-            document.getElementById('inpLogoSub').value = siteData.general.logoSub;
-            document.getElementById('inpMarqueeText').value = siteData.general.marqueeText;
-            document.getElementById('inpHeroBadge').value = siteData.general.heroBadge;
-            document.getElementById('inpHeroTitle').value = siteData.general.heroTitle;
-            document.getElementById('inpHeroImgUrl').value = siteData.general.heroImgUrl;
-            document.getElementById('inpHeroDesc').value = siteData.general.heroDescription;
-            document.getElementById('inpHeroQuote').value = siteData.general.heroQuote;
-            document.getElementById('inpAboutSubtitle').value = siteData.general.aboutSubtitle;
-            document.getElementById('inpAboutTitle').value = siteData.general.aboutTitle;
-            document.getElementById('inpAboutImgUrl').value = siteData.general.aboutImgUrl;
-            document.getElementById('inpAboutText').value = siteData.general.aboutMainText;
+            // Populate CMS inputs safely
+            safeSetValue('inpLogoMain', siteData.general.logoMain);
+            safeSetValue('inpLogoSub', siteData.general.logoSub);
+            safeSetValue('inpMarqueeText', siteData.general.marqueeText);
+            safeSetValue('inpHeroBadge', siteData.general.heroBadge);
+            safeSetValue('inpHeroTitle', siteData.general.heroTitle);
+            safeSetValue('inpHeroImgUrl', siteData.general.heroImgUrl);
+            safeSetValue('inpHeroDesc', siteData.general.heroDescription);
+            safeSetValue('inpHeroQuote', siteData.general.heroQuote);
+            safeSetValue('inpAboutSubtitle', siteData.general.aboutSubtitle);
+            safeSetValue('inpAboutTitle', siteData.general.aboutTitle);
+            safeSetValue('inpAboutImgUrl', siteData.general.aboutImgUrl);
+            safeSetValue('inpAboutText', siteData.general.aboutMainText);
 
-            // Contact tab CMS inputs
-            document.getElementById('inpContactAddress').value = siteData.contact.address;
-            document.getElementById('inpContactEmail').value = siteData.contact.email;
-            document.getElementById('inpContactPhone').value = siteData.contact.phone;
-            document.getElementById('inpContactWhatsapp').value = siteData.contact.whatsapp;
-            document.getElementById('inpAdminPassword').value = siteData.contact.password;
+            // Contact tab CMS inputs safely
+            safeSetValue('inpContactAddress', siteData.contact.address);
+            safeSetValue('inpContactEmail', siteData.contact.email);
+            safeSetValue('inpContactPhone', siteData.contact.phone);
+            safeSetValue('inpContactWhatsapp', siteData.contact.whatsapp);
+            safeSetValue('inpAdminPassword', siteData.contact.password);
 
-            // CMS Sublists renderers
+            // CMS Sublists renderers safely
             renderCmsServicesList();
             renderCmsArticlesList();
             renderCmsTestimonialsList();
@@ -1429,21 +1506,25 @@
             const art = siteData.articles.find(a => a.id === id);
             if (!art) return;
 
-            document.getElementById('readArtCategory').textContent = art.category;
-            document.getElementById('readArtTitle').textContent = art.title;
-            document.getElementById('readArtDate').innerHTML = `<i class="fa-regular fa-calendar ml-1.5"></i>تاريخ النشر: ${art.date}`;
-            document.getElementById('readArtImage').src = art.imgUrl;
-            document.getElementById('readArtContent').textContent = art.content;
+            safeSetText('readArtCategory', art.category);
+            safeSetText('readArtTitle', art.title);
+            safeSetHTML('readArtDate', `<i class="fa-regular fa-calendar ml-1.5"></i>تاريخ النشر: ${art.date}`);
+            safeSetSrc('readArtImage', art.imgUrl);
+            safeSetText('readArtContent', art.content);
 
             const modal = document.getElementById('articleReadModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
         }
 
         function closeArticleReadModal() {
             const modal = document.getElementById('articleReadModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
         }
 
         // Handle Admin Button Click (Protected Login / CMS Opening)
@@ -1457,14 +1538,18 @@
 
         function openAdminLoginModal() {
             const modal = document.getElementById('adminLoginModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
         }
 
         function closeAdminLoginModal() {
             const modal = document.getElementById('adminLoginModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
         }
 
         // Verify Admin Credentials (Strictly salahhibrahim131@gmail.com)
@@ -1478,7 +1563,6 @@
                 closeAdminLoginModal();
                 toggleAdminPanel();
                 showNotificationModal("نجاح تسجيل الدخول!", "أهلاً بك المستشار صلاح حسن إبراهيم، يمكنك الآن حيازة وتعديل ونشر كافة ممتلكات موقعك الإلكتروني عبر لوحة الإدارة الفورية.");
-                // Reset form fields
                 e.target.reset();
             } else {
                 showNotificationModal("فشل التحقق!", "عذراً، البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى إعادة التحقق لتأمين النظام.");
@@ -1502,30 +1586,34 @@
         }
 
         function showConfirmModal(title, msg, onConfirmCallback) {
-            document.getElementById('confirmTitle').textContent = title;
-            document.getElementById('confirmMessage').textContent = msg;
+            safeSetText('confirmTitle', title);
+            safeSetText('confirmMessage', msg);
             
             const yesBtn = document.getElementById('confirmYesBtn');
-            yesBtn.onclick = onConfirmCallback;
+            if (yesBtn) yesBtn.onclick = onConfirmCallback;
 
             const modal = document.getElementById('confirmModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
         }
 
         function closeConfirmModal() {
             const modal = document.getElementById('confirmModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
         }
 
         // Dropdown Auto-select helper
         function selectBookingService(title) {
             const select = document.getElementById('bookingServiceSelect');
-            select.value = title;
+            if (select) select.value = title;
         }
 
-        // Render Services inside CMS manager list
+        // Render Services inside CMS manager list safely
         function renderCmsServicesList() {
             const listContainer = document.getElementById('cmsServicesList');
             if(!listContainer) return;
@@ -1578,14 +1666,14 @@
             renderCmsServicesList();
 
             // Clear inputs
-            document.getElementById('addSvcTitle').value = '';
-            document.getElementById('addSvcIcon').value = '';
-            document.getElementById('addSvcDesc').value = '';
+            safeSetValue('addSvcTitle', '');
+            safeSetValue('addSvcIcon', '');
+            safeSetValue('addSvcDesc', '');
 
             showNotificationModal("إضافة خدمة", "تم تجهيز الخدمة الجديدة. يرجى النقر على زر 'حفظ التغييرات الآن' لتثبيت الإضافة بنجاح.");
         }
 
-        // Render Articles inside CMS manager list
+        // Render Articles inside CMS manager list safely
         function renderCmsArticlesList() {
             const listContainer = document.getElementById('cmsArticlesList');
             if(!listContainer) return;
@@ -1644,17 +1732,17 @@
             renderCmsArticlesList();
 
             // Clear inputs
-            document.getElementById('addArtTitle').value = '';
-            document.getElementById('addArtCategory').value = '';
-            document.getElementById('addArtDate').value = '';
-            document.getElementById('addArtImgUrl').value = '';
-            document.getElementById('addArtSummary').value = '';
-            document.getElementById('addArtContent').value = '';
+            safeSetValue('addArtTitle', '');
+            safeSetValue('addArtCategory', '');
+            safeSetValue('addArtDate', '');
+            safeSetValue('addArtImgUrl', '');
+            safeSetValue('addArtSummary', '');
+            safeSetValue('addArtContent', '');
 
             showNotificationModal("تجهيز المقال بنجاح", "تم تضمين البحث الجديد. انقر فوق زر 'حفظ التغييرات الآن' بالأسفل لإظهاره للعامة.");
         }
 
-        // Render Testimonials inside CMS manager list
+        // Render Testimonials inside CMS manager list safely
         function renderCmsTestimonialsList() {
             const listContainer = document.getElementById('cmsTestimonialsList');
             if(!listContainer) return;
@@ -1709,16 +1797,16 @@
             renderCmsTestimonialsList();
 
             // Clear inputs
-            document.getElementById('addTestName').value = '';
-            document.getElementById('addTestTitle').value = '';
-            document.getElementById('addTestText').value = '';
+            safeSetValue('addTestName', '');
+            safeSetValue('addTestTitle', '');
+            safeSetValue('addTestText', '');
 
             showNotificationModal("تجهيز رأي العميل", "تمت إضافة شهادة العميل بنجاح. اضغط على زر 'حفظ التغييرات الآن' في الأسفل لتثبيت هذا الرأي في الواجهة الأمامية للموقع.");
         }
 
         // Save CMS updates to LocalStorage and refresh
         function saveAndApplyCmsChanges() {
-            // Pick up input texts
+            // Pick up input texts safely
             siteData.general.logoMain = document.getElementById('inpLogoMain').value;
             siteData.general.logoSub = document.getElementById('inpLogoSub').value;
             siteData.general.marqueeText = document.getElementById('inpMarqueeText').value;
@@ -1746,7 +1834,7 @@
             // Save to LocalStorage
             localStorage.setItem('salah_office_cms_state', JSON.stringify(siteData));
 
-            // Re-render
+            // Re-render safely
             renderAllCmsElements();
             
             // Re-calculate cost since parameters might have shifted
@@ -1782,7 +1870,6 @@
             reader.onload = function(e) {
                 try {
                     const parsedData = JSON.parse(e.target.result);
-                    // Minimal validation
                     if (parsedData.general && parsedData.services && parsedData.testimonials && parsedData.articles) {
                         siteData = parsedData;
                         localStorage.setItem('salah_office_cms_state', JSON.stringify(siteData));
@@ -1803,8 +1890,10 @@
         // Toggle Admin CMS panel display
         function toggleAdminPanel() {
             const panel = document.getElementById('adminPanel');
-            panel.classList.toggle('hidden');
-            panel.classList.toggle('flex');
+            if (panel) {
+                panel.classList.toggle('hidden');
+                panel.classList.toggle('flex');
+            }
         }
 
         // Navigation inside Admin tabbed menus
@@ -1817,19 +1906,24 @@
                 sect.classList.add('hidden');
             });
 
-            document.getElementById(`tab-${tabName}`).classList.add('active', 'border-gold-500', 'text-gold-600');
-            document.getElementById(`admin-sect-${tabName}`).classList.remove('hidden');
+            const actTab = document.getElementById(`tab-${tabName}`);
+            if (actTab) actTab.classList.add('active', 'border-gold-500', 'text-gold-600');
+            
+            const actSect = document.getElementById(`admin-sect-${tabName}`);
+            if (actSect) actSect.classList.remove('hidden');
         }
 
         // Theme Toggle Functionality
         function toggleTheme() {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
-                document.getElementById('themeIcon').className = 'fa-solid fa-moon';
+                const tIcon = document.getElementById('themeIcon');
+                if (tIcon) tIcon.className = 'fa-solid fa-moon';
                 localStorage.setItem('theme', 'light');
             } else {
                 document.documentElement.classList.add('dark');
-                document.getElementById('themeIcon').className = 'fa-solid fa-sun';
+                const tIcon = document.getElementById('themeIcon');
+                if (tIcon) tIcon.className = 'fa-solid fa-sun';
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -1837,7 +1931,7 @@
         // Mobile Menu Trigger
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+            if (menu) menu.classList.toggle('hidden');
         }
 
         // Digital Maturity Quiz Logic
@@ -1850,7 +1944,8 @@
             
             const nextStep = step + 1;
             const progressPercentage = (nextStep / 5) * 100;
-            document.getElementById('quizProgress').style.width = `${progressPercentage}%`;
+            const qProg = document.getElementById('quizProgress');
+            if (qProg) qProg.style.width = `${progressPercentage}%`;
 
             if (nextStep <= 5) {
                 // Show next step
@@ -1864,40 +1959,48 @@
 
         // Dynamic result calculation based on score
         function showQuizResults() {
-            document.getElementById('quizResult').classList.remove('hidden');
-            document.getElementById('quizScoreDisplay').textContent = quizScore;
+            const qRes = document.getElementById('quizResult');
+            if (qRes) qRes.classList.remove('hidden');
+
+            safeSetText('quizScoreDisplay', quizScore);
             
             const levelTitle = document.getElementById('resultLevelTitle');
             const levelDesc = document.getElementById('resultLevelDesc');
             const resultAdvice = document.getElementById('resultAdvice');
             
             if (quizScore >= 12) {
-                levelTitle.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500"></i>مستوى متقدم (نضج رائد)`;
-                levelDesc.textContent = "تمتلك مؤسستك أساسات تكنولوجية قوية وثقافة عمل مرنة تتكيف سريعاً مع بروتوكولات السيادة الرقمية والذكاء الاصطناعي وحماية السمعة.";
-                resultAdvice.textContent = "ركز الآن مع مكتبنا على الابتكار الاستباقي وحماية البنية السيبرانية من التهديدات الخارجية لضمان السيطرة والهيمنة الكاملة على السمعة المؤسسية لشركتك.";
+                if (levelTitle) levelTitle.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500"></i>مستوى متقدم (نضج رائد)`;
+                if (levelDesc) levelDesc.textContent = "تمتلك مؤسستك أساسات تكنولوجية قوية وثقافة عمل مرنة تتكيف سريعاً مع بروتوكولات السيادة الرقمية والذكاء الاصطناعي وحماية السمعة.";
+                if (resultAdvice) resultAdvice.textContent = "ركز الآن مع مكتبنا على الابتكار الاستباقي وحماية البنية السيبرانية من التهديدات الخارجية لضمان السيطرة والهيمنة الكاملة على السمعة المؤسسية لشركتك.";
             } else if (quizScore >= 7) {
-                levelTitle.innerHTML = `<i class="fa-solid fa-circle-exclamation text-amber-500"></i>مستوى متوسط (نضج ناشئ)`;
-                levelDesc.textContent = "تستخدم بعض الحلول التقنية ولكن هناك فجوات في ربط البيانات وحوكمتها مما يعرض السمعة المؤسسية لثغرات غير مرغوبة.";
-                resultAdvice.textContent = "ننصحك بالبدء فوراً في إعادة هندسة العمليات وتوحيد قواعد البيانات السحابية الحصينة، وتطوير بروتوكولات حماية السمعة الرقمية للحد من الأزمات الإعلامية.";
+                if (levelTitle) levelTitle.innerHTML = `<i class="fa-solid fa-circle-exclamation text-amber-500"></i>مستوى متوسط (نضج ناشئ)`;
+                if (levelDesc) levelDesc.textContent = "تستخدم بعض الحلول التقنية ولكن هناك فجوات في ربط البيانات وحوكمتها مما يعرض السمعة المؤسسية لثغرات غير مرغوبة.";
+                if (resultAdvice) resultAdvice.textContent = "ننصحك بالبدء فوراً في إعادة هندسة العمليات وتوحيد قواعد البيانات السحابية الحصينة، وتطوير بروتوكولات حماية السمعة الرقمية للحد من الأزمات الإعلامية.";
             } else {
-                levelTitle.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-red-500"></i>مستوى حرج (تقليـدي)`;
-                levelDesc.textContent = "مؤسستك تدار كلياً أو جزئياً بالطرق الورقية التقليدية، وتواجه مخاطر فقدان البيانات وهشاشة السمعة الرقمية بالكامل أمام المنافسين.";
-                resultAdvice.textContent = "أنت بحاجة ماسة وعاجلة إلى تصميم خطة سيادة رقمية وحماية للسمعة. ننصح بالبدء فوراً بجلسة استشارية عاجلة مع مكتب المستشار صلاح حسن إبراهيم لإيقاف النزيف التشغيلي.";
+                if (levelTitle) levelTitle.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-red-500"></i>مستوى حرج (تقليـدي)`;
+                if (levelDesc) levelDesc.textContent = "مؤسستك تدار كلياً أو جزئياً بالطرق الورقية التقليدية، وتواجه مخاطر فقدان البيانات وهشاشة السمعة الرقمية بالكامل أمام المنافسين.";
+                if (resultAdvice) resultAdvice.textContent = "أنت بحاجة ماسة وعاجلة إلى تصميم خطة سيادة رقمية وحماية للسمعة. ننصح بالبدء فوراً بجلسة استشارية عاجلة مع مكتب المستشار صلاح حسن إبراهيم لإيقاف النزيف التشغيلي.";
             }
         }
 
         // Quiz Reset
         function resetQuiz() {
             quizScore = 0;
-            document.getElementById('quizProgress').style.width = '20%';
-            document.getElementById('quizResult').classList.add('hidden');
+            const qProg = document.getElementById('quizProgress');
+            if (qProg) qProg.style.width = '20%';
+
+            const qRes = document.getElementById('quizResult');
+            if (qRes) qRes.classList.add('hidden');
+
             document.querySelectorAll('.quiz-step').forEach(step => step.classList.add('hidden'));
-            document.querySelector('.quiz-step[data-step="1"]').classList.remove('hidden');
+            
+            const qFirst = document.querySelector('.quiz-step[data-step="1"]');
+            if (qFirst) qFirst.classList.remove('hidden');
         }
 
         // Estimator Calculations
         function updateHoursRange(value) {
-            document.getElementById('estHoursDisplay').textContent = value;
+            safeSetText('estHoursDisplay', value);
             calculateCost();
         }
 
@@ -1914,8 +2017,10 @@
                 btn.classList.add('border-primary-300', 'dark:border-primary-700', 'bg-white', 'dark:bg-primary-950', 'text-slate-600', 'dark:text-slate-300');
             });
             
-            element.classList.remove('border-primary-300', 'dark:border-primary-700', 'bg-white', 'dark:bg-primary-950', 'text-slate-600', 'dark:text-slate-300');
-            element.classList.add('active', 'border-gold-500', 'bg-gold-50/50', 'dark:bg-gold-950/20', 'text-gold-600', 'dark:text-gold-400');
+            if (element) {
+                element.classList.remove('border-primary-300', 'dark:border-primary-700', 'bg-white', 'dark:bg-primary-950', 'text-slate-600', 'dark:text-slate-300');
+                element.classList.add('active', 'border-gold-500', 'bg-gold-50/50', 'dark:bg-gold-950/20', 'text-gold-600', 'dark:text-gold-400');
+            }
             
             calculateCost();
         }
@@ -1924,8 +2029,12 @@
             const selectEl = document.getElementById('estService');
             if(!selectEl) return;
             const baseRate = parseInt(selectEl.options[selectEl.selectedIndex].getAttribute('data-rate'));
-            const hours = parseInt(document.getElementById('estHours').value);
-            const isUrgent = document.getElementById('estUrgent').checked;
+            
+            const estHrsInput = document.getElementById('estHours');
+            const hours = estHrsInput ? parseInt(estHrsInput.value) : 5;
+            
+            const estUrgentInput = document.getElementById('estUrgent');
+            const isUrgent = estUrgentInput ? estUrgentInput.checked : false;
 
             let subtotal = baseRate * hours * selectedCompanyMultiplier;
             let urgentFee = 0;
@@ -1936,35 +2045,46 @@
 
             const total = subtotal + urgentFee;
 
-            // Update display
-            document.getElementById('estBaseRate').textContent = `$${baseRate}/ساعة`;
-            document.getElementById('estSizeMultiplier').textContent = `${selectedCompanyMultiplier}x (${selectedCompanyLabel})`;
-            document.getElementById('estUrgentLabel').textContent = isUrgent ? `+$${urgentFee.toFixed(0)} (25%)` : 'لا يوجد';
-            document.getElementById('estTotalCost').textContent = `$${total.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+            // Update display safely
+            safeSetText('estBaseRate', `$${baseRate}/ساعة`);
+            safeSetText('estSizeMultiplier', `${selectedCompanyMultiplier}x (${selectedCompanyLabel})`);
+            safeSetText('estUrgentLabel', isUrgent ? `+$${urgentFee.toFixed(0)} (25%)` : 'لا يوجد');
+            safeSetText('estTotalCost', `$${total.toLocaleString('en-US', {maximumFractionDigits: 0})}`);
         }
 
         function bookCalculatedConsultation() {
-            const serviceName = document.getElementById('estService').options[document.getElementById('estService').selectedIndex].text;
-            const hours = document.getElementById('estHours').value;
-            const total = document.getElementById('estTotalCost').textContent;
+            const selectEl = document.getElementById('estService');
+            if(!selectEl) return;
+            const serviceName = selectEl.options[selectEl.selectedIndex].text;
+            
+            const estHrsInput = document.getElementById('estHours');
+            const hours = estHrsInput ? estHrsInput.value : 5;
+            
+            const totalCost = document.getElementById('estTotalCost');
+            const total = totalCost ? totalCost.textContent : '$1,000';
 
             // Fill & scroll to booking form
             const textarea = document.querySelector('#bookingForm textarea');
-            textarea.value = `أود طلب حجز موعد استشاري للخدمة: [${serviceName}] بحجم منشأة: [${selectedCompanyLabel}] لعدد ساعات تقديرية: [${hours} ساعات]. التكلفة التقديرية بالحاسبة هي: [${total}].`;
+            if (textarea) {
+                textarea.value = `أود طلب حجز موعد استشاري للخدمة: [${serviceName}] بحجم منشأة: [${selectedCompanyLabel}] لعدد ساعات تقديرية: [${hours} ساعات]. التكلفة التقديرية بالحاسبة هي: [${total}].`;
+            }
             
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            const contactSec = document.getElementById('contact');
+            if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
             
             showNotificationModal("تجهيز حاسبة الاستشارات", "تم نقل تفاصيل تقدير الحساب بنجاح لنموذج الحجز أدناه. يرجى إكمال إدخال بيانات تواصلك لإرسال الطلب بشكل رسمي.");
         }
 
         // Notifications Modal Helpers
         function showNotificationModal(title, msg) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalMessage').textContent = msg;
+            safeSetText('modalTitle', title);
+            safeSetText('modalMessage', msg);
             
             const modal = document.getElementById('notificationModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
         }
 
         // Close custom notifications modal
@@ -2021,6 +2141,7 @@
         async function handleChatSubmit(e) {
             e.preventDefault();
             const inputEl = document.getElementById('chatInput');
+            if(!inputEl) return;
             const query = inputEl.value.trim();
             if (!query) return;
 
@@ -2033,7 +2154,7 @@
             // Render temporary waiting placeholder response
             const placeholderId = appendChatMessage('قيد التفكير وتوليد النصائح الاستشارية والمحاكاة...', 'bot-loading');
 
-            const systemPrompt = `أنت المساعد الرقمي الافتراضي والتوأم الذكي لمكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي. اسمك 'مستشار صلاح الرقمي'. أنت خبير في السيادة الرقمية وإدارة السمعة المؤسسية والأمن السيبراني في العراق والوطن العربي. تحدث بلغة استشارية راقية، ملهمة، واحترافية باللغة العربية. قدم إرشادات ونقاط نصائح عملية في استراتيجيات الإدارة والتحول الرقمي والتقنية والسمعة المؤسسية استناداً لخبرة واسعة. شجع العميل على حجز موعد مع المستشار الحقيقي 'صلاح حسن إبراهيم' لمراجعة أعمق وتطبيق عملي من خلال النماذج والوسائل المتاحة بالموقع أو التواصل الفوري عبر الواتساب المتاح بالموقع على الرقم ${siteData.contact.whatsapp} أو هاتف المكتب المباشر ${siteData.contact.phone} أو إرسال بريد إلكتروني إلى ${siteData.contact.email}، ومقرنا هو العراق - بغداد.`;
+            const systemPrompt = `أنت المساعد الرقمي الافتراضي والتوأم الذكي لمكتب المستشار صلاح حسن إبراهيم للاستشارات والتطوير الرقمي. اسمك 'مستشار صلاح الرقمي'. أنت خبير في السيادة الرقمية وإدارة السمعة المؤسسية والأمن السيبراني في العراق والوطن العربي. تحدث بلغة استشارية راقية، ملهمة، واحترافية باللغة العربية. قدم إرشادات ونقاط نصائح عملية في استراتيجيات الإدارة والتحول الرقمي والتقنية والسمعة المؤسسية استناداً لخبرة واسعة. شجع العميل على حجز موعد مع المستشار الحقيقي 'صلاح حسن إبراهيم' لمراجعة أعمق وتطبيق عملي من خلال النماذج والواجهات المتاحة بالموقع أو التواصل الفوري عبر الواتساب المتاح بالموقع على الرقم ${siteData.contact.whatsapp} أو هاتف المكتب المباشر ${siteData.contact.phone} أو إرسال بريد إلكتروني إلى ${siteData.contact.email}، ومقرنا هو العراق - بغداد.`;
 
             try {
                 const responseData = await fetchGeminiWithBackoff(query, systemPrompt);
@@ -2049,6 +2170,7 @@
 
         function appendChatMessage(text, sender) {
             const container = document.getElementById('chatMessages');
+            if(!container) return;
             const msgId = 'msg-' + Date.now() + Math.random().toString(36).substr(2, 4);
 
             const wrapper = document.createElement('div');
@@ -2092,6 +2214,7 @@
 
         function clearChat() {
             const container = document.getElementById('chatMessages');
+            if(!container) return;
             container.innerHTML = `
                 <div class="flex items-start gap-3 max-w-[85%]">
                     <div class="w-8 h-8 rounded-full bg-gold-600 text-white flex items-center justify-center shrink-0">
@@ -2107,8 +2230,17 @@
             `;
         }
 
-        // Initialize state on script parse
-        loadSiteState();
+        // Safe Initialization under DOM Ready to guarantee zero runtime crashes
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSiteState();
+            
+            // Apply current year safely
+            const yr = document.getElementById('currentYear');
+            if (yr) yr.textContent = new Date().getFullYear();
+            
+            // Calculate Cost on startup
+            calculateCost();
+        });
     </script>
 </body>
 </html>

@@ -13,39 +13,54 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
-		<link rel="stylesheet" href="/fonts/cairo.css" />
-		<link rel="stylesheet" href="/icons/fontawesome.css" />
+
+		<!-- [جسر عملياتي]: استدعاء آمن ومباشر للخطوط ومحرك التصميم لضمان عمل الواجهة عبر GitHub Web -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+		<!-- تعريف الهوية البصرية الملكية -->
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: { cairo: ['Cairo', 'sans-serif'] }
+					}
+				}
+			}
+		</script>
 	</head>
 	<body class="bg-[#07111e] text-[#c9d4e5] font-cairo antialiased min-h-screen">
+		
+		<!-- نقطة الارتكاز التي يتم حقن محتوى الصفحات بداخلها -->
 		<slot />
-        
-        <style is:global>
-            /* قواعد الأمان البصرية الأساسية (Global CSS) */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            ::-webkit-scrollbar-track {
-                background: #07111e;
-            }
-            ::-webkit-scrollbar-thumb {
-                background: #dfb76c;
-                border-radius: 4px;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: #bfa15f;
-            }
-            .glassmorphism {
-                background: rgba(13, 30, 54, 0.75);
-                backdrop-filter: blur(14px);
-                border: 1px solid rgba(223, 183, 108, 0.12);
-                box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
-                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            .glassmorphism:hover {
-                border-color: rgba(223, 183, 108, 0.35);
-                box-shadow: 0 12px 40px 0 rgba(223, 183, 108, 0.08);
-                transform: translateY(-6px);
-            }
-        </style>
+
+		<style is:global>
+			/* قواعد الأمان البصرية وتأثيرات الزجاج الفاخرة */
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: #07111e;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #dfb76c;
+				border-radius: 4px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #bfa15f;
+			}
+			.glassmorphism {
+				background: rgba(13, 30, 54, 0.75);
+				backdrop-filter: blur(14px);
+				border: 1px solid rgba(223, 183, 108, 0.12);
+				box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+				transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+			.glassmorphism:hover {
+				border-color: rgba(223, 183, 108, 0.35);
+				transform: translateY(-6px);
+			}
+		</style>
 	</body>
 </html>

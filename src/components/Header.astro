@@ -2,28 +2,40 @@
 // src/components/Header.astro
 ---
 
-<header class="bg-[#07111e]/90 backdrop-blur-md border-b border-[#dfb76c]/15 sticky top-0 z-40">
+<header class="bg-[#07111e]/95 backdrop-blur-md border-b border-[#dfb76c]/20 sticky top-0 z-50">
+    
+    <div class="bg-[#0d1e36] border-b border-[#dfb76c]/20 py-2 overflow-hidden flex items-center">
+        <div class="marquee-container text-[#dfb76c] text-xs sm:text-sm font-bold tracking-wide whitespace-nowrap">
+            <div class="marquee-content inline-block">
+                ✦ مرحباً بكم في مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي ✦ نقود السيادة الرقمية ونحمي السمعة المؤسسية للكيانات الكبرى ✦ للتدخل الفني العاجل وإخماد الأزمات السيبرانية تواصلوا معنا مباشرة ✦ 
+            </div>
+            <div class="marquee-content inline-block">
+                ✦ مرحباً بكم في مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي ✦ نقود السيادة الرقمية ونحمي السمعة المؤسسية للكيانات الكبرى ✦ للتدخل الفني العاجل وإخماد الأزمات السيبرانية تواصلوا معنا مباشرة ✦ 
+            </div>
+        </div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         
         <div class="flex items-center gap-3 select-none">
-            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#dfb76c] to-yellow-600 flex items-center justify-center shadow-lg">
-                <i class="fa-solid fa-fingerprint text-[#07111e] text-2xl"></i>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#dfb76c] to-yellow-600 flex items-center justify-center shadow-lg shadow-[#dfb76c]/20">
+                <i class="fa-solid fa-fingerprint text-[#07111e] text-xl sm:text-2xl"></i>
             </div>
             <div>
-                <h1 class="text-[#f1f5f9] font-black text-xl leading-tight tracking-wide">المستشار صلاح حسن</h1>
-                <p class="text-[#dfb76c] text-xs font-bold">السيادة الرقمية وإدارة السمعة</p>
+                <h1 class="text-[#f1f5f9] font-black text-sm sm:text-lg leading-tight tracking-wide">مكتب المستشار صلاح حسن</h1>
+                <p class="text-[#dfb76c] text-[10px] sm:text-xs font-bold">للاستشارات والتطوير الرقمي</p>
             </div>
         </div>
 
-        <nav class="hidden lg:flex items-center gap-8 font-semibold">
+        <nav class="hidden lg:flex items-center gap-6 font-bold text-sm">
             <a href="#services" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">الخدمات الاستراتيجية</a>
-            <a href="#blog" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">مدونة السيادة</a>
-            <a href="#contact" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">حجز المواعيد</a>
+            <a href="#booking" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">طرح الأزمات والحلول</a>
+            <a href="#articles" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">الدراسات والمقالات</a>
         </nav>
 
         <div class="flex items-center gap-3">
-            <a href="#contact" class="hidden sm:inline-flex bg-gradient-to-r from-[#dfb76c] to-yellow-600 text-[#07111e] px-5 py-2.5 rounded-lg font-extrabold text-xs shadow-md hover:brightness-110 transition-all">
-                تواصل الآن
+            <a href="https://wa.me/9647706556772" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2 rounded-lg font-extrabold text-xs shadow-md hover:brightness-110 transition-all">
+                <i class="fa-brands fa-whatsapp text-lg"></i> تواصل عاجل
             </a>
             <button id="mobileMenuBtn" class="lg:hidden text-[#f1f5f9] text-2xl focus:outline-none">
                 <i id="mobileMenuIcon" class="fa-solid fa-bars"></i>
@@ -32,13 +44,33 @@
     </div>
 
     <div id="mobileMenu" class="hidden lg:hidden bg-[#0d1e36] border-b border-[#dfb76c]/20 px-6 py-5 space-y-4">
-        <a href="#services" class="block text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">الخدمات الاستراتيجية</a>
-        <a href="#blog" class="block text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">مدونة السيادة</a>
-        <a href="#contact" class="block text-center bg-[#dfb76c] text-[#07111e] py-2.5 rounded-lg font-bold">حجز المواعيد</a>
+        <a href="#services" class="block text-[#c9d4e5] hover:text-[#dfb76c] font-bold">الخدمات الاستراتيجية</a>
+        <a href="#booking" class="block text-[#c9d4e5] hover:text-[#dfb76c] font-bold">طرح الأزمات والحلول</a>
+        <a href="#articles" class="block text-[#c9d4e5] hover:text-[#dfb76c] font-bold">الدراسات والمقالات</a>
+        <a href="https://wa.me/9647706556772" class="flex justify-center items-center gap-2 bg-[#25D366] text-white py-2.5 rounded-lg font-bold">
+            <i class="fa-brands fa-whatsapp text-lg"></i> واتساب مباشر
+        </a>
     </div>
 </header>
 
-<script>
+<style>
+    /* حركة الشريط الإخباري من اليمين لليسار تتوافق مع اللغة العربية */
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+    }
+    .marquee-content {
+        animation: marquee 25s linear infinite;
+        padding-left: 2rem;
+    }
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(100%); }
+    }
+</style>
+
+<script is:inline>
     const btn = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('mobileMenu');
     const icon = document.getElementById('mobileMenuIcon');
@@ -46,11 +78,7 @@
     if (btn && menu && icon) {
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) {
-                icon.className = 'fa-solid fa-bars';
-            } else {
-                icon.className = 'fa-solid fa-xmark';
-            }
+            icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
         });
     }
 </script>

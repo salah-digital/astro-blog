@@ -1,51 +1,99 @@
 ---
-// src/layouts/Layout.astro
-interface Props {
-	title: string;
-}
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 
-const { title } = Astro.props;
+// قاعدة البيانات السيادية المحمية داخل السيرفر
+const siteIdentity = {
+  heroTitle: "هندسة السيادة الرقمية <br> <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#dfb76c] to-yellow-600'>وحماية السمعة المؤسسية</span>",
+  heroSubtitle: "نصنع الدرع الرقمي الحامي لكيانك الاستراتيجي وندعم التحول الآمن للمؤسسات والشركات الكبرى داخل العراق والمنطقة العربية بأحدث منهجيات الأمن الرقمي وإدارة الأزمات والسمعة الإلكترونية.",
+  phoneLink: "+9647706556772",
+  whatsAppLink: "https://wa.me/9647706556772"
+};
+
+const services = [
+  {
+    icon: "fa-solid fa-shield-halved",
+    title: "السيادة الوطنية والرقمية",
+    desc: "تصميم الأطر والمنهجيات التنظيمية لتأمين السيادة التكنولوجية الكاملة للمؤسسات والهيئات الحكومية بما يطابق المعايير السيادية والأمنية الفائقة."
+  },
+  {
+    icon: "fa-solid fa-bullhorn",
+    title: "إدارة السمعة الإلكترونية",
+    desc: "مراقبة مستمرة للفضاء الرقمي وتتبع الحملات الموجهة وتشويه السمعة، مع تفعيل آليات الدفاع المباشر لحفظ اسم ومكانة مؤسستك."
+  },
+  {
+    icon: "fa-solid fa-triangle-exclamation",
+    title: "حوكمة الأزمات التكنولوجية",
+    desc: "تدخل فني استراتيجي فوري ومدروس لاحتواء الهجمات السيبرانية وحملات الابتزاز ووقف تداعيات الكوارث الرقمية بأعلى درجات الكتمان."
+  }
+];
 ---
 
-<!doctype html>
-<html lang="ar" dir="rtl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
-		<link rel="stylesheet" href="/fonts/cairo.css" />
-		<link rel="stylesheet" href="/icons/fontawesome.css" />
-	</head>
-	<body class="bg-[#07111e] text-[#c9d4e5] font-cairo antialiased min-h-screen">
-		<slot />
-        
-        <style is:global>
-            /* قواعد الأمان البصرية الأساسية (Global CSS) */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            ::-webkit-scrollbar-track {
-                background: #07111e;
-            }
-            ::-webkit-scrollbar-thumb {
-                background: #dfb76c;
-                border-radius: 4px;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: #bfa15f;
-            }
-            .glassmorphism {
-                background: rgba(13, 30, 54, 0.75);
-                backdrop-filter: blur(14px);
-                border: 1px solid rgba(223, 183, 108, 0.12);
-                box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
-                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-            .glassmorphism:hover {
-                border-color: rgba(223, 183, 108, 0.35);
-                box-shadow: 0 12px 40px 0 rgba(223, 183, 108, 0.08);
-                transform: translateY(-6px);
-            }
-        </style>
-	</body>
-</html>
+<Layout title="مكتب المستشار صلاح حسن إبراهيم | بوابة السيادة الرقمية">
+    <Header />
+
+    <main>
+        <section class="relative overflow-hidden py-16 lg:py-28 flex items-center justify-center">
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#dfb76c_1.5px,transparent_1.5px)] [background-size:24px_24px]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#dfb76c]/10 text-[#dfb76c] font-bold text-xs border border-[#dfb76c]/25">
+                        <i class="fa-solid fa-ribbon"></i> خبير السيادة الرقمية وإدارة السمعة المؤسسية
+                    </span>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f1f5f9] leading-tight" set:html={siteIdentity.heroTitle}></h1>
+                    
+                    <p class="text-base sm:text-lg text-[#c9d4e5] max-w-2xl leading-relaxed">
+                        {siteIdentity.heroSubtitle}
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href={siteIdentity.whatsAppLink} target="_blank" class="flex items-center gap-3 bg-[#25D366] text-white hover:brightness-110 font-bold px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl animate-pulse"></i> التواصل الفوري
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <div class="relative rounded-3xl overflow-hidden border border-[#dfb76c]/30 bg-[#0d1e36] p-2 w-[310px] h-[390px] sm:w-[350px] sm:h-[440px]">
+                            <img src="/images/Salah.jpg" alt="المستشار صلاح حسن إبراهيم" class="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-[#0d1e36] border border-[#dfb76c]/30 p-4 rounded-2xl shadow-2xl flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#dfb76c]/20 flex items-center justify-center text-[#dfb76c]">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-[#c9d4e5]/70">المقر الإستراتيجي الرئيسي</div>
+                                <div class="text-sm font-bold text-[#f1f5f9]">العراق - بغداد</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-3 mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#f1f5f9]">الخدمات الاستشارية الاستراتيجية</h2>
+                    <div class="w-24 h-1 bg-[#dfb76c] mx-auto rounded"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {services.map((service) => (
+                        <div class="glassmorphism rounded-3xl p-8 relative overflow-hidden group">
+                            <div class="w-14 h-14 rounded-2xl bg-[#dfb76c]/10 text-[#dfb76c] flex items-center justify-center text-2xl mb-6 border border-[#dfb76c]/20">
+                                <i class={service.icon}></i>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-[#f1f5f9] mb-4">{service.title}</h3>
+                            <p class="text-sm text-[#c9d4e5]/80 leading-relaxed">{service.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

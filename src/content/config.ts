@@ -1,26 +1,18 @@
-import { SITE } from "@config";
-import { defineCollection, z } from "astro:content";
+// src/content/config.ts
+import { z, defineCollection } from 'astro:content';
 
-const blog = defineCollection({
-  type: "content",
-  schema: ({ image }) =>
-    z.object({
-      author: z.string().default(SITE.author),
-      pubDatetime: z.date(),
-      modDatetime: z.date().optional().nullable(),
-      title: z.string(),
-      featured: z.boolean().optional(),
-      draft: z.boolean().optional(),
-      tags: z.array(z.string()).default(["others"]),
-      ogImage: image()
-        .refine(img => img.width >= 1200 && img.height >= 630, {
-          message: "OpenGraph image must be at least 1200 X 630 pixels!",
-        })
-        .or(z.string())
-        .optional(),
-      description: z.string(),
-      canonicalURL: z.string().optional(),
+// تعريف القالب الصارم للمقالات (لا يقبل السيرفر أي مقال لا يحتوي على هذه البيانات)
+const blogCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        date: z.string(),
+        category: z.string(),
+        description: z.string(),
+        draft: z.boolean().default(false), // للتحكم في إخفاء أو إظهار المقال
     }),
 });
 
-export const collections = { blog };
+export const collections = {
+    'blog': blogCollection,
+};

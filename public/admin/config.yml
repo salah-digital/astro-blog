@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: "salah-digital/astro-blog" # يرجى استبدال "salah-digital" باسم مستخدم الغيت هاب الخاص بك بدقة إذا كان مختلفاً
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+locale: 'ar' # تعريب اللوحة بالكامل
+
+collections:
+  - name: "blog"
+    label: "المقالات والدراسات"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "عنوان المقال", name: "title", widget: "string"}
+      - {label: "تاريخ النشر", name: "pubDatetime", widget: "datetime"}
+      - {label: "الكاتب", name: "author", widget: "string", default: "المستشار صلاح حسن"}
+      - {label: "التصنيف (القسم)", name: "tags", widget: "list", default: ["إدارة الأزمات"]}
+      - {label: "وصف موجز للمقال", name: "description", widget: "text"}
+      - {label: "حفظ كمسودة (إخفاء عن الزوار)", name: "draft", widget: "boolean", default: false}
+      - {label: "محتوى المقال والدراسة", name: "body", widget: "markdown"}

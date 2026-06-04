@@ -3,70 +3,50 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
-// قاعدة البيانات السيادية المحمية داخل السيرفر
 const siteIdentity = {
   heroTitle: "هندسة السيادة الرقمية <br> <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#dfb76c] to-yellow-600'>وحماية السمعة المؤسسية</span>",
-  heroSubtitle: "نصنع الدرع الرقمي الحامي لكيانك الاستراتيجي وندعم التحول الآمن للمؤسسات والشركات الكبرى داخل العراق والمنطقة العربية بأحدث منهجيات الأمن الرقمي وإدارة الأزمات والسمعة الإلكترونية.",
-  phoneLink: "+9647706556772",
-  whatsAppLink: "https://wa.me/9647706556772"
+  heroSubtitle: "مكتب المستشار صلاح حسن للاستشارات والتطوير الرقمي. نصنع الدرع الرقمي الحامي لكيانك الاستراتيجي وندعم التحول الآمن للمؤسسات والشركات الكبرى بأحدث منهجيات الأمن الرقمي وإدارة الأزمات.",
+  phone: "+9647706556772",
+  email: "consultant.salahhasan@gmail.com"
 };
-
-const services = [
-  {
-    icon: "fa-solid fa-shield-halved",
-    title: "السيادة الوطنية والرقمية",
-    desc: "تصميم الأطر والمنهجيات التنظيمية لتأمين السيادة التكنولوجية الكاملة للمؤسسات والهيئات الحكومية بما يطابق المعايير السيادية والأمنية الفائقة."
-  },
-  {
-    icon: "fa-solid fa-bullhorn",
-    title: "إدارة السمعة الإلكترونية",
-    desc: "مراقبة مستمرة للفضاء الرقمي وتتبع الحملات الموجهة وتشويه السمعة، مع تفعيل آليات الدفاع المباشر لحفظ اسم ومكانة مؤسستك."
-  },
-  {
-    icon: "fa-solid fa-triangle-exclamation",
-    title: "حوكمة الأزمات التكنولوجية",
-    desc: "تدخل فني استراتيجي فوري ومدروس لاحتواء الهجمات السيبرانية وحملات الابتزاز ووقف تداعيات الكوارث الرقمية بأعلى درجات الكتمان."
-  }
-];
 ---
 
-<Layout title="مكتب المستشار صلاح حسن إبراهيم | بوابة السيادة الرقمية">
+<Layout title="مكتب المستشار صلاح حسن | للاستشارات والتطوير الرقمي">
     <Header />
 
     <main>
-        <section class="relative overflow-hidden py-16 lg:py-28 flex items-center justify-center">
+        <section class="relative overflow-hidden py-16 lg:py-28 flex items-center justify-center border-b border-[#dfb76c]/10">
             <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#dfb76c_1.5px,transparent_1.5px)] [background-size:24px_24px]"></div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
                     <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#dfb76c]/10 text-[#dfb76c] font-bold text-xs border border-[#dfb76c]/25">
-                        <i class="fa-solid fa-ribbon"></i> خبير السيادة الرقمية وإدارة السمعة المؤسسية
+                        <i class="fa-solid fa-shield-halved"></i> خبير السيادة الرقمية وحل الأزمات
                     </span>
-                    
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f1f5f9] leading-tight" set:html={siteIdentity.heroTitle}></h1>
-                    
-                    <p class="text-base sm:text-lg text-[#c9d4e5] max-w-2xl leading-relaxed">
-                        {siteIdentity.heroSubtitle}
-                    </p>
+                    <p class="text-base sm:text-lg text-[#c9d4e5] max-w-2xl leading-relaxed">{siteIdentity.heroSubtitle}</p>
 
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href={siteIdentity.whatsAppLink} target="_blank" class="flex items-center gap-3 bg-[#25D366] text-white hover:brightness-110 font-bold px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1">
-                            <i class="fa-brands fa-whatsapp text-2xl animate-pulse"></i> التواصل الفوري
+                        <a href={`https://wa.me/${siteIdentity.phone.replace('+','')}`} target="_blank" class="flex items-center gap-3 bg-[#25D366] text-white hover:brightness-110 font-bold px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl animate-pulse"></i> واتساب مباشر
+                        </a>
+                        <a href={`tel:${siteIdentity.phone}`} class="flex items-center gap-2 bg-[#0d1e36] border-2 border-[#dfb76c] text-[#dfb76c] hover:bg-[#dfb76c] hover:text-[#07111e] font-bold px-8 py-4 rounded-xl transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-phone"></i> اتصال هاتفي
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 flex justify-center">
                     <div class="relative group">
-                        <div class="relative rounded-3xl overflow-hidden border border-[#dfb76c]/30 bg-[#0d1e36] p-2 w-[310px] h-[390px] sm:w-[350px] sm:h-[440px]">
-                            <img src="/images/Salah.jpg" alt="المستشار صلاح حسن إبراهيم" class="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-700 group-hover:scale-105">
+                        <div class="relative rounded-3xl overflow-hidden border-2 border-[#dfb76c]/40 bg-[#0d1e36] p-2 w-[310px] h-[390px] sm:w-[350px] sm:h-[440px]">
+                            <img src="/images/Salah.jpg" alt="المستشار صلاح حسن" class="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop'">
                         </div>
                         <div class="absolute -bottom-5 -right-5 bg-[#0d1e36] border border-[#dfb76c]/30 p-4 rounded-2xl shadow-2xl flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#dfb76c]/20 flex items-center justify-center text-[#dfb76c]">
+                            <div class="w-10 h-10 rounded-full bg-[#dfb76c]/20 flex items-center justify-center text-[#dfb76c] animate-pulse">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <div class="text-[10px] text-[#c9d4e5]/70">المقر الإستراتيجي الرئيسي</div>
+                                <div class="text-[10px] text-[#c9d4e5]/70">المقر الإستراتيجي</div>
                                 <div class="text-sm font-bold text-[#f1f5f9]">العراق - بغداد</div>
                             </div>
                         </div>
@@ -75,25 +55,170 @@ const services = [
             </div>
         </section>
 
-        <section id="services" class="py-20">
+        <section id="services" class="py-20 bg-[#07111e]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-3 mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#f1f5f9]">الخدمات الاستشارية الاستراتيجية</h2>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#f1f5f9]">الخدمات الاستشارية والتطويرية</h2>
                     <div class="w-24 h-1 bg-[#dfb76c] mx-auto rounded"></div>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service) => (
-                        <div class="glassmorphism rounded-3xl p-8 relative overflow-hidden group">
-                            <div class="w-14 h-14 rounded-2xl bg-[#dfb76c]/10 text-[#dfb76c] flex items-center justify-center text-2xl mb-6 border border-[#dfb76c]/20">
-                                <i class={service.icon}></i>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-[#f1f5f9] mb-4">{service.title}</h3>
-                            <p class="text-sm text-[#c9d4e5]/80 leading-relaxed">{service.desc}</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glassmorphism rounded-3xl p-8 hover:-translate-y-2 transition-transform border border-[#dfb76c]/20">
+                        <div class="w-14 h-14 rounded-2xl bg-[#dfb76c]/10 text-[#dfb76c] flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-shield-halved"></i>
                         </div>
-                    ))}
+                        <h3 class="text-xl font-bold text-white mb-3">السيادة الوطنية والرقمية</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">تصميم الأطر والمنهجيات لتأمين السيادة التكنولوجية الكاملة للمؤسسات والهيئات الحكومية بعيداً عن التبعية الخارجية.</p>
+                    </div>
+                    <div class="glassmorphism rounded-3xl p-8 hover:-translate-y-2 transition-transform border border-[#dfb76c]/20">
+                        <div class="w-14 h-14 rounded-2xl bg-[#dfb76c]/10 text-[#dfb76c] flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">إدارة السمعة الإلكترونية</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">مراقبة مستمرة للفضاء الرقمي وتتبع الحملات الموجهة وتشويه السمعة، مع تفعيل آليات الدفاع المباشر.</p>
+                    </div>
+                    <div class="glassmorphism rounded-3xl p-8 hover:-translate-y-2 transition-transform border border-[#dfb76c]/20">
+                        <div class="w-14 h-14 rounded-2xl bg-[#dfb76c]/10 text-[#dfb76c] flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">حوكمة الأزمات التكنولوجية</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">تدخل فني استراتيجي فوري ومدروس لاحتواء الهجمات السيبرانية وحملات الابتزاز بأعلى درجات الكتمان.</p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section id="booking" class="py-20 bg-[#0d1e36] border-y border-[#dfb76c]/10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-3 mb-10">
+                    <h2 class="text-3xl font-extrabold text-[#f1f5f9]">طرح الأزمات وطلب الحلول الاستراتيجية</h2>
+                    <p class="text-sm text-gray-400">أرسل تفاصيل مشكلة مؤسستك بأمان تام، سيتم تقييم الأزمة وتحديد أجور التدخل الفني المناسبة لإنهاء المشكلة.</p>
+                    <div class="w-24 h-1 bg-[#dfb76c] mx-auto rounded"></div>
+                </div>
+
+                <div class="glassmorphism p-8 rounded-3xl border border-[#dfb76c]/30 shadow-2xl">
+                    <form id="crisisForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-[#dfb76c] mb-2">اسم الجهة / الشركة:</label>
+                                <input type="text" id="companyName" required class="w-full bg-[#07111e] border border-[#dfb76c]/20 text-white p-3 rounded-lg focus:outline-none focus:border-[#dfb76c]" placeholder="اسم المؤسسة">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-[#dfb76c] mb-2">رقم التواصل الفعال:</label>
+                                <input type="text" id="contactNumber" required class="w-full bg-[#07111e] border border-[#dfb76c]/20 text-white p-3 rounded-lg focus:outline-none focus:border-[#dfb76c]" placeholder="رقم الهاتف أو الواتساب">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-[#dfb76c] mb-2">نوع الأزمة / الخدمة المطلوبة:</label>
+                            <select id="issueType" class="w-full bg-[#07111e] border border-[#dfb76c]/20 text-white p-3 rounded-lg focus:outline-none focus:border-[#dfb76c]">
+                                <option value="ابتزاز إلكتروني وتشويه سمعة">ابتزاز إلكتروني وتشويه سمعة</option>
+                                <option value="اختراق سيبراني أو فقدان سيادة">اختراق سيبراني أو فقدان سيادة</option>
+                                <option value="استشارة تطوير وتأسيس بنية تحتية">استشارة تطوير وتأسيس بنية تحتية</option>
+                                <option value="أخرى (سيتم الشرح بالتفاصيل)">أخرى (سيتم الشرح بالتفاصيل)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-[#dfb76c] mb-2">شرح مختصر للأزمة والمشكلة:</label>
+                            <textarea id="issueDetails" rows="4" required class="w-full bg-[#07111e] border border-[#dfb76c]/20 text-white p-3 rounded-lg focus:outline-none focus:border-[#dfb76c]" placeholder="اشرح المشكلة باختصار، نحن نضمن السرية التامة..."></textarea>
+                        </div>
+                        
+                        <button type="button" onclick="sendCrisisReport()" class="w-full bg-gradient-to-r from-[#dfb76c] to-yellow-600 text-[#07111e] font-extrabold py-4 rounded-xl hover:brightness-110 transition-all flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> إرسال الملف السري للمستشار مباشرة (عبر واتساب)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div id="aiChatWidget" class="fixed bottom-6 right-6 z-50">
+            <button onclick="toggleAi()" class="w-16 h-16 rounded-full bg-gradient-to-r from-[#dfb76c] to-yellow-600 text-[#07111e] flex items-center justify-center shadow-2xl hover:scale-110 transition-transform relative border-2 border-[#07111e]">
+                <i class="fa-solid fa-robot text-3xl"></i>
+                <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 border-2 border-[#07111e] rounded-full animate-ping"></span>
+                <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 border-2 border-[#07111e] rounded-full"></span>
+            </button>
+
+            <div id="aiWindow" class="hidden absolute bottom-20 right-0 w-[340px] bg-[#0d1e36] rounded-2xl border border-[#dfb76c]/30 shadow-2xl overflow-hidden flex-col h-[400px]">
+                <div class="bg-[#07111e] p-4 border-b border-[#dfb76c]/20 flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-microchip text-[#dfb76c] text-xl"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">المستشار الذكي (Gemini)</h4>
+                            <p class="text-[10px] text-green-400">متصل - آمن ومحمي</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleAi()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+                </div>
+                <div id="aiMessages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#07111e]/50">
+                    <div class="bg-[#07111e] border border-[#dfb76c]/20 text-gray-300 p-3 rounded-xl rounded-tr-none text-xs leading-relaxed">
+                        أهلاً بك. أنا المساعد الذكي لمكتب المستشار صلاح حسن. كيف يمكنني إرشادك اليوم بخصوص حماية مؤسستك؟
+                    </div>
+                </div>
+                <div class="p-3 bg-[#07111e] border-t border-[#dfb76c]/20 flex gap-2">
+                    <input type="text" id="aiInput" placeholder="اكتب استفسارك هنا..." class="flex-1 bg-[#0d1e36] text-white p-2 rounded-lg text-xs border border-[#dfb76c]/20 focus:outline-none">
+                    <button onclick="sendAiMessage()" class="bg-[#dfb76c] text-[#07111e] px-3 rounded-lg"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
     </main>
+
+    <footer class="bg-[#07111e] border-t border-[#dfb76c]/20 py-8 text-center">
+        <p class="text-[#c9d4e5] text-sm">جميع الحقوق محفوظة © {new Date().getFullYear()} - مكتب المستشار صلاح حسن</p>
+        <div class="flex justify-center gap-4 mt-4">
+            <a href={`mailto:${siteIdentity.email}`} class="text-[#dfb76c] hover:text-white"><i class="fa-solid fa-envelope text-xl"></i></a>
+            <a href={`tel:${siteIdentity.phone}`} class="text-[#dfb76c] hover:text-white"><i class="fa-solid fa-phone text-xl"></i></a>
+        </div>
+    </footer>
 </Layout>
+
+<script is:inline>
+    // 1. نظام إرسال الأزمات الآمن (يرسل البيانات للواتساب مباشرة دون خوادم وسيطة)
+    function sendCrisisReport() {
+        const company = document.getElementById('companyName').value;
+        const phone = document.getElementById('contactNumber').value;
+        const type = document.getElementById('issueType').value;
+        const details = document.getElementById('issueDetails').value;
+
+        if(!company || !phone || !details) {
+            alert('يرجى تعبئة الحقول المطلوبة لضمان دراسة الحالة.');
+            return;
+        }
+
+        const message = `*طلب تدخل فني واستشارة مأجورة*%0A%0A` +
+                        `🏢 *الجهة:* ${company}%0A` +
+                        `📞 *التواصل:* ${phone}%0A` +
+                        `⚠️ *نوع الأزمة:* ${type}%0A` +
+                        `📝 *التفاصيل:* ${details}%0A%0A` +
+                        `الرجاء تقييم الحالة وتحديد التكلفة للبدء.`;
+        
+        // رقم المستشار
+        const targetNumber = "9647706556772";
+        window.open(`https://wa.me/${targetNumber}?text=${message}`, '_blank');
+    }
+
+    // 2. المحاكي الذكي (UI Control)
+    function toggleAi() {
+        const win = document.getElementById('aiWindow');
+        win.classList.toggle('hidden');
+        win.classList.toggle('flex');
+    }
+
+    function sendAiMessage() {
+        const input = document.getElementById('aiInput');
+        const text = input.value.trim();
+        if(!text) return;
+
+        const messagesBox = document.getElementById('aiMessages');
+        
+        // رسالة المستخدم
+        messagesBox.innerHTML += `<div class="bg-[#dfb76c] text-[#07111e] p-3 rounded-xl rounded-tl-none text-xs font-bold ms-auto w-[85%]">${text}</div>`;
+        input.value = '';
+
+        // رد آلي مؤقت (لحين ربط الـ API برمجياً عبر Cloudflare)
+        setTimeout(() => {
+            messagesBox.innerHTML += `<div class="bg-[#07111e] border border-[#dfb76c]/20 text-gray-300 p-3 rounded-xl rounded-tr-none text-xs leading-relaxed w-[90%]">
+                عذراً، لضمان أعلى معايير "الحصن الرقمي" والسيادة، نحن لا نربط الذكاء الاصطناعي مباشرة من المتصفح. يرجى إرسال أزمتك عبر نموذج (طرح الأزمات) وسيتواصل معك المستشار شخصياً.
+            </div>`;
+            messagesBox.scrollTop = messagesBox.scrollHeight;
+        }, 1000);
+    }
+</script>

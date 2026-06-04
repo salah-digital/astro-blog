@@ -1,146 +1,56 @@
 ---
-import { LOGO_IMAGE, SITE } from "@config";
-import Hr from "./Hr.astro";
-import LinkButton from "./LinkButton.astro";
-
-export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
-}
-
-const { activeNav } = Astro.props;
+// src/components/Header.astro
 ---
 
-<header>
-  <a id="skip-to-content" href="#main-content">Skip to content</a>
-  <div class="nav-container">
-    <div class="top-nav-wrapper">
-      <a href="/" class="logo whitespace-nowrap">
-        {
-          LOGO_IMAGE.enable ? (
-            <img
-              src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
-              alt={SITE.title}
-              width={LOGO_IMAGE.width}
-              height={LOGO_IMAGE.height}
-            />
-          ) : (
-            SITE.title
-          )
-        }
-      </a>
+<header class="bg-[#07111e]/90 backdrop-blur-md border-b border-[#dfb76c]/15 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        
+        <div class="flex items-center gap-3 select-none">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#dfb76c] to-yellow-600 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-fingerprint text-[#07111e] text-2xl"></i>
+            </div>
+            <div>
+                <h1 class="text-[#f1f5f9] font-black text-xl leading-tight tracking-wide">المستشار صلاح حسن</h1>
+                <p class="text-[#dfb76c] text-xs font-bold">السيادة الرقمية وإدارة السمعة</p>
+            </div>
+        </div>
 
-      <nav id="nav-menu">
-        <button
-          class="hamburger-menu focus-outline"
-          aria-label="Open Menu"
-          aria-expanded="false"
-          aria-controls="menu-items"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="menu-icon"
-          >
-            <line x1="4" y1="12" x2="20" y2="12" class="line"></line>
-            <line x1="4" y1="6" x2="20" y2="6" class="line"></line>
-            <line x1="4" y1="18" x2="20" y2="18" class="line"></line>
-          </svg>
-        </button>
+        <nav class="hidden lg:flex items-center gap-8 font-semibold">
+            <a href="#services" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">الخدمات الاستراتيجية</a>
+            <a href="#blog" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">مدونة السيادة</a>
+            <a href="#contact" class="text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">حجز المواعيد</a>
+        </nav>
 
-        <ul id="menu-items" class="display-none sm:flex">
-          <li>
-            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
-              المقالات والاستشارات
+        <div class="flex items-center gap-3">
+            <a href="#contact" class="hidden sm:inline-flex bg-gradient-to-r from-[#dfb76c] to-yellow-600 text-[#07111e] px-5 py-2.5 rounded-lg font-extrabold text-xs shadow-md hover:brightness-110 transition-all">
+                تواصل الآن
             </a>
-          </li>
-          <li>
-            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
-              التصنيفات الهيكلية
-            </a>
-          </li>
-          <li>
-            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
-              عن المكتب الاستشاري
-            </a>
-          </li>
-          <li>
-            <LinkButton
-              href="/search/"
-              className={`focus-outline p-3 sm:p-1 ${
-                activeNav === "search" ? "active" : ""
-              }`}
-              ariaLabel="search"
-              title="Search"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100"
-                ><path
-                  d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.374-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
-                ></path>
-              </svg>
-            </LinkButton>
-          </li>
-        </ul>
-      </nav>
+            <button id="mobileMenuBtn" class="lg:hidden text-[#f1f5f9] text-2xl focus:outline-none">
+                <i id="mobileMenuIcon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
     </div>
-  </div>
-  <Hr />
+
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0d1e36] border-b border-[#dfb76c]/20 px-6 py-5 space-y-4">
+        <a href="#services" class="block text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">الخدمات الاستراتيجية</a>
+        <a href="#blog" class="block text-[#c9d4e5] hover:text-[#dfb76c] transition-colors">مدونة السيادة</a>
+        <a href="#contact" class="block text-center bg-[#dfb76c] text-[#07111e] py-2.5 rounded-lg font-bold">حجز المواعيد</a>
+    </div>
 </header>
 
-<style>
-  #skip-to-content {
-    @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
-  }
-  .nav-container {
-    @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
-  }
-  .top-nav-wrapper {
-    @apply flex w-full items-center justify-between border-b border-skin-line py-4 sm:border-none sm:py-8;
-  }
-  .logo {
-    @apply p-4 text-xl font-semibold sm:p-0 sm:text-2xl;
-  }
-  nav {
-    @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
-  }
-  nav ul {
-    @apply mt-4 grid w-44 grid-cols-2 gap-x-4 gap-y-2 sm:mt-0 sm:ml-0 sm:flex sm:w-auto sm:gap-x-0 sm:gap-y-0 sm:space-x-7;
-  }
-  nav ul li {
-    @apply flex items-center justify-center;
-  }
-  nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
-  }
-  nav ul li a.active {
-    @apply text-skin-accent underline decoration-wavy decoration-2 underline-offset-4;
-  }
-  .hamburger-menu {
-    @apply self-end p-2 sm:hidden;
-  }
-  .hamburger-menu svg {
-    @apply h-6 w-6 fill-skin-base;
-  }
-</style>
-
 <script>
-  function toggleNav() {
-    const menuBtn = document.querySelector(".hamburger-menu");
-    const menuItems = document.querySelector("#menu-items");
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('mobileMenuIcon');
 
-    menuBtn?.addEventListener("click", () => {
-      const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
-      menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
-      menuBtn.setAttribute("aria-label", menuExpanded ? "Open Menu" : "Close Menu");
-      menuItems?.classList.toggle("display-none");
-    });
-  }
-  toggleNav();
-  document.addEventListener("astro:after-swap", toggleNav);
+    if (btn && menu && icon) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        });
+    }
 </script>

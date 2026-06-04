@@ -1,0 +1,26 @@
+---
+// src/components/YouTubeShield.astro
+interface Props {
+    videoId: string;
+    title?: string;
+}
+
+const { videoId, title = "فيديو توضيحي" } = Astro.props;
+
+// استخدام النطاق السيادي والآمن ليوتيوب (nocookie) لمنع التتبع وحقن الإعلانات الموجهة
+const iframeSrc = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`;
+---
+
+<div class="relative w-full overflow-hidden rounded-2xl border-2 border-[#dfb76c]/30 shadow-lg my-8">
+    <div class="pt-[56.25%]">
+        <iframe
+            class="absolute top-0 left-0 w-full h-full"
+            src={iframeSrc}
+            title={title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-popups"
+        ></iframe>
+    </div>
+</div>

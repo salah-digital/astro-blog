@@ -6,7 +6,7 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
-locale: 'ar' # تعريب واجهة الإدارة بالكامل
+locale: 'ar' # تعريب واجهة الإدارة بالكامل وضمان المزامنة السيادية
 
 collections:
   - name: "blog"

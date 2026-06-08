@@ -2,7 +2,7 @@ backend:
   name: github
   repo: "salah-digital/astro-blog"
   branch: main
-  base_url: "https://auth.salah-digital.com"
+  base_url: "https://salah-digital.com"
 media_folder: "public/images"
 public_folder: "/images"
 
